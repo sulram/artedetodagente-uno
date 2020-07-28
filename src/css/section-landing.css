@@ -25,7 +25,7 @@ section.landing {
       a {
         @apply flex content-center;
         span {
-          @apply block leading-tight mr-2;
+          @apply block leading-none mr-2;
         }
       }
     }

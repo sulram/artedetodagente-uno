@@ -24,10 +24,14 @@
   }
 
   .page-title {
-    @apply p-8 bg-black text-white text-2xl leading-tight;
+    @apply p-8 bg-black text-white text-2xl leading-none uppercase;
     font-family: "Pixel Square";
     @screen md {
       @apply flex-grow pl-0 text-4xl;
+      span {
+        display: block;
+        margin-top: 2px;
+      }
     }
   }
 
