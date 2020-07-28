@@ -23,7 +23,7 @@ section.landing {
     
     li {
       a {
-        @apply block flex content-center;
+        @apply flex content-center;
         span {
           @apply block leading-tight mr-2;
         }
