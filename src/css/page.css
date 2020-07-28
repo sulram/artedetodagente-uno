@@ -1,0 +1,7 @@
+.page-content {
+  @apply p-10;
+  background: var(--yellow);
+  @screen md {
+    @apply p-20;
+  }
+}

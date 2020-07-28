@@ -1,0 +1,10 @@
+@font-face {
+    font-family:"Pixel Square";
+    src:url("Pixel Square 10.woff2") format("woff2"),url("Pixel Square 10.woff") format("woff"),url("Pixel Square 10.otf") format("opentype");
+    font-style:normal;font-weight:400;
+}
+@font-face {
+    font-family:"Pixel Square Bold";
+    src:url("Pixel Square Bold10.woff2") format("woff2"),url("Pixel Square Bold10.woff") format("woff"),url("Pixel Square Bold10.otf") format("opentype");
+    font-style:normal;font-weight:400;
+}

@@ -1,0 +1,105 @@
+.logotipo {
+  @apply p-5 bg-white;
+}
+
+.mobile-header {
+  @screen md {
+    @apply hidden;
+  }
+}
+
+.menu-dropdown-sticky {
+
+  position: sticky;
+  top: 0;
+
+  .logotipo {
+    @apply hidden;
+  }
+  @screen md {
+    @apply flex;
+    .logotipo {
+      @apply block max-w-xs;
+    }
+  }
+
+  .page-title {
+    @apply p-8 bg-black text-white text-2xl leading-tight;
+    font-family: "Pixel Square";
+    @screen md {
+      @apply flex-grow pl-0 text-4xl;
+    }
+  }
+
+  .menu-dropdown {
+    
+    @apply p-5 text-xl relative;
+    /* font-family: "Pixel Square"; */
+    background: #8a8a8a;
+
+    .menu-toggle {
+      @apply px-2 py-1 relative;
+      background-color: black;
+      color: #fff;
+      display: inline-block;
+      cursor: pointer;
+      text-transform: uppercase;
+      width: 100px;
+      z-index:2;
+    }
+    .menu-content {
+      @apply absolute bg-white mx-5;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s;
+      top: 20px;
+      left: 0;
+      width: calc(100% -2.5rem);
+      z-index: 1;
+      &.is-open {
+        max-height: 500px;
+      }
+    }
+
+    @screen md {
+      
+      @apply bg-black;
+      
+      &.no-title {
+        @apply flex-grow;
+      }
+
+      .menu-toggle {
+        width: 144px;
+      }
+
+      .menu-content {
+        @apply m-0;
+        top: 104px;
+        left: 0px;
+        width: 300px;
+        &.is-open {
+          @apply pt-0;
+        }
+      }
+      
+    }
+
+  }
+}
+
+.site-menu-1 {
+  @apply p-5 pt-16;
+  li {
+    @apply list-none m-0 p-0 uppercase;
+    a {
+      @apply px-2 py-1 block;
+      &:hover {
+        @apply bg-black text-white;
+      }
+    }
+  }
+  @screen md {
+    @apply p-5;
+  }
+}

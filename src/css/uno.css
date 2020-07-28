@@ -1,0 +1,22 @@
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "base";
+@import "header";
+@import "footer";
+
+@import "section-base";
+@import "section-landing";
+
+@import "page";
+
+/* ;
+@import "home-landing";
+@import "home-news-agenda";
+@import "home-cursos";
+@import "home-orquestras";
+@import "page";
+@import "footer";
+@import "util-slideshow"; */

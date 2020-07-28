@@ -1,0 +1,47 @@
+@import "_variables";
+
+section.landing {
+
+  @apply p-5;
+  background: var(--yellow);
+
+  @screen md {
+    @apply p-10 text-xl;
+  }
+
+  ul {
+    @apply mb-4;
+  }
+
+  p, li {
+    @apply mb-2;
+  }
+
+  .cols {
+
+    @apply flex flex-col;
+    
+    li {
+      a {
+        @apply block flex content-center;
+        span {
+          @apply block leading-tight mr-2;
+        }
+      }
+    }
+
+    p img {
+      @apply inline-block;
+    }
+    
+    @screen md {
+      @apply flex-row;
+      & > div {
+        @apply w-1/2;
+      }
+      & > div:nth-child(2) {
+        text-align: right;
+      }
+    }
+  }
+}

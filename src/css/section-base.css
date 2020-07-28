@@ -1,0 +1,19 @@
+@import "_variables";
+
+section.base {
+  
+  .title {
+    @apply text-2xl mb-5;
+  }
+
+  .title-box {
+    @apply text-2xl mb-5 bg-black p-5 leading-tight text-white inline-block;
+  }
+
+  @screen md {
+    .title, .title-box {
+      @apply text-4xl;
+    }
+  }
+  
+}
