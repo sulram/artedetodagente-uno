@@ -12,7 +12,7 @@ function Cursos() {
       <p>&nbsp;</p>
       <div className="inside-content">
         <div className="title-box">
-          <h2>Cursos: a arte de incluir</h2>
+          <h2>Cursos Arte/Educação + Acessibilidade</h2>
         </div>
         <div>{parse(cursos.fulltext.split("\n").join("<br/>"))}</div>
         <div>

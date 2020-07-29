@@ -32,7 +32,7 @@ function Landing() {
           </ul>
         </div>
         <div>
-          <p><img src="/img/landing-wai.png" width="120" alt="áudio descrição e libras" /></p>
+          <p><img src="/img/landing-libras.png" width="60" alt="libras" /></p>
         </div>
       </div>
 
