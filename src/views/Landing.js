@@ -19,13 +19,13 @@ function Landing() {
           <ul>
             <li>
               <a href="https://www.facebook.com/Um-Novo-Olhar-100828528394867/" rel="noopener noreferrer" target="_blank" title="facebook">
-                <span><img src="/img/icons/facebook.svg" width="24px" alt="facebook" /></span>
+                <span><img src="/img/icons/facebook.svg" width="32px" alt="facebook" /></span>
                 <span>facebook.com/Um-Novo-Olhar</span>
               </a>
             </li>
             <li>
               <a href="https://youtube.com/artedetodagente" rel="noopener noreferrer" target="_blank" title="youtube">
-                <span><img src="/img/icons/youtube.svg" width="24px" alt="youtube" /></span>
+                <span><img src="/img/icons/youtube.svg" width="32px" alt="youtube" /></span>
                 <span>youtube.com/artedetodagente</span>
               </a>
             </li>
@@ -43,7 +43,7 @@ function Landing() {
           </p>
         </div>
         <div>
-          <p><img src="/img/landing-libras.png" width="60" alt="libras" /></p>
+          <p><img src="/img/landing-libras.png" width="96" alt="libras" /></p>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ function Landing() {
           <ul>
             <li>
               <a href="https://instagram.com/umnovoolhar.art.br" rel="noopener noreferrer" target="_blank" title="facebook">
-                <span><img src="/img/icons/instagram.svg" width="24px" alt="instagram" /></span>
+                <span><img src="/img/icons/instagram.svg" width="32px" alt="instagram" /></span>
                 <span>instagram.com/umnovoolhar.art.br</span>
               </a>
             </li>

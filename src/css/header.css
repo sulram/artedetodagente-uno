@@ -25,13 +25,16 @@
   }
 
   .page-title {
-    @apply p-8 bg-black text-white text-2xl leading-none uppercase;
+    @apply p-8 py-4 bg-black text-white text-2xl leading-none uppercase;
     font-family: "Pixel Square";
+    span {
+      display: block;
+      margin-top: 5px;
+    }
     @screen md {
-      @apply flex-grow pl-0 text-4xl;
-      span {
-        display: block;
-        margin-top: 2px;
+      @apply flex flex-grow py-8 pl-0 text-4xl; 
+      &::before {
+        content: ">\00a0";
       }
     }
   }
@@ -53,12 +56,12 @@
       z-index:2;
     }
     .menu-content {
-      @apply absolute bg-white mx-5;
+      @apply absolute bg-white;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.25s;
-      top: 20px;
-      left: 0;
+      top: 25px;
+      left: 25px;
       width: calc(100% -2.5rem);
       z-index: 1;
       &.is-open {
@@ -68,19 +71,19 @@
 
     @screen md {
       
-      @apply bg-black;
+      @apply bg-black text-2xl;
       
       &.no-title {
         @apply flex-grow;
       }
 
       .menu-toggle {
-        width: 144px;
+        width: 182px;
       }
 
       .menu-content {
         @apply m-0;
-        top: 103px;
+        top: 131px;
         left: 0px;
         width: 300px;
         &.is-open {
@@ -94,17 +97,17 @@
 }
 
 .site-menu-1 {
-  @apply p-5 pt-16;
+  @apply py-5 pt-12;
   li {
     @apply list-none m-0 p-0 uppercase;
     a {
-      @apply px-2 py-1 block;
+      @apply p-2 pl-4 block leading-none;
       &:hover, &:focus {
         @apply bg-black text-white;
       }
     }
   }
   @screen md {
-    @apply p-5;
+    @apply py-5;
   }
 }

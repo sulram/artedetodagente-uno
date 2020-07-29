@@ -9,7 +9,7 @@
       @apply flex-row text-left items-start pr-20;
     }
     .footer-col {
-      @apply text-sm m-4;
+      @apply m-4;
   
       @screen md {
         @apply ml-10;
@@ -28,7 +28,7 @@
       }
       &.social {
         a {
-          @apply mr-1;
+          @apply mr-2;
           display: inline-block;
         }
       }

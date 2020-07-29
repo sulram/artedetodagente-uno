@@ -37,7 +37,7 @@ export default {
     title: "Parceiros",
     text: "",
     fulltext:`
-    <strong>QUER SER NOSSO PARCEIRO?</strong>
+    <h3>Quer ser nosso parceiro?</h3>
 
     Que tal ter sua marca fazendo parte do <strong>Um Novo Olhar</strong>?
 
