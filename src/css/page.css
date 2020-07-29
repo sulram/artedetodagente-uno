@@ -1,4 +1,5 @@
-.page-content {
+.page-content,
+.video-content {
   @apply p-10;
   background: var(--yellow);
   @screen md {
@@ -7,5 +8,35 @@
 
   a {
     @apply underline;
+  }
+}
+
+
+.video-content {
+  .videos-feed {
+    @screen md {
+      @apply flex flex-wrap;
+    }
+  }
+
+  .videos-feed-v {
+    
+    .box {
+      @apply m-2 p-6 bg-white block no-underline;
+      img {
+        @apply w-full mb-2;
+      }
+      &:hover {
+        @apply bg-black text-white;
+      }
+    }
+
+    @screen md {
+      @apply w-1/2;
+    }
+
+    @screen lg {
+      @apply w-1/3;
+    }
   }
 }

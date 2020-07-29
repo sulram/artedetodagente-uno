@@ -8,9 +8,10 @@ function Menu(props) {
       <li><Link to="/projeto">O Projeto</Link></li>
       <li><Link smooth to="/videos/oficinasderegencia">Oficinas de Regência</Link></li>
       <li><Link smooth to="/videos/coral">Coral</Link></li>
-      <li><Link smooth to="/videos/cursos">Cursos</Link></li>
+      <li><Link smooth to="/#cursos">Cursos</Link></li>
       <li><Link smooth to="/videos/apresentacoes">Apresentações</Link></li>
       <li><Link smooth to="/videos/palestras">Palestras</Link></li>
+      {/* <li><Link smooth to="/publicacoes">Publicações</Link></li> */}
       <li><Link smooth to="/parceiros">Parceiros</Link></li>
       <li><Link smooth to="/imprensa">Imprensa</Link></li>
     </>

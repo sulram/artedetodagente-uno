@@ -5,9 +5,8 @@ import {
   Route
 } from "react-router-dom"
 import Home from './views/Home'
-// import PageCursos from './views/PageCursos'
-// import PageNoticias from './views/PageNoticias'
 import Page from './views/Page'
+import PageVideos from './views/PageVideos'
 import ScrollToTop from './util/ScrollToTop'
 
 function App() {
@@ -16,10 +15,7 @@ function App() {
       <ScrollToTop />
       <Switch>
         <Route path="/videos/:id">
-          Hello videos
-        </Route>
-        <Route path="/noticias">
-          Em breve
+          <PageVideos />
         </Route>
         <Route exact path="/:id">
           <Page />
