@@ -9,11 +9,11 @@ function Menu(props) {
       <li><Link smooth to="/videos/apresentacoes">Apresentações</Link></li>
       <li><Link smooth to="/videos/palestras">Palestras</Link></li>
       <li><Link smooth to="/#cursos">Cursos</Link></li>
-      <li><Link smooth to="/videos/oficinasderegencia">Oficinas de Regência</Link></li>
+      {/* <li><Link smooth to="/videos/oficinasderegencia">Oficinas de Regência</Link></li> */}
       <li><Link smooth to="/videos/repertorio-coral">Repertório Coral</Link></li>
-      <li><Link smooth to="/publicacoes">Publicações</Link></li>
-      <li><Link smooth to="/noticias">Notícias</Link></li>
-      <li><Link smooth to="/galeria">Galeria</Link></li>
+      {/* <li><Link smooth to="/publicacoes">Publicações</Link></li> */}
+      {/* <li><Link smooth to="/noticias">Notícias</Link></li> */}
+      {/* <li><Link smooth to="/galeria">Galeria</Link></li> */}
       <li><Link smooth to="/parceiros">Parceiros</Link></li>
       <li><Link smooth to="/imprensa">Imprensa</Link></li>
     </>
