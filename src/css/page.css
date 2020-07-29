@@ -6,7 +6,7 @@
     @apply p-32 text-lg;
   }
 
-  a {
+  a:not(.link-box) {
     @apply underline;
   }
 
@@ -55,16 +55,6 @@
 
     @screen lg {
       @apply w-1/3;
-    }
-  }
-
-  .link-box {
-    @apply px-4 py-2 bg-black text-white no-underline uppercase leading-tight block;
-    &:hover {
-      @apply bg-white text-black;
-    }
-    @screen md {
-      @apply inline-block leading-none;
     }
   }
 

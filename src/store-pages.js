@@ -63,9 +63,7 @@ export default {
   cursos: {
     title: 'Cursos',
     text: "",
-    fulltext: `<h3>A arte de incluir</h3>
-
-    O Um Novo Olhar oferece, aqui no site, uma série de sete cursos de extensão online. Todos são focados na acessibilidade e inclusão de crianças com deficiência no ambiente escolar, com o uso das artes como ferramenta facilitadora. Os cursos são destinados a professores do ensino fundamental e dão direito a certificado de conclusão. Para participar, é necessário se inscrever e criar um login, que dará acesso às aulas.
+    fulltext: `O Um Novo Olhar oferece, aqui no site, uma série de sete cursos de extensão online. Todos são focados na acessibilidade e inclusão de crianças com deficiência no ambiente escolar, com o uso das artes como ferramenta facilitadora. Os cursos são destinados a professores do ensino fundamental e dão direito a certificado de conclusão. Para participar, é necessário se inscrever e criar um login, que dará acesso às aulas.
     
     Nossos cursos são ministrados por profissionais com experiência no ensino utilizando metodologias especialmente voltadas para a integração de crianças, com diferentes tipos de deficiências ou sem deficiência por meio da arte-educação, contribuindo para criar um ambiente mais inclusivo nas salas de aula. Os conteúdos contam com vídeos, textos e outros materiais para a orientação, teórica e prática, do desenvolvimento do trabalho nas escolas.
     `

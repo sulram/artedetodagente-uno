@@ -2,20 +2,7 @@
 
 section.landing {
 
-  @apply p-5;
   background: var(--yellow);
-
-  @screen md {
-    @apply p-10 text-xl;
-  }
-
-  ul {
-    @apply mb-4;
-  }
-
-  p, li {
-    @apply mb-2;
-  }
 
   .cols {
 

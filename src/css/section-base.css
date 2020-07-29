@@ -2,18 +2,36 @@
 
 section.base {
   
+  @apply p-5;
+
+  ul {
+    @apply mb-4;
+  }
+
+  p, li {
+    @apply mb-2;
+  }
+
   .title {
     @apply text-2xl mb-5;
   }
 
   .title-box {
-    @apply text-2xl mb-5 bg-black p-5 leading-none text-white inline-block;
+    @apply text-2xl mb-10 bg-black p-5 leading-none text-white inline-block;
   }
 
   @screen md {
+    
+    @apply p-20 text-xl;
+    
     .title, .title-box {
       @apply text-4xl;
     }
+
+    .inside-content {
+      @apply w-9/12;
+    }
+
   }
   
 }

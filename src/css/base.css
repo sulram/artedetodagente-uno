@@ -71,24 +71,19 @@ strong {
 
 .center-out {
   @apply flex justify-center items-center;
-  min-height: 80vh;
+  /* min-height: 80vh; */
   @screen md {
     @apply  h-full;
   }
   .center-in {}
 }
 
-.section-header {
-  @apply flex flex-col m-8 absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  @screen md {
-    @apply ml-20;
+.link-box {
+  @apply px-4 py-2 bg-black text-white no-underline uppercase leading-tight block cursor-pointer;
+  &:hover {
+    @apply bg-white text-black;
   }
-  .title {
-    @apply p-2 mb-2 text-4xl bg-black text-white leading-none;
-    text-transform: uppercase;
+  @screen md {
+    @apply inline-block leading-none;
   }
 }
-
