@@ -30,6 +30,17 @@ function Landing() {
               </a>
             </li>
           </ul>
+          <p>&nbsp;</p>
+          <p>
+            <a
+              className="link-box"
+              href="https://forms.gle/knLRKvuzuqezeG6s5"
+              title="Faça a sua inscrição"
+              rel="noopener noreferrer"
+              target="_blank" >
+                Faça a sua inscrição
+            </a>
+          </p>
         </div>
         <div>
           <p><img src="/img/landing-libras.png" width="60" alt="libras" /></p>
