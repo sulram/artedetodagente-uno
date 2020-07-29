@@ -39,10 +39,13 @@
     .box {
       @apply m-2 p-4 bg-white block no-underline;
       img {
-        @apply w-full mb-2;
+        @apply w-full mb-4;
       }
       &:hover {
         @apply bg-black text-white;
+      }
+      p {
+        @apply m-0 leading-tight;
       }
     }
 
@@ -56,9 +59,12 @@
   }
 
   .link-box {
-    @apply px-4 py-2 bg-black text-white no-underline uppercase leading-none;
+    @apply px-4 py-2 bg-black text-white no-underline uppercase leading-tight block;
     &:hover {
       @apply bg-white text-black;
+    }
+    @screen md {
+      @apply inline-block leading-none;
     }
   }
 
