@@ -2,6 +2,10 @@
   @apply p-10;
   background: var(--yellow);
   @screen md {
-    @apply p-20;
+    @apply p-32 text-lg;
+  }
+
+  a {
+    @apply underline;
   }
 }
