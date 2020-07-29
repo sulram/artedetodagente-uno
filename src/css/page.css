@@ -41,7 +41,7 @@
       img {
         @apply w-full mb-4;
       }
-      &:hover {
+      &:hover, &:focus {
         @apply bg-black text-white;
       }
       p {

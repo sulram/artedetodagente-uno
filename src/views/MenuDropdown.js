@@ -24,7 +24,7 @@ function MenuDropdown(props) {
         </button>
         <div className={`menu-content ${open ? 'is-open' : '' }`}>
           <div onClick={() => setOpen(false)}  className="site-menu-1">
-            <Menu home={home}/>
+            <Menu home={home} onfocus={()=>setOpen(true)} onblur={()=>setOpen(false)} />
           </div>
         </div>
       </div>
