@@ -118,6 +118,48 @@ export default {
         title: 'O cavalinho alazão',
         text: '20 Rondas Infantis: Edino Krieger',
         youtube: 'https://www.youtube.com/watch?v=-RqBLUWH6iY'
+      },
+      {
+        id: '20-rondas-infantis-o-elefante',
+        title: 'O elefante',
+        text: '20 Rondas Infantis: Edino Krieger',
+        youtube: 'https://www.youtube.com/watch?v=Kkgne6K8KYA'
+      },
+      {
+        id: '20-rondas-infantis-o-galo',
+        title: 'O galo',
+        text: '20 Rondas Infantis: Edino Krieger',
+        youtube: 'https://www.youtube.com/watch?v=UKZqTDisOcY'
+      },
+      {
+        id: '20-rondas-infantis-o-gatinho',
+        title: 'O gatinho',
+        text: '20 Rondas Infantis: Edino Krieger',
+        youtube: 'https://www.youtube.com/watch?v=pLkCNNZk9Gk'
+      },
+      {
+        id: '20-rondas-infantis-o-macaco-simao',
+        title: 'O macaco Simão',
+        text: '20 Rondas Infantis: Edino Krieger',
+        youtube: 'https://www.youtube.com/watch?v=btESDa2F1iw'
+      },
+      {
+        id: '20-rondas-infantis-o-pato-e-a-galinha',
+        title: 'O pato e a galinha',
+        text: '20 Rondas Infantis: Edino Krieger',
+        youtube: 'https://www.youtube.com/watch?v=n-H3iJ8do-w'
+      },
+      {
+        id: '20-rondas-infantis-os-sinos-de-belem',
+        title: 'Os sinos de Belém',
+        text: '20 Rondas Infantis: Edino Krieger',
+        youtube: 'https://www.youtube.com/watch?v=y29fAROeF4Q'
+      },
+      {
+        id: '20-rondas-infantis-um-dois',
+        title: 'Um dois',
+        text: '20 Rondas Infantis: Edino Krieger',
+        youtube: 'https://www.youtube.com/watch?v=V2GsdgvhULU'
       }
     ]
   },
