@@ -1,13 +1,15 @@
 export default {
   "404": {
     title: "Oooops...",
-    text: "Página não encontrada ou em construção",
-    fulltext: "Página não encontrada ou em construção"
+    text: "",
+    fulltext: `<h3>Página não encontrada.</h3>
+    
+    Site em construção, aguarde novas atualizações.`
   },
   projeto: {
     title: "O Projeto",
     text: "Sinos",
-    fulltext: `<strong>Um Novo Olhar: arte e capacitação de professores e regentes para a inclusão</strong>
+    fulltext: `<h3>Um Novo Olhar: arte e capacitação de professores e regentes para a inclusão</h3>
 
     O Um Novo Olhar foi desenvolvido em parceria pela Fundação Nacional de Artes – Funarte e a Universidade Federal do Rio de Janeiro (UFRJ), por meio da Escola de Música da Universidade, e disponibiliza oficinas de artes em geral, com ênfase nas artes visuais, online e em várias regiões do país. O projeto reúne capacitações em arte-educação e também em regência coral. A iniciativa faz parte do Programa Funarte de Toda Gente e seu objetivo do projeto é promover a inclusão e o acesso de crianças, jovens e adultos com algum tipo de deficiência.
     
@@ -56,6 +58,16 @@ export default {
     Releases
     - <a href="/downloads/release-funarte-um-novo-olhar.pdf" rel="noopener noreferrer" target="_blank">Funarte de Toda Gente</a>
     - <a href="/downloads/release-funarte-de-toda-gente-rev-julho-2020.pdf" rel="noopener noreferrer" target="_blank">Projeto Um Novo Olhar</a>
+    `
+  },
+  cursos: {
+    title: 'Cursos',
+    text: "",
+    fulltext: `<h3>A arte de incluir</h3>
+
+    O Um Novo Olhar oferece, aqui no site, uma série de sete cursos de extensão online. Todos são focados na acessibilidade e inclusão de crianças com deficiência no ambiente escolar, com o uso das artes como ferramenta facilitadora. Os cursos são destinados a professores do ensino fundamental e dão direito a certificado de conclusão. Para participar, é necessário se inscrever e criar um login, que dará acesso às aulas.
+    
+    Nossos cursos são ministrados por profissionais com experiência no ensino utilizando metodologias especialmente voltadas para a integração de crianças, com diferentes tipos de deficiências ou sem deficiência por meio da arte-educação, contribuindo para criar um ambiente mais inclusivo nas salas de aula. Os conteúdos contam com vídeos, textos e outros materiais para a orientação, teórica e prática, do desenvolvimento do trabalho nas escolas.
     `
   }
 }

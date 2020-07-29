@@ -43,8 +43,8 @@ export default {
     fulltext: `Aqui você encontra os vídeos das Oficinas de Regência do Projeto Um Novo Olhar.`,
     videos: R.clone(videos)
   },
-  coral: {
-    title: "Coral",
+  'repertorio-coral': {
+    title: "Repertório Coral",
     fulltext: `Aqui você encontra os vídeos sobre Corais do Projeto Um Novo Olhar.`,
     videos: R.clone(videos)
   },

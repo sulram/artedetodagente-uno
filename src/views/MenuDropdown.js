@@ -28,7 +28,7 @@ function MenuDropdown(props) {
           </div>
         </div>
       </div>
-      {title ? <div className="page-title"><span>&gt; {title}</span></div> : <></>}
+      {title ? <h1 className="page-title"><span>&gt; {title}</span></h1> : <></>}
     </nav>
   );
 }

@@ -28,6 +28,7 @@
 .video-content {
 
   .videos-feed {
+    @apply -m-2;
     @screen md {
       @apply flex flex-wrap;
     }
@@ -36,7 +37,7 @@
   .videos-feed-v {
     
     .box {
-      @apply m-2 p-6 bg-white block no-underline;
+      @apply m-2 p-4 bg-white block no-underline;
       img {
         @apply w-full mb-2;
       }
