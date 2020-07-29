@@ -171,6 +171,19 @@ export default {
   palestras: {
     title: "Palestras",
     fulltext: `Aqui você encontra os vídeos das palestras do Projeto Um Novo Olhar.`,
-    videos: R.clone(videos)
+    videos: [
+      {
+        id: 'concertos-acessiveis',
+        title: 'Concertos Acessíveis, com Felipe Monteiro',
+        text: '',
+        youtube: 'https://www.youtube.com/watch?v=bVziVRg8bzk'
+      },
+      {
+        id: 'em-busca-da-danca-acessivel',
+        title: 'Em Busca da Dança Acessível, com Taís Vieira',
+        text: '',
+        youtube: 'https://www.youtube.com/watch?v=uds5cY4JDsE'
+      }
+    ]
   }
 }
