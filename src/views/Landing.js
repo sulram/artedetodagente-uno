@@ -18,9 +18,9 @@ function Landing() {
           <p>Transmissão ao vivo:</p>
           <ul>
             <li>
-              <a href="https://facebook.com/umnovoolhar" rel="noopener noreferrer" target="_blank" title="facebook">
+              <a href="https://www.facebook.com/Um-Novo-Olhar-100828528394867/" rel="noopener noreferrer" target="_blank" title="facebook">
                 <span><img src="/img/icons/facebook.svg" width="24px" alt="facebook" /></span>
-                <span>facebook.com/umnovoolhar</span>
+                <span>facebook.com/Um-Novo-Olhar</span>
               </a>
             </li>
             <li>
@@ -43,9 +43,9 @@ function Landing() {
           <p>Acompanhe:</p>
           <ul>
             <li>
-              <a href="https://instagram.com/umnovoolhar" rel="noopener noreferrer" target="_blank" title="facebook">
+              <a href="https://instagram.com/umnovoolhar.art.br" rel="noopener noreferrer" target="_blank" title="facebook">
                 <span><img src="/img/icons/instagram.svg" width="24px" alt="instagram" /></span>
-                <span>instagram.com/umnovoolhar</span>
+                <span>instagram.com/umnovoolhar.art.br</span>
               </a>
             </li>
           </ul>

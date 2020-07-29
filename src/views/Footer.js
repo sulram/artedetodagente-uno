@@ -8,7 +8,7 @@ function Footer(props) {
       <div className="footer-1">
         <div className="footer-col social">
           <h3>Social</h3>
-          <a href="https://instagram.com/umnovoolhar" rel="noopener noreferrer" target="_blank" title="Instagram">
+          <a href="https://instagram.com/umnovoolhar.art.br" rel="noopener noreferrer" target="_blank" title="Instagram">
             <img width="20" src="/img/icons/instagram.svg" alt="Instagram" />
           </a>
           <a href="https://facebook.com/umnovoolhar" rel="noopener noreferrer" target="_blank" title="Facebook">
