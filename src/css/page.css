@@ -9,10 +9,24 @@
   a {
     @apply underline;
   }
+
+  h3 {
+    @apply text-4xl mb-2 leading-none;
+  }
+
+  p {
+    @apply mb-2;
+  }
+
+  .embed-container {
+    @apply my-5;
+  }
+
 }
 
 
 .video-content {
+
   .videos-feed {
     @screen md {
       @apply flex flex-wrap;
@@ -39,4 +53,12 @@
       @apply w-1/3;
     }
   }
+
+  .link-box {
+    @apply px-4 py-2 bg-black text-white no-underline uppercase leading-none;
+    &:hover {
+      @apply bg-white text-black;
+    }
+  }
+
 }

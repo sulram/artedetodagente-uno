@@ -1,3 +1,5 @@
+import * as R from 'ramda'
+
 import React from 'react'
 import parse from 'html-react-parser'
 
@@ -23,31 +25,63 @@ function PageVideos() {
 
   const content = videos[id] || videos[404]
 
+  const { path } = useRouteMatch()
+
   return (
     <>
       <Header title={content.title} />
       <main className="main-content video-content">
-        {parse(content.fulltext.split("\n").join("<br/>"))}
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <section className="videos-feed">
-          {
-            content.videos.map((video)=>{
-              return(
-                <article className="videos-feed-v" key={video.id}>
-                  <Link to={`/videos/${id}/${video.id}`} className="box">
-                    <YouThumb url={video.youtube} />
-                    <p>{video.title}</p>
-                  </Link>
-                </article>
-              )
-            })
-          }
-        </section>
+        <Switch>
+
+          <Route exact path={path}>
+            {parse(content.fulltext.split("\n").join("<br/>"))}
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <section className="videos-feed">
+              {
+                content.videos.map((video)=>{
+                  return(
+                    <article className="videos-feed-v" key={video.id}>
+                      <Link to={`/videos/${id}/${video.id}`} className="box">
+                        <YouThumb url={video.youtube} />
+                        <p>{video.title}</p>
+                      </Link>
+                    </article>
+                  )
+                })
+              }
+            </section>
+          </Route>
+
+          <Route path={`${path}/:id`}>
+            <Video parent={id} content={content} />
+          </Route>
+
+        </Switch>
       </main>
       <Footer />
     </>
   );
 }
+
+function Video(props) {
+
+  const {parent,content} = props
+  const {id} = useParams()
+
+  const video = R.find(R.propEq('id', id), content.videos)
+
+  return (
+    <>
+      <h3>{video.title}</h3>
+      <p>{video.text}</p>
+      <YouEmbed url={video.youtube} />
+      <p>
+        <Link className="link-box" to={`/videos/${parent}`}>todos os vídeos de &ldquo;{content.title}&rdquo;</Link>
+      </p>
+    </>
+  )
+}
+
 
 export default PageVideos;
