@@ -49,13 +49,13 @@ export default {
   imprensa: {
     title: 'Imprensa',
     text:"",
-    fulltext: `<strong>Contatos</strong>
+    fulltext: `<h3>Contatos</h3>
 
-    Assessoria de imprensa:
+    <strong>Assessoria de imprensa</strong>
     Projetos UFRJ – Funarte: imprensa@musica.ufrj.br
     Funarte – Assessoria de Comunicação: ascomfunarte@funarte.gov.br
     
-    Releases
+    <h3>Releases</h3>
     - <a href="/downloads/release-funarte-um-novo-olhar.pdf" rel="noopener noreferrer" target="_blank">Funarte de Toda Gente</a>
     - <a href="/downloads/release-funarte-de-toda-gente-rev-julho-2020.pdf" rel="noopener noreferrer" target="_blank">Projeto Um Novo Olhar</a>
     `
