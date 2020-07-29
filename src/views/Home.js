@@ -1,5 +1,5 @@
 import React from 'react'
-import store from '../store'
+// import store from '../store'
 
 import Header from './Header'
 import Footer from './Footer'

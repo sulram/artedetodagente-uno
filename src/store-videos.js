@@ -166,7 +166,7 @@ export default {
   apresentacoes: {
     title: "Apresentações",
     fulltext: `Aqui você encontra os vídeos de apresentações do Projeto Um Novo Olhar.`,
-    videos: R.clone(videos)
+    videos: []
   },
   palestras: {
     title: "Palestras",
