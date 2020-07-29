@@ -12,7 +12,6 @@ function Home() {
       <Header />
       <main className="main-content home-content">
         <Landing />
-        <div style={{height:'1000px'}}>Hello home</div>
       </main>
       <Footer />
     </>
