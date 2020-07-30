@@ -7,7 +7,7 @@ function Header(props) {
   return (
     <>
       <HeaderLogo />
-      <MenuDropdown title={props.title} />
+      <MenuDropdown title={props.title} url={props.url}/>
     </>
   )
 }

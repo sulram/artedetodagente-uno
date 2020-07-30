@@ -1,5 +1,4 @@
-.page-content,
-.video-content {
+.page-content {
   @apply p-10;
   background: var(--yellow);
   
@@ -30,17 +29,13 @@
 }
 
 
-.video-content {
-
-  .videos-feed {
-    @apply -m-2;
-    @screen md {
-      @apply flex flex-wrap;
-    }
+.videos-feed {
+  @apply -m-2;
+  @screen md {
+    @apply flex flex-wrap;
   }
-
   .videos-feed-v {
-    
+  
     .box {
       @apply m-2 p-4 bg-white block no-underline;
       img {
@@ -62,5 +57,4 @@
       @apply w-1/3;
     }
   }
-
 }

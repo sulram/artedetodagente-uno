@@ -29,8 +29,8 @@ function PageVideos() {
 
   return (
     <>
-      <Header title={content.title} />
-      <main className="main-content video-content">
+      <Header title={content.title} url={`/videos/${id}`} />
+      <main className="main-content page-content">
         <Switch>
 
           <Route exact path={path}>

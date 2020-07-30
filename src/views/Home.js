@@ -5,7 +5,8 @@ import Header from './Header'
 import Footer from './Footer'
 
 import Landing from './Landing'
-import Cursos from './Cursos'
+import HomeCursos from './HomeCursos'
+import HomeVideos from './HomeVideos'
 
 function Home() {
   return (
@@ -13,7 +14,10 @@ function Home() {
       <Header />
       <main className="main-content home-content">
         <Landing />
-        <Cursos />
+        <HomeCursos />
+        <HomeVideos id="apresentacoes" color="#eee" label="Acessar todas as apresentações" />
+        <HomeVideos id="palestras" color="#ddd" label="Acessar todas as palestras" />
+        <HomeVideos id="repertorio-coral" color="#eee" label="Acessar todo repertório coral" />
       </main>
       <Footer />
     </>
