@@ -10,11 +10,10 @@ function HomeCursos() {
 
   return (
     <section id="cursos" className="base cursos">
-      <p>&nbsp;</p>
+      <div className="title-box divider">
+        <h2><Link to="/#cursos">Cursos Arte/Educação + Acessibilidade</Link></h2>
+      </div>
       <div className="inside-content">
-        <div className="title-box">
-          <h2><Link to="/#cursos">Cursos Arte/Educação + Acessibilidade</Link></h2>
-        </div>
         <div>{parse(cursos.fulltext.split("\n").join("<br/>"))}</div>
         {/* <div>
           <p>&nbsp;</p>

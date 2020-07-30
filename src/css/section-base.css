@@ -18,6 +18,9 @@ section.base {
 
   .title-box {
     @apply text-2xl mb-10 bg-black p-5 leading-none text-white inline-block;
+    &.divider {
+      @apply -mt-5 -mx-5 block;
+    }
   }
 
   @screen md {
@@ -26,6 +29,12 @@ section.base {
     
     .title, .title-box {
       @apply text-4xl;
+    }
+
+    .title-box {
+      &.divider {
+        @apply -mt-20 -mx-20 block;
+      }
     }
 
     .inside-content {

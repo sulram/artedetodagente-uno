@@ -16,7 +16,7 @@ function Home() {
         <Landing />
         <HomeCursos />
         <HomeVideos id="apresentacoes" color="#eee" label="Acessar todas as apresentações" />
-        <HomeVideos id="palestras" color="#ddd" label="Acessar todas as palestras" />
+        <HomeVideos id="palestras" color="#eee" label="Acessar todas as palestras" />
         <HomeVideos id="repertorio-coral" color="#eee" label="Acessar todo repertório coral" />
       </main>
       <Footer />

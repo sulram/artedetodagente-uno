@@ -16,9 +16,8 @@ function HomeVideos(props) {
 
   return (
     <section id={id} className="base cursos" style={{backgroundColor: props.color}}>
-      <p>&nbsp;</p>
       <div className="">
-        <div className="title-box">
+        <div className="title-box divider">
           <h2><Link to={`/#${id}`}>{content.title}</Link></h2>
         </div>
         <section className="videos-feed">
