@@ -1,12 +1,12 @@
 import React from 'react'
+import { HashLink as Link } from 'react-router-hash-link'
 
-
-function Landing() {
+function HomeLanding() {
   return (
-    <section className="base landing">
+    <section id="landing" className="base landing">
 
       <div className="title-box">
-        <h2>Encontro um novo olhar de arte/educação + acessibilidade</h2>
+        <h2><Link to="/#landing">Encontro um novo olhar de arte/educação + acessibilidade</Link></h2>
       </div>
 
       <div className="title">
@@ -71,4 +71,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default HomeLanding;
