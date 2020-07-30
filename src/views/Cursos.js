@@ -15,10 +15,10 @@ function Cursos() {
           <h2>Cursos Arte/Educação + Acessibilidade</h2>
         </div>
         <div>{parse(cursos.fulltext.split("\n").join("<br/>"))}</div>
-        <div>
+        {/* <div>
           <p>&nbsp;</p>
           <span className="link-box">em breve</span>
-        </div>
+        </div> */}
       </div>
     </section>
   );
