@@ -40,6 +40,12 @@ function HomeLanding() {
               target="_blank" >
                 Faça a sua inscrição
             </a>
+            &nbsp;
+            <Link
+              className="link-box"
+              to="/encontro-programacao">
+                Confira a programação
+            </Link>
           </p>
         </div>
         <div>

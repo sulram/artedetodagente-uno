@@ -1,6 +1,7 @@
 .page-content {
 
   background: var(--yellow);
+  /* background: #f6f6f6; */
   @apply p-5 overflow-hidden;
   
   @screen md {

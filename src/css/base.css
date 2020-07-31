@@ -82,6 +82,10 @@ strong {
   .center-in {}
 }
 
+.text-box {
+  @apply px-4 py-2 bg-black text-white no-underline uppercase leading-tight cursor-pointer;
+}
+
 .link-box {
   @apply px-4 py-2 bg-black text-white no-underline uppercase leading-tight block cursor-pointer;
   &:hover {

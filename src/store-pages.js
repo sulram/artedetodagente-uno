@@ -69,5 +69,77 @@ export default {
     
     Nossos cursos são ministrados por profissionais com experiência no ensino utilizando metodologias especialmente voltadas para a integração de crianças, com diferentes tipos de deficiências ou sem deficiência por meio da arte-educação, contribuindo para criar um ambiente mais inclusivo nas salas de aula. Os conteúdos contam com vídeos, textos e outros materiais para a orientação, teórica e prática, do desenvolvimento do trabalho nas escolas.
     `
+  },
+  'encontro-programacao': {
+    title: 'Encontro',
+    text: "",
+    fulltext: `
+    <h3>Encontro Um Novo Olhar de Arte/Educação+Acessibilidade</h3>
+
+    O Encontro Um Novo Olhar de Arte/Educação+Acessibilidade acontecerá entre os dias 05 e 06 de agosto na plataforma do projeto Um Novo Olhar, uma parceria entre a FUNARTE e a UFRJ através da Escola de Música.
+    
+    O Encontro inaugura uma série de ações do projeto que se propõe a promover capacitação e difusão sobre cultura acessível dedicada à promoção da cidadania cultural das pessoas com deficiência.
+    
+    Com um foco na formação, na arte- educação numa perspectiva  acessível inclusiva, as mesas em formato de lives apresentarão um contexto da Arte Educação inclusiva no Brasil, os desafios da formação de professores em diferentes áreas do campo das artes para atuação na escola, a contribuição dos espaços culturais na formação de professores na arte e cultura acessível, entre outros. Como convidados, encontram-se formadores e profissionais que têm atuado na promoção da cultura acessível e de diferentes regiões do país e instituições com o objetivo de traduzir experiências, sotaques e perspectivas diferenciadas sobre o tema.
+
+
+    <h3>Confira a programação</h3>
+    <strong class="text-box">Dia 05/08 (quarta-feira)</strong>
+
+    <strong>09:50 às 10:00</strong> | Mesa abertura institucional
+    <strong>Apresentador:</strong> Marcelo Jardim (UFRJ)
+
+    <strong>10:00 às 11:30</strong> | Conferência de Abertura: “A arte e o querer viver” 
+    <strong>Palestrantes:</strong>
+    Drª. Ana Mae Barbosa
+    Drª. Ana Amália Barbosa
+    <strong>Mediador:</strong> Robson Xavier (UFPB)
+    <strong>Apresentadora:</strong> Patrícia Dorneles (UFRJ)
+ 
+    <strong>14:00 às 15:30</strong> | Mesa Virtual 1: “O Contexto da Arte Educação Inclusiva no Brasil”
+    <strong>Palestrantes:</strong>
+    Robson Xavier (UFPB)
+    Carla Mauch (Mais Diferença)
+    Maria Cristina da Rosa Fonseca (UDESC) 
+    <strong>Mediadora:</strong> Patrícia Dorneles (UFRJ)
+     
+    <strong>16:30 às 18:00</strong> | Mesa Virtual 2: "Arte Acessível na Escola: Desafios da Formação dos Professores nas Áreas de Teatro e Dança"
+    <strong>Palestrantes:</strong>
+    Emerson de Paula (UNIFAP)
+    Edu O (UFBA)
+    Ana Luiza Faria (Artista circense)
+    <strong>Mediador:</strong> Jefferson Fernandes (UFRN)
+     
+    <strong>19:00 às 20:30</strong> | Mesa Virtual 3: "O papel dos Espaços Culturais na Formação, Fomento e Difusão da Arte Acessível"
+    <strong>Palestrantes:</strong>
+    Daina Leyton (Educadora e escritora)
+    Ninfa Cunha (Espaço Xisto Bahia) 
+    José Vinícius de Melo Scheffer (Centro Dragão do Mar de Arte e Cultura)
+    <strong>Mediadora:</strong> Patrícia Dorneles (UFRJ)
+
+
+    <strong class="text-box">Dia 06/08 (quinta-feira)</strong>
+
+    <strong>10:30 às 12:00</strong> | Mesa Virtual 4: "Arte Educação Acessível nos Ambientes de Educação Não Formal"
+    <strong>Palestrantes:</strong>
+    Larissa Hobi (Artista e audiodescritora)
+    Rodrigo Hübner Mendes (Instituto Rodrigo Mendes)
+    Helena Holanda (ONG Centro de Atividades Especiais Helena Holanda)
+    <strong>Mediador:</strong> Robson Xavier (UFPB)
+     
+    <strong>15:00 às 16:30</strong> | Mesa Virtual 5: "Arte Educação Acessível na Escola Desafios da Formação de Professores nas Áreas da Música e Artes Visuais"
+    <strong>Palestrantes:</strong>
+    Thelma Alvares (UFRJ)
+    Lúcia Helena Reily (UNICAMP)
+    <strong>Mediadora:</strong> Vânia Mefano (UFRJ)
+     
+    <strong>18:30 às 20:00</strong> | Mesa Virtual 6: "Pistas para uma Formação Inventiva: Articulando Arte, Educação e Acessibilidade"
+    <strong>Palestrantes:</strong>
+    Rosimeri Dias (UERJ)
+    Raquel Guerreiro (UFRGS)
+    Virgínia Kastrup (UFRJ)
+    <strong>Mediadora:</strong> Laura Pozzana (UFRJ) 
+
+`
   }
 }
