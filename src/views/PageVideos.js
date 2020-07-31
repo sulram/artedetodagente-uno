@@ -75,6 +75,7 @@ function Video(props) {
       <YouEmbed url={video.youtube} />
       <h3>{video.title}</h3>
       <p>{video.text}</p>
+      <p>&nbsp;</p>
       <p>
         <Link className="link-box" to={`/videos/${parent}`}>voltar para vídeos de &ldquo;{content.title}&rdquo;</Link>
       </p>
