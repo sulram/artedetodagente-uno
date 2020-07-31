@@ -9,7 +9,8 @@ export default {
   projeto: {
     title: "O Projeto",
     text: "Sinos",
-    fulltext: `<h3>Um Novo Olhar: arte e capacitação de professores e regentes para a inclusão</h3>
+    fulltext: `
+    <h3>Um Novo Olhar: arte e capacitação de professores e regentes para a inclusão</h3>
 
     O Um Novo Olhar foi desenvolvido em parceria pela Fundação Nacional de Artes – Funarte e a Universidade Federal do Rio de Janeiro (UFRJ), por meio da Escola de Música da Universidade, e disponibiliza oficinas de artes em geral, com ênfase nas artes visuais, online e em várias regiões do país. O projeto reúne capacitações em arte-educação e também em regência coral. A iniciativa faz parte do Programa Funarte de Toda Gente e seu objetivo do projeto é promover a inclusão e o acesso de crianças, jovens e adultos com algum tipo de deficiência.
     
@@ -49,7 +50,8 @@ export default {
   imprensa: {
     title: 'Imprensa',
     text:"",
-    fulltext: `<h3>Contatos</h3>
+    fulltext: `
+    <h3>Contatos</h3>
 
     <strong>Assessoria de imprensa</strong>
     Projetos UFRJ – Funarte: imprensa@musica.ufrj.br

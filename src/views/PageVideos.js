@@ -36,7 +36,6 @@ function PageVideos() {
           <Route exact path={path}>
             {parse(content.fulltext.split("\n").join("<br/>"))}
             <p>&nbsp;</p>
-            <p>&nbsp;</p>
             <section className="videos-feed">
               {
                 content.videos.map((video)=>{
@@ -73,9 +72,9 @@ function Video(props) {
 
   return (
     <>
+      <YouEmbed url={video.youtube} />
       <h3>{video.title}</h3>
       <p>{video.text}</p>
-      <YouEmbed url={video.youtube} />
       <p>
         <Link className="link-box" to={`/videos/${parent}`}>voltar para vídeos de &ldquo;{content.title}&rdquo;</Link>
       </p>

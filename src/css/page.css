@@ -1,6 +1,7 @@
 .page-content {
-  @apply p-10;
+
   background: var(--yellow);
+  @apply p-5;
   
   @screen md {
     @apply p-16 text-lg;
@@ -15,7 +16,10 @@
   }
 
   h3 {
-    @apply text-4xl mb-2 leading-none;
+    @apply text-2xl mb-2 leading-none;
+    @screen md {
+      @apply text-4xl;
+    }
   }
 
   p {
@@ -24,6 +28,11 @@
 
   .embed-container {
     @apply my-5;
+    @media (max-width: 640px) {
+      @apply -mt-5 -mx-5 mb-5 max-w-none;
+      /* width: 100vw;
+      padding-bottom: 56.25vw; */
+    }
   }
 
 }
