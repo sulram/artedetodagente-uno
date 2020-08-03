@@ -34,7 +34,7 @@ function PageVideos() {
         <Switch>
 
           <Route exact path={path}>
-            {parse(content.fulltext.split("\n").join("<br/>"))}
+            {parse(content.fulltext)}
             <p>&nbsp;</p>
             <section className="videos-feed">
               {

@@ -17,14 +17,17 @@
   }
 
   h3 {
-    @apply text-2xl mb-2 leading-none;
+    @apply text-2xl my-8 leading-none;
     @screen md {
       @apply text-4xl;
     }
   }
 
   p {
-    @apply mb-2;
+    @apply mb-4;
+  }
+  p.text-box {
+    @apply my-10;
   }
 
   .embed-container {

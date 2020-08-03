@@ -14,7 +14,7 @@ function HomeCursos() {
         <h2><Link to="/#cursos">Cursos Arte/Educação + Acessibilidade</Link></h2>
       </div>
       <div className="inside-content">
-        <div>{parse(cursos.fulltext.split("\n").join("<br/>"))}</div>
+        <div>{parse(cursos.fulltext)}</div>
         {/* <div>
           <p>&nbsp;</p>
           <span className="link-box">em breve</span>

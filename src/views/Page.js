@@ -18,7 +18,7 @@ function Page() {
     <>
       <Header title={content.title} url={`/${id}`} />
       <main className="main-content page-content">
-        {parse(content.fulltext.split("\n").join("<br/>"))}
+        {parse(content.fulltext)}
       </main>
       <Footer />
     </>
