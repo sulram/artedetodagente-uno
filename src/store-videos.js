@@ -175,6 +175,18 @@ export default {
       }
     ]
   },
+  oficinasderegencia: {
+    title: "Oficinas de Regência",
+    fulltext: ``,
+    videos: [
+      {
+        id: 'danielly-souza-01',
+        title: 'Gestual da Regência - Danielly Souza - Aula 1',
+        text: '',
+        youtube: 'https://www.youtube.com/watch?v=C_uBFrkfbng'
+      }
+    ]
+  },
   palestras: {
     title: "Palestras",
     fulltext: `Aqui você encontra os vídeos das palestras do Projeto Um Novo Olhar.`,
