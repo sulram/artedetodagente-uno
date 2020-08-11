@@ -8,14 +8,46 @@ function HomeLanding() {
       <div className="title-box">
         <h2><Link to="/#landing">Encontro um novo olhar de arte/educação + acessibilidade</Link></h2>
       </div>
-
+      {/* 
       <div className="title">
         <h3>5 e 6 de agosto de 2020</h3>
+      </div>
+      */}
+      <div className="cols">
+        <div>
+          <p>
+            O Encontro Um Novo Olhar de Arte/Educação + Acessibilidade
+            aconteceu entre os dias 5 e 6 de agosto, de forma virtual.
+            A Conferência de abertura e as mesas do encontro estão
+            disponíveis no canal Arte de Toda Gente, no <a href="https://youtube.com/artedetodagente" rel="noopener noreferrer" target="_blank" title="youtube">Youtube</a>.
+          </p>
+          <p>
+            {/* <a
+              className="link-box"
+              href="https://forms.gle/knLRKvuzuqezeG6s5"
+              title="Faça a sua inscrição"
+              rel="noopener noreferrer"
+              target="_blank" >
+                Faça a sua inscrição
+            </a>
+            &nbsp; */}
+            <Link
+              className="link-box"
+              to="/encontro-programacao">
+                Saiba mais
+            </Link>
+          </p>
+          <p>&nbsp;</p>
+          
+        </div>
+        <div>
+          {/* <p><img src="/img/landing-libras.png" width="96" alt="libras" /></p> */}
+        </div>
       </div>
 
       <div className="cols">
         <div>
-          <p>Transmissão ao vivo:</p>
+          <p>Acompanhe:</p>
           <ul>
             <li>
               <a href="https://www.facebook.com/Um-Novo-Olhar-100828528394867/" rel="noopener noreferrer" target="_blank" title="facebook">
@@ -29,36 +61,6 @@ function HomeLanding() {
                 <span>youtube.com/artedetodagente</span>
               </a>
             </li>
-          </ul>
-          <p>&nbsp;</p>
-          <p>
-            <a
-              className="link-box"
-              href="https://forms.gle/knLRKvuzuqezeG6s5"
-              title="Faça a sua inscrição"
-              rel="noopener noreferrer"
-              target="_blank" >
-                Faça a sua inscrição
-            </a>
-            &nbsp;
-            <Link
-              className="link-box"
-              to="/encontro-programacao">
-                Confira a programação
-            </Link>
-          </p>
-        </div>
-        <div>
-          <p><img src="/img/landing-libras.png" width="96" alt="libras" /></p>
-        </div>
-      </div>
-
-      <p>&nbsp;</p>
-
-      <div className="cols">
-        <div>
-          <p>Acompanhe:</p>
-          <ul>
             <li>
               <a href="https://instagram.com/umnovoolhar.art.br" rel="noopener noreferrer" target="_blank" title="facebook">
                 <span><img src="/img/icons/instagram.svg" width="32px" alt="instagram" /></span>

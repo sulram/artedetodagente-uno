@@ -20,6 +20,10 @@ section.landing {
     p img {
       @apply inline-block;
     }
+
+    p a:not(.link-box){
+      text-decoration: underline;
+    }
     
     @screen md {
       @apply flex-row;
