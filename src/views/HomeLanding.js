@@ -30,12 +30,21 @@ function HomeLanding() {
               target="_blank" >
                 Faça a sua inscrição
             </a>
-            &nbsp; */}
+            &nbsp; 
             <Link
               className="link-box"
               to="/encontro-programacao">
-                Saiba mais
+                Confira a programação
             </Link>
+            */}
+            <a
+              className="link-box"
+              href="https://www.youtube.com/playlist?list=PL5mP5ut65rSK5yHw6PsD2pjzic080HKEs"
+              title="Saiba mais"
+              rel="noopener noreferrer"
+              target="_blank" >
+                Saiba mais
+            </a>
           </p>
           <p>&nbsp;</p>
           
