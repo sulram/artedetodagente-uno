@@ -161,7 +161,7 @@ export default {
         id: 'em-busca-da-danca-acessivel',
         title: 'Em Busca da Dança Acessível, com Taís Vieira',
         text: '',
-        youtube: 'https://www.youtube.com/watch?v=uds5cY4JDsE'
+        youtube: 'https://www.youtube.com/watch?v=4SidrG2Jr_M'
       }
     ]
   }
