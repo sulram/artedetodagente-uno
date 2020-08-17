@@ -144,6 +144,12 @@ export default {
         title: 'Gestual da Regência - Danielly Souza - Aula 1',
         text: '',
         youtube: 'https://www.youtube.com/watch?v=C_uBFrkfbng'
+      },
+      {
+        id: 'danielly-souza-02',
+        title: 'Gestual da Regência - Danielly Souza - Aula 2',
+        text: '',
+        youtube: 'https://www.youtube.com/watch?v=rCPIbYEYIVI'
       }
     ]
   },
@@ -162,6 +168,12 @@ export default {
         title: 'Em Busca da Dança Acessível, com Taís Vieira',
         text: '',
         youtube: 'https://www.youtube.com/watch?v=4SidrG2Jr_M'
+      },
+      {
+        id: 'educacao-inclusao-diversidade',
+        title: 'Educação Inclusão e Diversidade, com Thelma Alvares',
+        text: '',
+        youtube: 'https://www.youtube.com/watch?v=lYD0f4iSwz0'
       }
     ]
   }
