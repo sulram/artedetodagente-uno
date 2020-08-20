@@ -21,6 +21,9 @@
     @screen md {
       @apply text-4xl;
     }
+    &.title-2 {
+      @apply text-xl text-left;
+    }
   }
 
   p {
@@ -39,8 +42,49 @@
     }
   }
 
+  .info-box {
+    @apply my-4 flex flex-col items-stretch;
+    @screen md {
+      @apply flex-row;
+    }
+    .figure {
+      min-height: 14rem;
+      @screen md {
+        @apply w-1/3;
+      }
+    }
+    .box {
+      @apply p-4 bg-white;
+      .text-box {
+        @apply m-0 mb-2;
+      }
+      @screen md {
+        @apply w-2/3;
+      }
+    }
+  }
+
 }
 
+.cat-feed {
+  @apply -m-2;
+  @screen md {
+    @apply flex flex-wrap;
+  }
+  .cat-feed-item {
+    @apply p-1;
+    .link-box {
+      @apply block;
+    }
+    @screen md {
+      @apply w-1/2;
+    }
+
+    @screen lg {
+      @apply w-1/3;
+    }
+  }
+}
 
 .videos-feed {
   @apply -m-2;

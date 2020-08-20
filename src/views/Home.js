@@ -7,6 +7,7 @@ import Footer from './Footer'
 import HomeLanding from './HomeLanding'
 import HomeCursos from './HomeCursos'
 import HomeVideos from './HomeVideos'
+import HomeProjetos from './HomeProjetos'
 
 function Home() {
   return (
@@ -15,10 +16,10 @@ function Home() {
       <main className="main-content home-content">
         <HomeLanding />
         <HomeCursos />
-        <HomeVideos id="apresentacoes" color="#eee" label="Acessar todas as apresentações" />
-        <HomeVideos id="palestras" color="#eee" label="Acessar todas as palestras" />
-        <HomeVideos id="oficinasderegencia" color="#eee" label="Acessar todas as oficinas" />
-        <HomeVideos id="repertorio-coral" color="#eee" label="Acessar todo repertório coral" />
+        <HomeVideos id="apresentacoes" label="Acessar todas as apresentações" />
+        <HomeVideos id="palestras" label="Acessar todas as palestras" />
+        <HomeProjetos id="oficinasderegencia" label="Acessar todas as oficinas" />
+        <HomeProjetos id="repertorio-coral" label="Acessar todo repertório coral" />
       </main>
       <Footer />
     </>

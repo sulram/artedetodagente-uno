@@ -95,3 +95,10 @@ strong {
     @apply inline-block leading-none;
   }
 }
+
+.mobile-hidden {
+  display: none;
+  @screen md {
+    display: block;
+  }
+}

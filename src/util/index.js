@@ -5,6 +5,12 @@ const fdate = (d) => {
   return {day,month,year}
 }
 
+const ytImage = (url) => {
+  const vid = url.match(/(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+|\/ytscreeningroom\?v=))([\w-]{10,12})\b/)[1]
+  return `https://img.youtube.com/vi/${vid}/hqdefault.jpg`
+}
+
 export {
-  fdate
+  fdate,
+  ytImage
 }

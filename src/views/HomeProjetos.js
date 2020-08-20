@@ -6,13 +6,13 @@ import store from '../store'
 import YouThumb from './YouThumb'
 import useWindowSize from '../util/useWindowSize'
 
-function HomeVideos(props) {
+function HomeProjetos(props) {
 
   const {id} = props
-  const content = store.videos[id]
+  const content = store.projetos[id]
   const size = useWindowSize()
 
-  const videos = R.slice(0, (size.width > 1024 ? 6 : 2), content.videos)
+  const categories = R.slice(0, (size.width > 1024 ? 6 : 2), content.categories)
 
   return (
     <section id={id} className="base cursos" style={{backgroundColor: props.color || `#fdf204`}}>
@@ -22,12 +22,13 @@ function HomeVideos(props) {
         </div>
         <section className="videos-feed">
           {
-            videos.map((video)=>{
+            categories.map((cat)=>{
+              const video = cat?.videos[0]
               return(
-                <article className="videos-feed-v" key={video.id}>
-                  <Link to={`/videos/${id}/${video.id}`} className="box">
+                <article className="videos-feed-v" key={cat.id}>
+                  <Link to={`/projetos/${id}/${cat.id}`} className="box">
                     <YouThumb url={video.youtube} />
-                    <p>{video.title}</p>
+                    <p>{cat.info_title}: {cat.title}</p>
                   </Link>
                 </article>
               )
@@ -36,7 +37,7 @@ function HomeVideos(props) {
         </section>
         <p>&nbsp;</p>
         <p>
-          <Link to={`/videos/${id}`} className="link-box">
+          <Link to={`/projetos/${id}`} className="link-box">
             { props.label || `Acessar todos os vídeos de ${content.title}`}
           </Link>
         </p>
@@ -45,4 +46,4 @@ function HomeVideos(props) {
   );
 }
 
-export default HomeVideos;
+export default HomeProjetos;
