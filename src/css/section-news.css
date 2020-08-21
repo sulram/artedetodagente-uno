@@ -1,0 +1,34 @@
+@import "_variables";
+
+section.slider-noticias {
+  background: var(--yellow);
+  .noticia {
+    background-size: cover !important;
+  }
+  .wrapper {
+    @apply p-4;
+    @screen md {
+      @apply p-10 pt-64 max-w-4xl mx-auto;
+    }
+    .content {
+      background: var(--yellow);
+      @apply p-4 border-black border-4 block mb-2;
+      h3 {
+        @apply font-medium text-xl;
+      }
+      .post-date {
+        @apply text-sm;
+      }
+    }
+    .bt-group {
+      @apply text-right;
+    }
+    .bt {
+      background: var(--yellow);
+      @apply px-4 py-2 border-black border-4 mb-2 inline-block uppercase font-medium;
+      &:hover,&:focus {
+        @apply bg-black text-white;
+      }
+    }
+  }
+}

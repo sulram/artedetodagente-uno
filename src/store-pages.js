@@ -56,8 +56,8 @@ export default {
     
     <h3>Releases</h3>
     <ul>
-      <li><a href="/downloads/release-funarte-um-novo-olhar.pdf" rel="noopener noreferrer" target="_blank">Funarte de Toda Gente</a></li>
-      <li><a href="/downloads/release-funarte-de-toda-gente-rev-julho-2020.pdf" rel="noopener noreferrer" target="_blank">Projeto Um Novo Olhar</a></li>
+      <li><a href="/downloads/release-funarte-de-toda-gente-rev-julho-2020.pdf" rel="noopener noreferrer" target="_blank">Funarte de Toda Gente</a></li>
+      <li><a href="/downloads/release-funarte-um-novo-olhar.pdf" rel="noopener noreferrer" target="_blank">Projeto Um Novo Olhar</a></li>
     </ul>
     `
   },

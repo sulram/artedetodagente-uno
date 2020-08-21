@@ -1,7 +1,11 @@
 import * as R from 'ramda'
+<<<<<<< HEAD
 
 import React, { useState, useEffect } from 'react'
 import parse from 'html-react-parser'
+=======
+import React from 'react'
+>>>>>>> 45016489539ea417883e200c68104a047bbe6eeb
 
 import {
   Switch,
@@ -48,9 +52,13 @@ function PageProjetos() {
             <h3 className="title-2">Selecione uma categoria</h3>
             <section className="cat-feed">
               {
+<<<<<<< HEAD
                 obras.map((obra,i)=>{
                   const professor = obra.professor
                   
+=======
+                content.categories.map((cat,i)=>{
+>>>>>>> 45016489539ea417883e200c68104a047bbe6eeb
                   return(
                     <article className="cat-feed-item" key={`${i}-${obra.id}`}>
                       <Link to={`/projetos/${id}/${obra.id}`} className="link-box">
@@ -183,9 +191,14 @@ function InfoBox(props) {
 
 function Video(props) {
 
+<<<<<<< HEAD
   const {parent} = props
   const [aula, setAula] = useState([])
 
+=======
+  const {content} = props
+  const {id} = useParams()
+>>>>>>> 45016489539ea417883e200c68104a047bbe6eeb
 
   useEffect(()=>{
     async function fetchData(){
