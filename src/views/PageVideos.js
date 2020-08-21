@@ -1,6 +1,6 @@
 import * as R from 'ramda'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import parse from 'html-react-parser'
 
 import {
@@ -18,12 +18,27 @@ import Footer from './Footer'
 import YouThumb from './YouThumb'
 import YouEmbed from './YouEmbed'
 
+import api from '../services/api'
+
 function PageVideos() {
 
   const {id} = useParams()
+
+  const [video, setVideo] = useState([])
+
+  useEffect(()=>{
+    async function fetchData(){
+      const response = await api.get(`/${id}`)
+      setVideo(response.data)
+    }
+    fetchData()
+  },[])
+
   const {videos} = store
 
   const content = videos[id] || videos[404]
+
+  
 
   const { path } = useRouteMatch()
 
@@ -38,11 +53,11 @@ function PageVideos() {
             <p>&nbsp;</p>
             <section className="videos-feed">
               {
-                content.videos.map((video)=>{
+                video.map((video)=>{
                   return(
                     <article className="videos-feed-v" key={video.id}>
                       <Link to={`/videos/${id}/${video.id}`} className="box">
-                        <YouThumb url={video.youtube} />
+                        <YouThumb url={video.video_url} />
                         <p>{video.title}</p>
                       </Link>
                     </article>
@@ -68,13 +83,21 @@ function Video(props) {
   const {parent,content} = props
   const {id} = useParams()
 
-  const video = R.find(R.propEq('id', id), content.videos)
+  const [video, setVideo] = useState([])
+
+  useEffect(()=>{
+      async function fetchData(){
+        const response = await api.get(`/${parent}/${id}`)
+        setVideo(response.data)
+      }
+   fetchData()
+  },[id])
 
   return (
     <>
-      <YouEmbed url={video.youtube} />
+      <YouEmbed url={video.video_url} />
       <h3>{video.title}</h3>
-      <p>{video.text}</p>
+      <p>{video.description}</p>
       <p>&nbsp;</p>
       <p>
         <Link className="link-box" to={`/videos/${parent}`}>voltar para vídeos de &ldquo;{content.title}&rdquo;</Link>
