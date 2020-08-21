@@ -1,7 +1,5 @@
 import * as R from 'ramda'
-
 import React from 'react'
-import parse from 'html-react-parser'
 
 import {
   Switch,
@@ -37,7 +35,6 @@ function PageProjetos() {
             <section className="cat-feed">
               {
                 content.categories.map((cat,i)=>{
-                  const video = cat?.videos[0]
                   return(
                     <article className="cat-feed-item" key={`${i}-${cat.id}`}>
                       <Link to={`/projetos/${id}/${cat.id}`} className="link-box">
@@ -142,7 +139,7 @@ function InfoBox(props) {
 
 function Video(props) {
 
-  const {parent,content} = props
+  const {content} = props
   const {id} = useParams()
 
   const video = R.find(R.propEq('id', id), content.videos)

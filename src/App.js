@@ -8,6 +8,7 @@ import Home from './views/Home'
 import Page from './views/Page'
 import PageVideos from './views/PageVideos'
 import PageProjetos from './views/PageProjetos'
+import PageNoticias from './views/PageNoticias'
 import ScrollToTop from './util/ScrollToTop'
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/projetos/:id">
           <PageProjetos />
+        </Route>
+        <Route path="/noticias">
+          <PageNoticias />
         </Route>
         <Route exact path="/:id">
           <Page />

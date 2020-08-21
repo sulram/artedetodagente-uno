@@ -4,17 +4,19 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 
-import HomeLanding from './HomeLanding'
+// import HomeLanding from './HomeLanding'
 import HomeCursos from './HomeCursos'
 import HomeVideos from './HomeVideos'
 import HomeProjetos from './HomeProjetos'
+import HomeNews from './HomeNews'
 
 function Home() {
   return (
     <>
       <Header />
       <main className="main-content home-content">
-        <HomeLanding />
+        {/* <HomeLanding /> */}
+        <HomeNews />
         <HomeCursos />
         <HomeVideos id="apresentacoes" label="Acessar todas as apresentações" />
         <HomeVideos id="palestras" label="Acessar todas as palestras" />

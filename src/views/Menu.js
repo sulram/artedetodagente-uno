@@ -23,7 +23,7 @@ function Menu(props) {
       <li><Link onBlur={props.onblur} onFocus={props.onfocus} to="/projetos/oficinasderegencia">Oficinas de Regência</Link></li>
       <li><Link onBlur={props.onblur} onFocus={props.onfocus} to="/projetos/repertorio-coral">Repertório Coral</Link></li>
       {/* <li><Link to="/publicacoes">Publicações</Link></li> */}
-      {/* <li><Link to="/noticias">Notícias</Link></li> */}
+      <li><Link to="/noticias">Notícias</Link></li>
       {/* <li><Link to="/galeria">Galeria</Link></li> */}
       <li><Link onBlur={props.onblur} onFocus={props.onfocus} to="/parceiros">Parceiros</Link></li>
       <li><Link onBlur={props.onblur} onFocus={props.onfocus} to="/imprensa">Imprensa</Link></li>
