@@ -52,13 +52,9 @@ function PageProjetos() {
             <h3 className="title-2">Selecione uma categoria</h3>
             <section className="cat-feed">
               {
-<<<<<<< HEAD
                 obras.map((obra,i)=>{
-                  const professor = obra.professor
+                  const professor = obra.professor     
                   
-=======
-                content.categories.map((cat,i)=>{
->>>>>>> 45016489539ea417883e200c68104a047bbe6eeb
                   return(
                     <article className="cat-feed-item" key={`${i}-${obra.id}`}>
                       <Link to={`/projetos/${id}/${obra.id}`} className="link-box">
