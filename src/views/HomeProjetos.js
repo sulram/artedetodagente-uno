@@ -1,10 +1,7 @@
-import * as R from 'ramda'
 import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 
-import store from '../store'
 import YouThumb from './YouThumb'
-import useWindowSize from '../util/useWindowSize'
 
 function HomeProjetos(props) {
 
@@ -18,7 +15,7 @@ function HomeProjetos(props) {
         </div>
         <section className="videos-feed">
           {
-            obras.map((obra)=>{
+            obras.reverse().map((obra)=>{
               const video = obra.aulas[0]
               const professor = obra.professor
               

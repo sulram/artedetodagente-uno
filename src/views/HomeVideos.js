@@ -1,10 +1,9 @@
-import * as R from 'ramda'
 import React, { useState, useEffect } from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 
 import store from '../store'
 import YouThumb from './YouThumb'
-import useWindowSize from '../util/useWindowSize'
+
 import api from '../services/api'
 
 function HomeVideos(props) {
@@ -17,14 +16,13 @@ function HomeVideos(props) {
   useEffect(()=>{
     async function fetchData(){
       const response = await api.get(`/${id}`)
-      setVideos(response.data)
+      setVideos(response.data.reverse())
     }
     fetchData()
     
   },[])
  
   const content = store.videos[id]
-  const size = useWindowSize()
   
   return (
     <section id={id} className="base cursos" style={{backgroundColor: props.color || `#fdf204`}}>

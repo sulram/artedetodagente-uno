@@ -23,10 +23,6 @@ function Home() {
     fetchData()
   },[])
 
-  function retiraAcento(string){
-    return string.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(' ', '-');
-  }
-
   return (
     <>
       <Header />

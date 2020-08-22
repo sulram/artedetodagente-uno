@@ -1,7 +1,4 @@
-import * as R from 'ramda'
-
 import React, { useState, useEffect } from 'react'
-import parse from 'html-react-parser'
 
 import ReactMarkdown from 'react-markdown'
 
@@ -12,8 +9,6 @@ import {
   useRouteMatch
 } from "react-router-dom"
 import { HashLink as Link } from 'react-router-hash-link'
-
-import store from '../store'
 
 import Header from './Header'
 import Footer from './Footer'

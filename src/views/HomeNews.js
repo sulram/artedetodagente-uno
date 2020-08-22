@@ -3,8 +3,8 @@ import React, {useState, useEffect} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { HashLink as Link } from 'react-router-hash-link'
 import useWindowSize from '../util/useWindowSize'
-import store from '../store'
 import {fdate} from '../util'
+
 import api from '../services/api'
 
 function HomeNews() {
