@@ -5,11 +5,21 @@ import { HashLink as Link } from 'react-router-hash-link'
 import useWindowSize from '../util/useWindowSize'
 import store from '../store'
 import {fdate} from '../util'
+import api from '../services/api'
 
 function HomeNews() {
 
   const size = useWindowSize()
   const [slideNext, setSlideNext] = useState(null)
+  const [noticias, setNoticias] = useState([])
+
+  useEffect(()=>{
+    async function fetchData(){
+      const response = await api.get('/noticias')
+      setNoticias(response.data.reverse())
+    }
+    fetchData()
+  },[])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,8 +27,6 @@ function HomeNews() {
     }, 8000);
     return () => clearInterval(interval)
   }, [slideNext])
-
-  const {noticias} = store
 
   const latestPosts = R.slice(0, 3, noticias)
   const bindSwiper = (swiper) => setSlideNext(() => () => swiper.slideNext())
@@ -33,15 +41,16 @@ function HomeNews() {
         >
           {latestPosts.map((noticia,i)=>{
             const date = fdate(noticia.date)
+            const image = noticia.image
             return(
               <SwiperSlide key={`${noticia.id}-slide-${i}`}>
                 <article
                   className="noticia"
-                  style={{background: bgcover(`${noticia.cover}`) }}
+                  style={{background: bgcover(`https://admin.umnovoolhar.art.br${image.url}`) }}
                 >
                   <div className="wrapper">
                     {size.width <= 768 && (
-                      <img src={noticia.cover} alt={noticia.title} />
+                      <img src={`https://admin.umnovoolhar.art.br${image.url}`} alt={noticia.title} />
                     )}
                     <Link className="content" to={`/noticias/${noticia.id}`}>
                       <h3>{noticia.title}</h3>

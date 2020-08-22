@@ -1,11 +1,7 @@
 import * as R from 'ramda'
-<<<<<<< HEAD
 
 import React, { useState, useEffect } from 'react'
 import parse from 'html-react-parser'
-=======
-import React from 'react'
->>>>>>> 45016489539ea417883e200c68104a047bbe6eeb
 
 import {
   Switch,
@@ -54,7 +50,7 @@ function PageProjetos() {
               {
                 obras.map((obra,i)=>{
                   const professor = obra.professor     
-                  
+
                   return(
                     <article className="cat-feed-item" key={`${i}-${obra.id}`}>
                       <Link to={`/projetos/${id}/${obra.id}`} className="link-box">
@@ -171,7 +167,7 @@ function InfoBox(props) {
       <div
         className="figure"
         style={{
-          background: `url(http://localhost:1337${image.url}) no-repeat top center`,
+          background: `url(https://admin.umnovoolhar.art.br${image.url}) center top / cover no-repeat`,
           backgroundSize: 'cover'
         }}
       ></div>
@@ -187,14 +183,8 @@ function InfoBox(props) {
 
 function Video(props) {
 
-<<<<<<< HEAD
   const {parent} = props
   const [aula, setAula] = useState([])
-
-=======
-  const {content} = props
-  const {id} = useParams()
->>>>>>> 45016489539ea417883e200c68104a047bbe6eeb
 
   useEffect(()=>{
     async function fetchData(){
