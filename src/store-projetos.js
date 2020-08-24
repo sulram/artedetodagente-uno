@@ -156,6 +156,12 @@ export default {
             title: 'Aula 2',
             text: '',
             youtube: 'https://www.youtube.com/watch?v=rCPIbYEYIVI'
+          },
+          {
+            id: 'aula-03',
+            title: 'Aula 3',
+            text: '',
+            youtube: 'https://www.youtube.com/watch?v=urElO0eYdyc'
           }
         ]
       }
