@@ -8,16 +8,22 @@ export default {
     fulltext: `Aqui você encontra os vídeos de apresentações do Projeto Um Novo Olhar.`,
     videos: [
       {
-        id: 'sara-bentes',
-        title: 'Sara Bentes, em voz e mensagem',
-        text: 'No pocket show que gravou especialmente para o projeto Um Novo Olhar, a cantora e compositora Sara Bentes interpreta composições próprias e, também, obras de grandes nomes da MPB, como Tom Jobim, Flávio Venturini e Caetano Veloso.',
-        youtube: 'https://www.youtube.com/watch?v=lLBzmxRQ4Jg'
+        id: 'analu-faria',
+        title: 'Analú Faria, uma artista que não vê limites',
+        text: '',
+        youtube: 'https://www.youtube.com/watch?v=RFdbdteCryM'
       },
       {
         id: 'lucio-piantino',
         title: 'Apresentação do artista plástico Lucio Piantino',
         text: '',
         youtube: 'https://www.youtube.com/watch?v=cxRoPH6UrYY'
+      },
+      {
+        id: 'sara-bentes',
+        title: 'Sara Bentes, em voz e mensagem',
+        text: 'No pocket show que gravou especialmente para o projeto Um Novo Olhar, a cantora e compositora Sara Bentes interpreta composições próprias e, também, obras de grandes nomes da MPB, como Tom Jobim, Flávio Venturini e Caetano Veloso.',
+        youtube: 'https://www.youtube.com/watch?v=lLBzmxRQ4Jg'
       }
     ]
   },
