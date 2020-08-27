@@ -9,7 +9,7 @@ export default {
     videos: [
       {
         id: 'analu-faria',
-        title: 'Analú Faria, uma artista que não vê limites',
+        title: 'Analú Faria: Circo para todos!',
         text: '',
         youtube: 'https://www.youtube.com/watch?v=RFdbdteCryM'
       },
