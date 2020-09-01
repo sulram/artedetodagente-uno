@@ -1,5 +1,31 @@
 export default [
   {
+    id: '4',
+    date: `2020-09-01`,
+    // cover: `/img/static/BG-Noticias-Padrao.png`,
+    title: `Panorama da arte-educação inclusiva`,
+    call: `Introdução à Arte/Educação, Tecnologia Assistiva e Deficiência, primeiro da série de cursos de capacitação para educadores oferecidos pelo projeto Um Novo Olhar, está com suas inscrições gratuitas abertas aqui no site. Aulas começam no dia 14/9 e serão realizadas no Ambiente Virtual de Aprendizagem da UFRJ.`,
+    article: `
+    <p>Estão abertas as inscrições para o curso Introdução à Arte/Educação, Tecnologia Assistiva e Deficiência, do projeto Um Novo Olhar. As aulas, que acontecerão no Ambiente Virtual de Aprendizagem da UFRJ, terão início em 14 de setembro e o prazo para conclusão de todas as atividades previstas é 8 de novembro. </p>
+    
+    <p>Este primeiro curso introdutório faz parte da série Arte/Educação + Acessibilidade + Inclusão, uma das frentes do projeto e que tem por objetivo capacitar educadores do ensino fundamental para trabalhar as artes de forma a integrar crianças com diferentes deficiências e crianças sem deficiência, contribuindo, assim, para a criação de um ambiente mais inclusivo e acolhedor dentro das salas de aula e no ambiente escolar como um todo. A coordenação de conteúdo deste módulo é dos professores Thelma Alvares e José Antônio Borges, contando ainda com conteúdo das professoras Carla Mauch e Vânia Mefano. Durante as aulas, serão abordados o modelo de Inclusão escolar, a contribuição das artes para uma escola mais acolhedora, os direitos da criança com deficiência no ambiente escolar, o atendimento educacional especializado e recursos multifuncionais e a arte como forma de expressão do indivíduo.</p>
+
+    <p>Estão sendo oferecidas 120 vagas para cada uma das regiões do país – Centro-Oeste, Nordeste, Norte, Sudeste e Sul –, que serão preenchidas por ordem de inscrição, totalizando 600 vagas para o curso. Ao final, haverá emissão de certificado, com carga horária de 48h, para os inscritos que obtiverem aprovação nas avaliações sobre o conteúdo apresentado.</p>
+
+    <p>“A diversidade é uma característica da vida e os seres humanos apresentam-se em sua essencial e rica perspectiva de se diferenciarem, de não serem iguais uns aos outros (ou de não serem os outros). Mas, na prática, a diferença nem sempre é encarada assim”, afirma Thelma Alvares, coordenadora de conteúdo. “Em nosso curso, pegaremos apenas uma fatia dessa ampla diversidade, discutindo a inclusão escolar de crianças com deficiência. Um grande desafio, mas, sem dúvida, uma oportunidade para desenvolver uma cultura escolar que seja solidária, que respeite o outro e que nos liberte de crenças arraigadas que nos enrijecem e nos tornam cidadãos indiferentes ao sofrimento alheio”, defende.</p>
+
+    <p><strong>Sobre os professores:</strong></p>
+
+    <p><strong>Thelma Alvares</strong> é professora titular da Escola de Música da UFRJ, onde atua nos cursos de Licenciatura em Música e de bacharelado em Musicoterapia, e também no programa de pós-graduação em Educação Musical. É bacharel em Musicoterapia (Conservatório Brasileiro de Música, 1986) e tem especialização em Saúde Mental (Instituto de Psiquiatria, UFRJ,1989), mestrado em Terapias Expressivas (Lesley College, 1993) e doutorado em Educação Musical/Musicoterapia (University of Miami, 2001). Foi coordenadora do Curso de Especialização em Terapia das Artes (formação de arteterapeutas e musicoterapeutas) da Universidade Federal do Espírito Santo (UFES).</p>
+
+    <p><strong>José Antonio dos Santos Borges</strong> é Informático pela UFRJ, com mestrado e doutorado em Engenharia de Sistemas e Computação pela COPPE-UFRJ. Trabalha desde 1974 no Núcleo de Computação Eletrônica da Universidade Federal do Rio de Janeiro, onde atuou em diversas áreas, como projeto de sistemas operacionais, sistemas CAD para eletrônica e microeletrônica, computação gráfica, multimídia e síntese de voz e computação para pessoas com deficiência. Atualmente, coordena uma série de projetos de acessibilidade no NCE/UFRJ.</p>
+
+    <p><strong>Carla Mauch</strong>, Coordenadora Geral da Mais Diferenças, é pedagoga, com especialização em Tecnologia Assistiva, e Mestre em Psicologia da Educação pela PUC SP. Desenvolve projetos de educação e cultura inclusivas há mais de 20 anos. Faz parte de várias redes e movimentos em defesa dos direitos das pessoas com deficiência, educação e cultura.</p>
+
+    <p><strong>Vania Mefano</strong> é formada em Terapia Ocupacional e Iniciou sua atividade profissional em Centro de Reabilitação conveniado pela LBA que tinha a bandeira da Prevenção e Promoção da Saúde. Atuou como Gestora Pública pela Secretaria Municipal de Saúde do Rio de Janeiro, na Área Técnica da Pessoa com Deficiência (com assento governamental em entidade de Defesa de Direitos das Pessoas com Deficiência-COMDEF/RJ) e na Gerência do NASF Carioca. Trabalha na UFRJ nas Linhas de Pesquisa sobre Educação Inclusiva e Atenção Básica.</p>
+    `
+  },
+  {
     id: '3',
     date: `2020-08-27`,
     cover: `/img/static/noticia-analu.jpg`,

@@ -64,8 +64,7 @@ export default {
   cursos: {
     title: 'Cursos',
     text: "",
-    fulltext: `<p>O Um Novo Olhar vai oferecer uma série de sete cursos de extensão online, que serão disponibilizados ao longo dos próximos meses. Todos serão focados na acessibilidade e inclusão de crianças com deficiência no ambiente escolar, com o uso das artes como ferramenta facilitadora. Os cursos são destinados a professores do ensino fundamental e dão direito a certificado de conclusão. Para participar, será necessário se inscrever e criar um login, que dará acesso às aulas.</p>
-    <p>Nossos cursos serão ministrados por profissionais com experiência no ensino utilizando metodologias especialmente voltadas para a integração de crianças, com diferentes tipos de deficiências ou sem deficiência por meio da arte-educação, contribuindo para criar um ambiente mais inclusivo nas salas de aula. Os conteúdos contarão com vídeos, textos e outros materiais para a orientação, teórica e prática, do desenvolvimento do trabalho nas escolas.</p>`
+    fulltext: `<p>Introdução à Arte/Educação, Tecnologia Assistiva e Deficiência, primeiro da série de cursos de capacitação para educadores oferecidos pelo projeto Um Novo Olhar, está com suas inscrições gratuitas abertas.</p><p>As aulas começam no dia 14/9 e serão realizadas no Ambiente Virtual de Aprendizagem da UFRJ.</p>`
   },
   'encontro-programacao': {
     title: 'Encontro',

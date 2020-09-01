@@ -37,7 +37,7 @@ function HomeNews() {
               <SwiperSlide key={`${noticia.id}-slide-${i}`}>
                 <article
                   className="noticia"
-                  style={{background: bgcover(`${noticia.cover}`) }}
+                  style={{background: bgcover(`${noticia.cover || `/img/static/BG-Noticias-Padrao.png`}`) }}
                 >
                   <div className="wrapper">
                     {size.width <= 768 && (

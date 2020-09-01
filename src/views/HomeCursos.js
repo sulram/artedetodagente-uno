@@ -4,7 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link'
 
 import store from '../store'
 
-function HomeCursos() {
+function HomeCursos(props) {
 
   const {cursos} = store.pages
 
@@ -15,10 +15,10 @@ function HomeCursos() {
       </div>
       <div className="inside-content">
         <div>{parse(cursos.fulltext)}</div>
-        {/* <div>
+        <div>
           <p>&nbsp;</p>
-          <span className="link-box">em breve</span>
-        </div> */}
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSed_X76Il411qz_isWsDT_qN8tjJNfwAaDH6CvgvNShgUT63g/viewform" className="link-box" rel="noopener noreferrer" target="_blank">Faça sua inscrição</a>
+        </div>
       </div>
     </section>
   );

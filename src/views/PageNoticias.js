@@ -37,7 +37,7 @@ function PageNoticias() {
                   return(
                     <article className="noticias-feed-item" key={i}>
                       <Link to={`/noticias/${noticia.id}`} className="box">
-                        <img src={noticia.cover} alt={noticia.title} />
+                        <img src={noticia.cover || `/img/static/BG-Noticias-Padrao.png`} alt={noticia.title} />
                         <p><strong>{noticia.title}</strong></p>
                         <p>{noticia.call}</p>
                       </Link>
