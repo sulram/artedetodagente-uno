@@ -32,6 +32,12 @@ export default {
     fulltext: `Aqui você encontra os vídeos das palestras do Projeto Um Novo Olhar.`,
     videos: [
       {
+        id: 'acessibilidade-producao-cultural',
+        title: 'Acessibilidade e Produção Cultural, com Renata Silencio',
+        text: '',
+        youtube: 'https://www.youtube.com/watch?v=60oy2lCfSo0'
+      },
+      {
         id: 'concertos-acessiveis',
         title: 'Concertos Acessíveis, com Felipe Monteiro',
         text: '',
