@@ -46,7 +46,7 @@ function HomeNews() {
               <SwiperSlide key={`${noticia.id}-slide-${i}`}>
                 <article
                   className="noticia"
-                  style={{background: bgcover(`https://admin.umnovoolhar.art.br${image.url}`) }}
+                  style={{background: bgcover(`https://admin.umnovoolhar.art.br${image.url || `/img/static/BG-Noticias-Padrao.png`}`) }}
                 >
                   <div className="wrapper">
                     {size.width <= 768 && (

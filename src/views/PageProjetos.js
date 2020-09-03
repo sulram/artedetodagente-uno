@@ -30,7 +30,7 @@ function PageProjetos() {
       setObras(response.data.obras)
     }
     fetchData()
-  },[])
+  },[id])
 
   const {path} = useRouteMatch()
 

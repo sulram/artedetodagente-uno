@@ -84,7 +84,6 @@ function Single(props) {
     fetchData()
   },[])
   
-  console.log(image.url)
   return (
     <>
       <h3 className="title-2 mobile-hidden">

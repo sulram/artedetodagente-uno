@@ -1,3 +1,6 @@
+import * as R from 'ramda'
+import useWindowSize from '../util/useWindowSize'
+
 import React, { useState, useEffect } from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 
@@ -8,7 +11,7 @@ import api from '../services/api'
 
 function HomeVideos(props) {
 
-  const [videos, setVideos] = useState([])
+  const [lessons, setVideos] = useState([])
 
   const {id} = props
 
@@ -23,7 +26,11 @@ function HomeVideos(props) {
   },[])
  
   const content = store.videos[id]
-  
+
+  const size = useWindowSize()
+
+  const videos = R.slice(0, (size.width > 1024 ? 6 : 2), lessons)
+
   return (
     <section id={id} className="base cursos" style={{backgroundColor: props.color || `#fdf204`}}>
       <div className="">

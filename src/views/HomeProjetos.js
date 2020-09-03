@@ -1,4 +1,6 @@
 import React from 'react'
+import * as R from 'ramda'
+import useWindowSize from '../util/useWindowSize'
 import { HashLink as Link } from 'react-router-hash-link'
 
 import YouThumb from './YouThumb'
@@ -7,7 +9,12 @@ function HomeProjetos(props) {
 
   const {id, obras, title} = props
 
+  const size = useWindowSize()
+
+  const categories = R.slice(0, (size.width > 1024 ? 6 : 2), obras)
+
   return (
+    
     <section id={id} className="base cursos" style={{backgroundColor: props.color || `#fdf204`}}>
       <div className="">
         <div className="title-box divider">
@@ -15,7 +22,7 @@ function HomeProjetos(props) {
         </div>
         <section className="videos-feed">
           {
-            obras.reverse().map((obra)=>{
+            categories.reverse().map((obra)=>{
               const video = obra.aulas[0]
               const professor = obra.professor
               
