@@ -58,7 +58,7 @@ function Releases() {
         {releases && releases.slice(start,end).map((item,i)=>{
           return (
             <li key={i}>
-              <a rel="noopener noreferrer" target="_blank" href={`https://admin.sinos.art.br${item.file.url}`}>
+              <a rel="noopener noreferrer" target="_blank" href={`https://admin.umnovoolhar.art.br${item.file.url}`}>
                 {item.title}
               </a>
             </li>
@@ -125,7 +125,7 @@ function Clippings() {
             <div className="article-box">
               <div className="figure">
                 <a rel="noopener noreferrer" target="_blank" href={item.link}>
-                  <img src={`https://admin.sinos.art.br${item.cover.formats.thumbnail.url}`} alt={item.title}/>
+                  <img src={`https://admin.umnovoolhar.art.br${item.cover.formats.thumbnail.url}`} alt={item.title}/>
                 </a>
               </div>
               <div className="info" >
