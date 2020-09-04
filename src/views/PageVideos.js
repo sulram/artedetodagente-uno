@@ -1,5 +1,3 @@
-import * as R from 'ramda'
-
 import React, { useState, useEffect } from 'react'
 import parse from 'html-react-parser'
 
@@ -32,7 +30,7 @@ function PageVideos() {
       setVideo(response.data)
     }
     fetchData()
-  },[])
+  },[id])
 
   const {videos} = store
 
@@ -91,7 +89,7 @@ function Video(props) {
         setVideo(response.data)
       }
    fetchData()
-  },[id])
+  },[id,parent])
 
   return (
     <>

@@ -82,7 +82,7 @@ function Single(props) {
       setImage(response.data.image)
     }
     fetchData()
-  },[])
+  },[id])
   
   return (
     <>

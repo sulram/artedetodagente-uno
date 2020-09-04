@@ -82,13 +82,13 @@ function Releases() {
 
 function Clippings() {
 
-  const [releases, setReleases] = useState([])
+  const [clippings, setClippings] = useState([])
   const [pagination, setPagination] = useState(0)
 
   const size = useWindowSize()
 
   const itemsPerPage = size.width > 768 ? 6 : 1
-  const totalPages = Math.ceil(releases.length/itemsPerPage)
+  const totalPages = Math.ceil(clippings.length/itemsPerPage)
   const start = pagination*itemsPerPage
   const end = pagination*itemsPerPage+itemsPerPage
   
@@ -102,7 +102,7 @@ function Clippings() {
   useEffect(()=>{
     async function fetchData(){
       const response = await api.get('/clippings?_sort=date:DESC')
-      setReleases(response.data)
+      setClippings(response.data)
     }
     fetchData()
   },[])
@@ -117,17 +117,18 @@ function Clippings() {
   return (
     <div className="imprensa-block">
       <div className="block-title">Clippings</div>
-      
       <div className="block-content-grid">
-      {releases && releases.slice(start,end).map((item,i)=>{
+      {clippings && clippings.slice(start,end).map((item,i)=>{
         return (
           <article key={i}>
             <div className="article-box">
-              <div className="figure">
-                <a rel="noopener noreferrer" target="_blank" href={item.link}>
-                  <img src={`https://admin.umnovoolhar.art.br${item.cover.formats.thumbnail.url}`} alt={item.title}/>
-                </a>
-              </div>
+              {item.cover[0] &&
+                <div className="figure">
+                  <a rel="noopener noreferrer" target="_blank" href={item.link}>
+                    <img src={`https://admin.umnovoolhar.art.br${item.cover[0].formats.thumbnail.url}`} alt={item.title}/>
+                  </a>
+                </div>
+              }
               <div className="info" >
                 <a rel="noopener noreferrer" target="_blank" href={item.link}>
                   <strong>{item.title}</strong>

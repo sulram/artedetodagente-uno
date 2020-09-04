@@ -25,7 +25,6 @@ function HomeProjetos(props) {
             categories.reverse().map((obra)=>{
               const video = obra.aulas[0]
               const professor = obra.professor
-              
               return(
                 <article className="videos-feed-v" key={obra.id}>
                   <Link to={`/projetos/${id}/${obra.id}`} className="box">

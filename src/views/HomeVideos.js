@@ -23,7 +23,7 @@ function HomeVideos(props) {
     }
     fetchData()
     
-  },[])
+  },[id])
  
   const content = store.videos[id]
 

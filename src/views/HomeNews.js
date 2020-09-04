@@ -13,10 +13,13 @@ function HomeNews() {
   const [slideNext, setSlideNext] = useState(null)
   const [noticias, setNoticias] = useState([])
 
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(()=>{
     async function fetchData(){
       const response = await api.get('/noticias')
       setNoticias(response.data.reverse())
+      setIsLoading(true)
     }
     fetchData()
   },[])
@@ -34,14 +37,14 @@ function HomeNews() {
 
   return (
     <section id="home-noticias" className="slider-noticias">
-      {noticias.length &&
+      {isLoading &&
         <Swiper
           loop={true}
           onSwiper={bindSwiper}
         >
           {latestPosts.map((noticia,i)=>{
             const date = fdate(noticia.date)
-            const image = noticia.image
+            const image = noticia.image.formats.medium
             return(
               <SwiperSlide key={`${noticia.id}-slide-${i}`}>
                 <article

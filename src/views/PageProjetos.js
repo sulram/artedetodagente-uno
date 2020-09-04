@@ -117,7 +117,7 @@ function PageVideos(props) {
       </h3>
       <Switch>
         <Route exact path={path}>
-          <InfoBox content={obra} id={professor.id} />
+          {professor.id && <InfoBox content={obra} id={professor.id} />}
         </Route>
         <Route path={`${path}/:id`}>
           <Video parent={id} content={content} obra={obra} professor={professor.id} />
@@ -154,6 +154,7 @@ function InfoBox(props) {
         const response = await api.get(`/professors/${id}`)
         setProf(response.data)
         setImage(response.data.image)
+        console.log(response.data.image)
       }
       fetchData()
   },[id])
@@ -162,9 +163,8 @@ function InfoBox(props) {
     <div className="info-box">
       <div
         className="figure"
-        style={{
-          background: `url(https://admin.umnovoolhar.art.br${image.url}) center top / cover no-repeat`,
-          backgroundSize: 'cover'
+        style={image.url && {
+          background: `url(https://admin.umnovoolhar.art.br${image.formats.small.url}) center top / cover no-repeat`
         }}
       ></div>
       <div className="box">
@@ -189,8 +189,6 @@ function Video(props) {
     }
     fetchData()
   },[parent])
-
-  const {id} = useParams()
 
   return (
     <>

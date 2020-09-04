@@ -160,6 +160,9 @@
       &.gray {
         background: #fff;
       }
+      li {
+        @apply mb-1;
+      }
     }
     .block-nav {
       button {
@@ -183,7 +186,7 @@
           @apply flex;
         }
         .info {
-          @apply px-2;
+          @apply px-2 text-sm leading-tight;
           @screen md {
             @apply w-2/3;
           }
