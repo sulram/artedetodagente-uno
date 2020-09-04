@@ -178,16 +178,16 @@ function InfoBox(props) {
 
 function Video(props) {
 
-  const {parent} = props
   const [aula, setAula] = useState([])
+  const {id} = useParams()
 
   useEffect(()=>{
     async function fetchData(){
-      const response = await api.get(`/aulas/${parent}`)
+      const response = await api.get(`/aulas/${id}`)
       setAula(response.data)
     }
     fetchData()
-  },[parent])
+  },[id])
 
   return (
     <>
