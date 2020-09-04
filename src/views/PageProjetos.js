@@ -154,7 +154,6 @@ function InfoBox(props) {
         const response = await api.get(`/professors/${id}`)
         setProf(response.data)
         setImage(response.data.image)
-        console.log(response.data.image)
       }
       fetchData()
   },[id])
