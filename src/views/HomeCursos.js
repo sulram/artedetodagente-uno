@@ -19,7 +19,7 @@ function HomeCursos(props) {
         <div>
           <p>&nbsp;</p>
           <a href={formUrl} className="link-box" rel="noopener noreferrer" target="_blank">Faça sua inscrição</a>
-          &nbsp;<Link className="link-box" to="/noticias/4">Saiba mais</Link>
+          &nbsp;<Link className="link-box" to="/noticias/5">Saiba mais</Link>
         </div>
       </div>
     </section>
