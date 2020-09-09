@@ -1,18 +1,35 @@
 import * as R from 'ramda'
-import React from 'react'
+import useWindowSize from '../util/useWindowSize'
+
+import React, { useState, useEffect } from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 
 import store from '../store'
 import YouThumb from './YouThumb'
-import useWindowSize from '../util/useWindowSize'
+
+import api from '../services/api'
 
 function HomeVideos(props) {
 
+  const [lessons, setVideos] = useState([])
+
   const {id} = props
+
+
+  useEffect(()=>{
+    async function fetchData(){
+      const response = await api.get(`/${id}`)
+      setVideos(response.data.reverse())
+    }
+    fetchData()
+    
+  },[id])
+ 
   const content = store.videos[id]
+
   const size = useWindowSize()
 
-  const videos = R.slice(0, (size.width > 1024 ? 6 : 2), content.videos)
+  const videos = R.slice(0, (size.width > 1024 ? 6 : 2), lessons)
 
   return (
     <section id={id} className="base cursos" style={{backgroundColor: props.color || `#fdf204`}}>
@@ -26,7 +43,7 @@ function HomeVideos(props) {
               return(
                 <article className="videos-feed-v" key={video.id}>
                   <Link to={`/videos/${id}/${video.id}`} className="box">
-                    <YouThumb url={video.youtube} />
+                    <YouThumb url={video.video_url} />
                     <p>{video.title}</p>
                   </Link>
                 </article>

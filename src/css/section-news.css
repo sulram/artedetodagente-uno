@@ -2,6 +2,7 @@
 
 section.slider-noticias {
   background: var(--yellow);
+  min-height: 100vh;
   .noticia {
     background-size: cover !important;
   }

@@ -1,7 +1,6 @@
-import * as R from 'ramda'
+import React, { useState, useEffect } from 'react'
 
-import React from 'react'
-import parse from 'html-react-parser'
+import ReactMarkdown from 'react-markdown'
 
 import {
   Switch,
@@ -11,14 +10,23 @@ import {
 } from "react-router-dom"
 import { HashLink as Link } from 'react-router-hash-link'
 
-import store from '../store'
-
 import Header from './Header'
 import Footer from './Footer'
 
+import api from '../services/api'
+
+
 function PageNoticias() {
 
-  const {noticias} = store
+  const [noticias, setNoticias] = useState([])
+
+  useEffect(()=>{
+    async function fetchData(){
+      const response = await api.get('/noticias')
+      setNoticias(response.data.reverse())
+    }
+    fetchData()
+  },[])
 
   const { path } = useRouteMatch()
 
@@ -34,10 +42,11 @@ function PageNoticias() {
             <section className="noticias-feed">
               {
                 noticias.map((noticia, i)=>{
+                  const image = noticia.image
                   return(
                     <article className="noticias-feed-item" key={i}>
                       <Link to={`/noticias/${noticia.id}`} className="box">
-                        <img src={noticia.cover || `/img/static/BG-Noticias-Padrao.png`} alt={noticia.title} />
+                        <img src={`https://admin.umnovoolhar.art.br${image.url}`} alt={noticia.title} />
                         <p><strong>{noticia.title}</strong></p>
                         <p>{noticia.call}</p>
                       </Link>
@@ -61,10 +70,19 @@ function PageNoticias() {
 
 function Single(props) {
 
-  const {noticias} = props
   const {id} = useParams()
   
-  const noticia = R.find(R.propEq('id', id), noticias)
+  const [noticia, setNoticia] = useState([])
+  const [image, setImage] = useState([])
+
+  useEffect(()=>{
+    async function fetchData(){
+      const response = await api.get(`/noticias/${id}`)
+      setNoticia(response.data)
+      setImage(response.data.image)
+    }
+    fetchData()
+  },[id])
   
   return (
     <>
@@ -74,14 +92,16 @@ function Single(props) {
         <Link to={`/noticias/${id}`} className="link-box">{noticia.title}</Link>
       </h3>
       <p>&nbsp;</p>
-      {noticia.cover &&
+      {`https://admin.umnovoolhar.art.br${image.url}` &&
         <img
           alt={noticia.title}
-          src={noticia.cover}
+          src={`https://admin.umnovoolhar.art.br${image.url}`}
           width="40%" style={{float:'right', margin: '40px 0 40px 40px'}}
         /> 
       }
-      {parse(noticia.article)}
+      <ReactMarkdown 
+        source={noticia.article}
+      />
     </>
   )
 }

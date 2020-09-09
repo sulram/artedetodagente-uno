@@ -1,5 +1,4 @@
-import * as R from 'ramda'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import {
   Switch,
@@ -9,53 +8,68 @@ import {
 } from "react-router-dom"
 import { HashLink as Link } from 'react-router-hash-link'
 
-import store from '../store'
 import Header from './Header'
 import Footer from './Footer'
 import YouThumb from './YouThumb'
 import YouEmbed from './YouEmbed'
 
+import api from '../services/api'
+
+
 function PageProjetos() {
 
   const {id} = useParams()
-  const {projetos} = store
+
+  const [projeto, setProjeto] = useState([])
+  const [obras, setObras] = useState([])
   
-  const content = projetos[id]
+  useEffect(()=>{
+    async function fetchData(){
+      const response = await api.get(`/projetos/${id}`)
+      setProjeto(response.data)
+      setObras(response.data.obras)
+    }
+    fetchData()
+  },[id])
 
   const {path} = useRouteMatch()
 
   return (
     <>
-      <Header title={content.title} url={`/projetos/${id}`} />
+      <Header title={projeto.name} url={`/projetos/${id}`} />
       <main className="main-content page-content">
         <Switch>
           <Route exact path={path}>
-            <h3 className='title-1'><Link to={`/projetos/${id}`} className="link-box">{content.title}</Link></h3>
+            <h3 className='title-1'><Link to={`/projetos/${id}`} className="link-box">{projeto.name}</Link></h3>
             <h3 className="title-2">Selecione uma categoria</h3>
             <section className="cat-feed">
               {
-                content.categories.map((cat,i)=>{
+                obras.map((obra,i)=>{
+                  const professor = obra.professor     
+
                   return(
-                    <article className="cat-feed-item" key={`${i}-${cat.id}`}>
-                      <Link to={`/projetos/${id}/${cat.id}`} className="link-box">
-                        {cat.info_title}: {cat.title}
+                    <article className="cat-feed-item" key={`${i}-${obra.id}`}>
+                      <Link to={`/projetos/${id}/${obra.id}`} className="link-box">
+                        {professor.name}: {obra.title}
                       </Link>
                     </article>
                   )
                 })
               }
+            
             </section>
             <p>&nbsp;</p>
             <h3 className="title-2">Últimas publicações</h3>
             <section className="videos-feed">
               {
-                content.categories.slice(0,3).map((cat, i)=>{
-                  const video = cat?.videos[0]
+                obras.slice(0,3).map((obra, i)=>{
+                  const video = obra.aulas[0]
+                  const professor = obra.professor
                   return(
-                    <article className="videos-feed-v" key={`${i}-${cat.id}`}>
-                      <Link to={`/projetos/${id}/${cat.id}`} className="box">
-                        <YouThumb url={video.youtube} />
-                        <p>{cat.info_title}: {cat.title}</p>
+                    <article className="videos-feed-v" key={`${i}-${obra.id}`}>
+                      <Link to={`/projetos/${id}/${obra.id}`} className="box">
+                        <YouThumb url={video.video_url} />
+                        <p>{professor.name}: {obra.title}</p>
                       </Link>
                     </article>
                   )
@@ -64,7 +78,7 @@ function PageProjetos() {
             </section>
           </Route>
           <Route path={`${path}/:catid`}>
-            <PageVideos id={id} content={content} />
+            <PageVideos id={id} content={projeto} />
           </Route>
         </Switch>
       </main>
@@ -75,37 +89,50 @@ function PageProjetos() {
 
 function PageVideos(props) {
 
-  const {id} = props
+  const {id, content} = props
   const {catid} = useParams()
   const {path} = useRouteMatch()
 
-  const content = R.find(R.propEq('id', catid), props.content.categories)
+  const [obra, setObra] = useState([])
+  const [aulas, setAulas] = useState([])
+  const [professor, setProfessor] = useState([])
+
+  useEffect(()=>{
+    async function fetchData(){
+      const response = await api.get(`/obras/${catid}`)
+      setObra(response.data)
+      setAulas(response.data.aulas)
+      setProfessor(response.data.professor)
+    }
+    fetchData()
+  },[catid])
+  
 
   return (
     <>
       <h3 className="title-2 mobile-hidden">
-        <Link to={`/projetos/${id}`} className="link-box">{props.content.title}</Link>
+        <Link to={`/projetos/${id}`} className="link-box">{content.name}</Link>
         &nbsp;
-        <Link to={`/projetos/${id}/${content.id}`} className="link-box">{content.info_title}: {content.title}</Link>
+        <Link to={`/projetos/${id}/${obra.id}`} className="link-box">{professor.name}: {content.name}</Link>
       </h3>
       <Switch>
         <Route exact path={path}>
-          <InfoBox content={content} />
+          {professor.id && <InfoBox content={obra} id={professor.id} />}
         </Route>
         <Route path={`${path}/:id`}>
-          <Video parent={id} content={content} />
-        </Route>
+          <Video parent={id} content={content} obra={obra} professor={professor.id} />
+      </Route>
       </Switch>
       <p>&nbsp;</p>
       <h3 className="title-2">Todos os vídeos</h3>
       <section className="videos-feed">
         {
-          content.videos.map((video)=>{
+          aulas.map((aula)=>{
             return(
-              <article className="videos-feed-v" key={video.id}>
-                <Link to={`/projetos/${id}/${content.id}/${video.id}`} className="box">
-                  <YouThumb url={video.youtube} />
-                  <p>{video.title}</p>
+              <article className="videos-feed-v" key={aula.id}>
+                <Link to={`/projetos/${id}/${obra.id}/${aula.id}`} className="box">
+                  <YouThumb url={aula.video_url} />
+                  <p>{aula.title}</p>
                 </Link>
               </article>
             )
@@ -117,21 +144,33 @@ function PageVideos(props) {
 }
 
 function InfoBox(props) {
-  const {content} = props
+  const {content, id} = props
+  const [professor, setProf] = useState([])
+  const [image, setImage] = useState([])
+
+
+  useEffect(()=>{
+      async function fetchData(){
+        const response = await api.get(`/professors/${id}`)
+        setProf(response.data)
+        setImage(response.data.image)
+      }
+      fetchData()
+  },[id])
+
   return (
     <div className="info-box">
       <div
         className="figure"
-        style={{
-          background: `url(${content.cover}) no-repeat top center`,
-          backgroundSize: 'cover'
+        style={image.url && {
+          background: `url(https://admin.umnovoolhar.art.br${image.formats.small.url}) center top / cover no-repeat`
         }}
       ></div>
       <div className="box">
         <p className="text-box">{content.title}</p>
-        <p>{content.text}</p>
-        <p className="text-box">{content.info_title}</p>
-        <p>{content.info_text}</p>
+        <p>{content.description}</p>
+        <p className="text-box">{professor.name}</p>
+        <p>{professor.bio}</p>
       </div>
     </div>
   )
@@ -139,19 +178,24 @@ function InfoBox(props) {
 
 function Video(props) {
 
-  const {content} = props
+  const [aula, setAula] = useState([])
   const {id} = useParams()
 
-  const video = R.find(R.propEq('id', id), content.videos)
+  useEffect(()=>{
+    async function fetchData(){
+      const response = await api.get(`/aulas/${id}`)
+      setAula(response.data)
+    }
+    fetchData()
+  },[id])
 
   return (
     <>
-      <YouEmbed url={video.youtube} />
-      <h3>{video.title}</h3>
-      <p>{video.text}</p>
+      <YouEmbed url={aula.video_url} />
+      <h3>{aula.title}</h3>
+      <p>{aula.text}</p>
     </>
   )
 }
-
 
 export default PageProjetos;
