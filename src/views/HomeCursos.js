@@ -7,7 +7,7 @@ import store from '../store'
 function HomeCursos(props) {
 
   const {cursos} = store.pages
-  const formUrl = `https://docs.google.com/forms/d/e/1FAIpQLSed_X76Il411qz_isWsDT_qN8tjJNfwAaDH6CvgvNShgUT63g/viewform`
+  // const formUrl = `https://docs.google.com/forms/d/e/1FAIpQLSed_X76Il411qz_isWsDT_qN8tjJNfwAaDH6CvgvNShgUT63g/viewform`
 
   return (
     <section id="cursos" className="base cursos">

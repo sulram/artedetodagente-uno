@@ -42,5 +42,14 @@ section.base {
     }
 
   }
+
+  &.congresso {
+    background: url("/img/uno-fundo-congresso.jpg") no-repeat 50% 50% / cover;
+    .content {
+      @screen md {
+        @apply w-3/4;
+      }
+    }
+  }
   
 }

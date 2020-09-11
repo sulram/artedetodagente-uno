@@ -5,6 +5,7 @@ import Header from './Header'
 import Footer from './Footer'
 
 // import HomeLanding from './HomeLanding'
+import HomeCongresso from './HomeCongresso'
 import HomeCursos from './HomeCursos'
 import HomeVideos from './HomeVideos'
 import HomeProjetos from './HomeProjetos'
@@ -29,6 +30,7 @@ function Home() {
       <main className="main-content home-content">
         {/* <HomeLanding /> */}
         <HomeNews />
+        <HomeCongresso />
         <HomeCursos />
         <HomeVideos id="apresentacoes" label="Acessar todas as apresentações" />
         <HomeVideos id="palestras" label="Acessar todas as palestras" />

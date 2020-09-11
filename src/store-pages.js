@@ -140,5 +140,147 @@ export default {
     <p><strong>Mediadora:</strong> Laura Pozzana (UFRJ) </p>
 
 `
+  },
+  'congresso-internacional': {
+    title: 'Congresso Internacional',
+    text: "",
+    fulltext: `
+    <h3>I Congresso Internacional de Música Coral Infantojuvenil – Um Novo Olhar</h3>
+
+    <p>Data: 15, 16 e 17 de outubro de 2020<br>Canal no YouTube: <a href="https://www.youtube.com/artedetodagente" rel="noopener noreferrer" target="_blank">Arte de Toda Gente</a></p>
+    
+    <h4>Apresentação</h4>
+    
+    <p>O Projeto Um Novo Olhar, realizado pela Universidade Federal do Rio de Janeiro – UFRJ e a Fundação Nacional das Artes - FUNARTE, em parceria com o Fórum Virtual de Regentes Corais Infantojuvenis – Projeto de Extensão Universitária da Universidade Federal do Mato Grosso do Sul (UFMS); o Coral Espaço Feliz – Lar Donato Flores, de Tatuí, São Paulo e o Coro Curumins – Projeto de Extensão da Faculdade de Música do Espírito Santo (FAMES), apresentam o <strong>I CONGRESSO INTERNACIONAL DE MÚSICA CORAL INFANTOJUVENIL – Um Novo Olhar</strong>, o qual será realizado virtualmente, nos dias 15, 16 e 17 de outubro de 2020.
+    </p>
+
+    <p>O Evento tem, como principais objetivos, incentivar as reflexões sobre os caminhos plurais da atividade coral, voltada para o público infantojuvenil; dar a oportunidade de divulgação de trabalhos e pesquisas que vem sendo desenvolvidas; ampliar o intercâmbio entre as diferentes instituições que desenvolvem trabalhos voltados para esse público, em âmbito nacional e internacional.</p>
+
+    <p>Estão previstos nove webinars, que contarão com a presença de destacados profissionais da música coral nacional e internacional, do meio artístico e/ou acadêmico, promovendo a troca de experiências e saberes.</p>
+
+    <p>Fica aqui o nosso agradecimento a todos os palestrantes e debatedores que aceitaram fazer parte desta empreitada, em prol do canto coral e de nossas crianças.</p>
+
+    <p><strong>A Comissão Organizadora</strong></p>
+
+    <p>&nbsp;</p>
+
+    <h4>Programação</h4>
+
+    <p class="text-box">15/10 (quinta-feira)</p>
+
+    <p><strong>09:30</strong> | Abertura do Congresso
+    <ul>
+      <li>Ana Lúcia Gaborim, Fórum Virtual de Regentes de Coros Infantojuvenis, UFMS</li>
+      <li>Luís Gustavo Laureano, Lar Donato Flores-SP</li>
+      <li>Maria José Chevitarese, UFRJ</li>
+      <li>Paulo Paraguassú, FAMES</li>
+    </ul>
+
+    <p><strong>10:00</strong> | Conferência</p>
+    <ul>
+      <li>Maria Guinand (Caracas, Venezuela)</li>
+    </ul>
+
+    <p><strong>11:30</strong> | Lançamento de livros</p>
+    <ul>
+      <li>Criando Arte Através da Excelência do Canto Coral de Henry Leck e Flossie Jordan
+        <ul>
+          <li><strong>Tradução:</strong> Aderbal Soares, Editora Pró Coral (São Paulo, SP)</li>
+          <li><strong>Organização:</strong> Lilia Valente (São Paulo, SP)</li>
+        </ul>
+      </li>
+      <li>Canto Coral Infantojuvenil: reflexões e ações
+        <ul>
+          <li><strong>Organização:</strong> Débora Andrade (São João del Rei, MG)</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><strong>15:00</strong> | Muda vocal: processos fisiológicos e processos de aprendizagem</p>
+    <ul>
+      <li>Cláudia Pacheco (São Paulo, SP)</li>
+      <li>Ana Leonor Pereira (Lisboa, Portugal)</li>
+      <li><strong>Mediação:</strong> Luís Gustavo Laureano e Paulo Paraguassú</li>
+    </ul>
+    
+    <p><strong>20:00</strong> | Elaboração e captação de recursos para projetos corais</p>
+    <ul>
+      <li>Oleide Lelis (Londrina, PR)</li>
+      <li>Daniel Andrade (Betim, MG)</li>
+      <li>Marino Galvão (Curitiba, PR)</li>
+      <li><strong>Mediação:</strong> Luís Gustavo Laureano e Paulo Paraguassú</li>
+    </ul>
+
+    <p class="text-box">16/10 (sexta-feira)</p>
+
+    <p><strong>10:00</strong> | Preparação vocal em coros infantojunvenis</p>
+    <ul>
+      <li>Juliana Melleiro (Campinas, SP)</li>
+      <li>Lucy Schimiti (Londrina, PR)</li>
+      <li>Lúcia Passos (São Leopoldo, RS)</li>
+      <li><strong>Mediação:</strong> Ana Lúcia Gaborim e Maria José Chevitares</li>
+    </ul>
+ 
+    <p><strong>15:00</strong> | A escrita para coros infantojuvenis: composições e arranjos</p>
+    <ul>
+      <li>Sven Kristersson (Malmö, Suécia)</li>
+      <li>Tim Rescala (Rio de Janeiro, RJ)</li>
+      <li>Cezar Elbert (São Paulo, SP)</li>
+      <li><strong>Mediação:</strong> Maria José Chevitarese e Paulo Paraguassú</li>
+    </ul>
+  
+    <p><strong>20:00</strong> | Um novo olhar: incluindo através da música coral</p>
+    <ul>
+      <li>Grupo Vozes Especiais (Campo Grande, MS)</li>
+      <li>Cláudia Cunha (Natal, RN)</li>
+      <li>Milka Rosa (São Paulo, SP)</li>
+      <li><strong>Mediação:</strong> Ana Lúcia Gaborim e Maria José Chevitarese</li>
+    </ul>
+ 
+  
+    <p class="text-box">17/10 (sábado)</p>
+
+    <p><strong>10:00</strong> | Critérios para seleção de repertório</p>
+    <ul>
+      <li>Angela Burgoa (Mendoza, Argentina)</li>
+      <li>Regina Kinjo (São Paulo, SP)</li>
+      <li>Mara Campos (São Paulo, SP)</li>
+      <li><strong>Mediação:</strong> Ana Lúcia Gaborim e Luis Gustavo Laureano</li>
+    </ul>
+    
+    <p><strong>15:00</strong> | Formação de regentes corais</p>
+    <ul>
+      <li>Elisa Dekaney (Syracuse, USA)</li>
+      <li>Marisa Fonterrada (São Paulo, SP)</li>
+      <li>Yara Campos (São Paulo, SP)</li>
+      <li><strong>Mediação:</strong> Ana Lúcia Gaborim e Paulo Paraguassú</li>
+    </ul>
+    
+    <p><strong>20:00</strong> | Atividade coral em Projetos sociais</p>
+    <ul>
+      <li>Ricardo Castro (Salvador, BA)</li>
+      <li>Glória Caputo e Eliane Fonseca (Belém, PA)</li>
+      <li>Silmara Drezza (Jundiaí, SP)</li>
+      <li><strong>Mediação:</strong>Maria José Chevitarese e Luis Gustavo Laureano</li>
+    </ul>
+
+    <h4>Comissão Organizadora</h4>
+    <ul>
+      <li>Ana Lúcia Gaborim, Campo Grande-MS</li>
+      <li>Luís Gustavo Laureano, Votorantim-SP</li>
+      <li>Maria José Chevitarese, Rio de Janeiro-RJ</li>
+      <li>Paulo Paraguassú, Vitória-ES</li>
+    </ul>
+
+
+    <h4>Realização</h4>
+    <ul>
+      <li>FUNARTE</li>
+      <li>UFRJ</li>
+      <li>Fórum Virtual de Regentes Corais Infantojuvenis / UFMS</li>
+      <li>FAMES</li>
+      <li>Lar Donato Flores</li>
+    </ul>
+`
   }
 }
