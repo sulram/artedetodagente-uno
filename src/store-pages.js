@@ -273,14 +273,7 @@ export default {
     </ul>
 
 
-    <h4>Realização</h4>
-    <ul>
-      <li>FUNARTE</li>
-      <li>UFRJ</li>
-      <li>Fórum Virtual de Regentes Corais Infantojuvenis / UFMS</li>
-      <li>FAMES</li>
-      <li>Lar Donato Flores</li>
-    </ul>
+    <img alt="Realização" src="/img/uno-congresso-marcas.png" />
 `
   }
 }
