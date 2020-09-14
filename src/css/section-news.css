@@ -1,9 +1,8 @@
 @import "_variables";
 
 section.slider-noticias {
-  background: var(--yellow);
-  min-height: 100vh;
-  .noticia {
+  background: #000;
+  .swiper-slide {
     background-size: cover !important;
   }
   .wrapper {

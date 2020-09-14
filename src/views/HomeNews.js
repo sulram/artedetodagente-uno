@@ -13,13 +13,13 @@ function HomeNews() {
   const [slideNext, setSlideNext] = useState(null)
   const [noticias, setNoticias] = useState([])
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(()=>{
     async function fetchData(){
       const response = await api.get('/noticias')
       setNoticias(response.data.reverse())
-      setIsLoading(true)
+      setIsLoaded(true)
     }
     fetchData()
   },[])
@@ -37,19 +37,20 @@ function HomeNews() {
 
   return (
     <section id="home-noticias" className="slider-noticias">
-      {isLoading &&
+      {isLoaded &&
         <Swiper
           loop={true}
+          autoHeight={true}
           onSwiper={bindSwiper}
         >
           {latestPosts.map((noticia,i)=>{
             const date = fdate(noticia.date)
             const image = noticia.image.formats.medium
             return(
-              <SwiperSlide key={`${noticia.id}-slide-${i}`}>
+              <SwiperSlide key={`${noticia.id}-slide-${i}`} style={{background: bgcover(`https://admin.umnovoolhar.art.br${image.url || `/img/static/BG-Noticias-Padrao.png`}`) }}>
                 <article
                   className="noticia"
-                  style={{background: bgcover(`https://admin.umnovoolhar.art.br${image.url || `/img/static/BG-Noticias-Padrao.png`}`) }}
+                  
                 >
                   <div className="wrapper">
                     {size.width <= 768 && (
