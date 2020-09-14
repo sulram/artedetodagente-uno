@@ -37,6 +37,7 @@ function HomeNews() {
 
   return (
     <section id="home-noticias" className="slider-noticias">
+      {!isLoaded && <div className="loading">Carregando últimas notícias...</div>}
       {isLoaded &&
         <Swiper
           loop={true}
@@ -48,10 +49,7 @@ function HomeNews() {
             const image = noticia.image.formats.medium
             return(
               <SwiperSlide key={`${noticia.id}-slide-${i}`} style={{background: bgcover(`https://admin.umnovoolhar.art.br${image.url || `/img/static/BG-Noticias-Padrao.png`}`) }}>
-                <article
-                  className="noticia"
-                  
-                >
+                <article className="noticia">
                   <div className="wrapper">
                     {size.width <= 768 && (
                       <img src={`https://admin.umnovoolhar.art.br${image.url}`} alt={noticia.title} />

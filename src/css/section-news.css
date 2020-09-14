@@ -2,11 +2,14 @@
 
 section.slider-noticias {
   background: #000;
+  .loading {
+    background: var(--yellow);
+    @apply p-10 pb-64 max-w-4xl mx-auto;
+  }
   .swiper-slide {
     background-size: cover !important;
   }
   .wrapper {
-    @apply p-4;
     @screen md {
       @apply p-10 pt-64 max-w-4xl mx-auto;
     }
