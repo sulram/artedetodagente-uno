@@ -4,7 +4,7 @@ section.slider-noticias {
   background: #000;
   .loading {
     background: var(--yellow);
-    @apply p-10 pb-64 max-w-4xl mx-auto;
+    @apply p-10 pb-64;
   }
   .swiper-slide {
     background-size: cover !important;
