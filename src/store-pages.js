@@ -176,9 +176,8 @@ export default {
       <li>Paulo Paraguassú, FAMES</li>
     </ul>
 
-    <p><strong>10:00</strong> | Conferência</p>
+    <p><strong>10:00</strong> | Conferência - Maria Guinand (Caracas, Venezuela)</p>
     <ul>
-      <li>Maria Guinand (Caracas, Venezuela)</li>
       <li><strong>Mediação:​</strong> Ana Lúcia Gaborim e Maria José Chevitarese</li>
     </ul>
 
