@@ -15,7 +15,7 @@ function HomeCongresso() {
       */}
       <div className="content">
         <div>
-          <p>Nos dias 15, 16 e 17 de outubro, será realizado o <strong>I CONGRESSO INTERNACIONAL DE MÚSICA CORAL INFANTOJUVENIL – UM NOVO OLHAR</strong>.</p>
+          <p>Nos dias 15, 16, 17 e 18 de outubro, será realizado o <strong>I CONGRESSO INTERNACIONAL DE MÚSICA CORAL INFANTOJUVENIL UM NOVO OLHAR - CIMUCI</strong>.</p>
           <p>Seus principais objetivos são: incentivar as reflexões sobre os caminhos plurais da atividade coral, voltada para o público infantojuvenil; dar a oportunidade de divulgação de trabalhos e pesquisas que vem sendo desenvolvidas; ampliar o intercâmbio entre as diferentes instituições que desenvolvem trabalhos voltados para esse público, em âmbito nacional e internacional.</p>
           <p>&nbsp;</p>
           <p>

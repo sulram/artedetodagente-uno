@@ -147,11 +147,11 @@ export default {
     fulltext: `
     <h3>I Congresso Internacional de Música Coral Infantojuvenil – Um Novo Olhar</h3>
 
-    <p>Data: 15, 16 e 17 de outubro de 2020<br>Canal no YouTube: <a href="https://www.youtube.com/artedetodagente" rel="noopener noreferrer" target="_blank">Arte de Toda Gente</a></p>
+    <p>Data: 15, 16, 17 e 18 de outubro de 2020<br>Canal no YouTube: <a href="https://www.youtube.com/artedetodagente" rel="noopener noreferrer" target="_blank">Arte de Toda Gente</a></p>
     
     <h4>Apresentação</h4>
     
-    <p>O Projeto Um Novo Olhar, realizado pela Universidade Federal do Rio de Janeiro – UFRJ e a Fundação Nacional das Artes - FUNARTE, em parceria com o Fórum Virtual de Regentes Corais Infantojuvenis – Projeto de Extensão Universitária da Universidade Federal do Mato Grosso do Sul (UFMS); o Coral Espaço Feliz – Lar Donato Flores, de Tatuí, São Paulo e o Coro Curumins – Projeto de Extensão da Faculdade de Música do Espírito Santo (FAMES), apresentam o <strong>I CONGRESSO INTERNACIONAL DE MÚSICA CORAL INFANTOJUVENIL – Um Novo Olhar</strong>, o qual será realizado virtualmente, nos dias 15, 16 e 17 de outubro de 2020.
+    <p>O Projeto Um Novo Olhar, realizado pela Universidade Federal do Rio de Janeiro – UFRJ e a Fundação Nacional das Artes - FUNARTE, em parceria com o Fórum Virtual de Regentes Corais Infantojuvenis – Projeto de Extensão Universitária da Universidade Federal do Mato Grosso do Sul (UFMS); o Coral Espaço Feliz – Lar Donato Flores, de Tatuí, São Paulo e o Coro Curumins – Projeto de Extensão da Faculdade de Música do Espírito Santo (FAMES), apresentam o <strong>I CONGRESSO INTERNACIONAL DE MÚSICA CORAL INFANTOJUVENIL – Um Novo Olhar</strong>, o qual será realizado virtualmente, nos dias 15, 16, 17 e 18 de outubro de 2020.
     </p>
 
     <p>O Evento tem, como principais objetivos, incentivar as reflexões sobre os caminhos plurais da atividade coral, voltada para o público infantojuvenil; dar a oportunidade de divulgação de trabalhos e pesquisas que vem sendo desenvolvidas; ampliar o intercâmbio entre as diferentes instituições que desenvolvem trabalhos voltados para esse público, em âmbito nacional e internacional.</p>
@@ -179,10 +179,12 @@ export default {
     <p><strong>10:00</strong> | Conferência</p>
     <ul>
       <li>Maria Guinand (Caracas, Venezuela)</li>
+      <li><strong>Mediação:​</strong> Ana Lúcia Gaborim e Maria José Chevitarese</li>
     </ul>
 
     <p><strong>11:30</strong> | Lançamento de livros</p>
     <ul>
+      <li> Lançamento da coleção 20 Rondas Infantis de Edino Krieger – Projeto Um Novo Olhar Partituras para ​free download</li>
       <li>Criando Arte Através da Excelência do Canto Coral de Henry Leck e Flossie Jordan
         <ul>
           <li><strong>Tradução:</strong> Aderbal Soares, Editora Pró Coral (São Paulo, SP)</li>
@@ -198,43 +200,43 @@ export default {
 
     <p><strong>15:00</strong> | Muda vocal: processos fisiológicos e processos de aprendizagem</p>
     <ul>
-      <li>Cláudia Pacheco (São Paulo, SP)</li>
-      <li>Ana Leonor Pereira (Lisboa, Portugal)</li>
       <li><strong>Mediação:</strong> Luís Gustavo Laureano e Paulo Paraguassú</li>
+      <li>Ana Leonor Pereira (Lisboa, Portugal)</li>
+      <li>Cláudia Pacheco (São Paulo, SP)</li>
     </ul>
     
     <p><strong>20:00</strong> | Elaboração e captação de recursos para projetos corais</p>
     <ul>
+      <li><strong>Mediação:</strong> Ana Lúcia Gaborim e​ L​uís Gustavo Laureano</li>
+      <li>Alice Nascimento (Vitória, ES)</li>
+      <li>Marino Galvão (Curitiba, PR)</li>
       <li>Oleide Lelis (Londrina, PR)</li>
-      <li>Daniel Andrade (Betim, MG)</li>
-      <li>Marino Galvão (Curitiba, PR)</li>
-      <li><strong>Mediação:</strong> Luís Gustavo Laureano e Paulo Paraguassú</li>
     </ul>
 
     <p class="text-box">16/10 (sexta-feira)</p>
 
     <p><strong>10:00</strong> | Preparação vocal em coros infantojunvenis</p>
     <ul>
+    <li><strong>Mediação:</strong> Ana Lúcia Gaborim e Luis Gustavo Laureano</li>
       <li>Juliana Melleiro (Campinas, SP)</li>
-      <li>Lucy Schimiti (Londrina, PR)</li>
       <li>Lúcia Passos (São Leopoldo, RS)</li>
-      <li><strong>Mediação:</strong> Ana Lúcia Gaborim e Maria José Chevitares</li>
+      <li>Lucy Schimiti (Londrina, PR)</li>
     </ul>
  
     <p><strong>15:00</strong> | A escrita para coros infantojuvenis: composições e arranjos</p>
     <ul>
+    <li><strong>Mediação:</strong> Maria José Chevitarese e Paulo Paraguassú</li>
       <li>Sven Kristersson (Malmö, Suécia)</li>
-      <li>Tim Rescala (Rio de Janeiro, RJ)</li>
       <li>Cezar Elbert (São Paulo, SP)</li>
-      <li><strong>Mediação:</strong> Maria José Chevitarese e Paulo Paraguassú</li>
+      <li>Tim Rescala (Rio de Janeiro, RJ)</li>
     </ul>
   
     <p><strong>20:00</strong> | Um novo olhar: incluindo através da música coral</p>
     <ul>
-      <li>Grupo Vozes Especiais (Campo Grande, MS)</li>
-      <li>Cláudia Cunha (Natal, RN)</li>
-      <li>Milka Rosa (São Paulo, SP)</li>
       <li><strong>Mediação:</strong> Ana Lúcia Gaborim e Maria José Chevitarese</li>
+      <li>Bianca (Goiânia, GO)</li>
+      <li>Cláudia Cunha (Natal, RN)</li>
+      <li>Grupo Vozes Especiais (Campo Grande, MS)</li>
     </ul>
  
   
@@ -242,27 +244,31 @@ export default {
 
     <p><strong>10:00</strong> | Critérios para seleção de repertório</p>
     <ul>
+      <li><strong>Mediação:</strong> ​Maria José Chevitarese e Paulo Paraguassu</li>
       <li>Angela Burgoa (Mendoza, Argentina)</li>
-      <li>Regina Kinjo (São Paulo, SP)</li>
       <li>Mara Campos (São Paulo, SP)</li>
-      <li><strong>Mediação:</strong> Ana Lúcia Gaborim e Luis Gustavo Laureano</li>
+      <li>Regina Kinjo (São Paulo, SP)</li>
     </ul>
     
     <p><strong>15:00</strong> | Formação de regentes corais</p>
     <ul>
+      <li><strong>Mediação:</strong> Ana Lúcia Gaborim e Paulo Paraguassú</li>
       <li>Elisa Dekaney (Syracuse, USA)</li>
       <li>Marisa Fonterrada (São Paulo, SP)</li>
       <li>Yara Campos (São Paulo, SP)</li>
-      <li><strong>Mediação:</strong> Ana Lúcia Gaborim e Paulo Paraguassú</li>
     </ul>
     
     <p><strong>20:00</strong> | Atividade coral em Projetos sociais</p>
     <ul>
-      <li>Ricardo Castro (Salvador, BA)</li>
+      <li><strong>Mediação:</strong> Maria José Chevitarese e Luis Gustavo Laureano</li>
       <li>Glória Caputo e Eliane Fonseca (Belém, PA)</li>
+      <li>Ricardo Castro (Salvador, BA)</li>
       <li>Silmara Drezza (Jundiaí, SP)</li>
-      <li><strong>Mediação:</strong>Maria José Chevitarese e Luis Gustavo Laureano</li>
     </ul>
+
+    <p class="text-box">18/10 (domingo)</p>
+
+    <p><strong>12:00</strong> | Mostra Coral</p>
 
     <h4>Comissão Organizadora</h4>
     <ul>
