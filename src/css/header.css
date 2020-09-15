@@ -41,7 +41,7 @@
 
   .menu-dropdown {
     
-    @apply p-5 text-xl relative;
+    @apply p-5 text-base relative;
     /* font-family: "Pixel Square"; */
     background: #8a8a8a;
 
@@ -65,7 +65,7 @@
       width: calc(100% -2.5rem);
       z-index: 1;
       &.is-open {
-        max-height: 500px;
+        max-height: 700px;
       }
     }
 
@@ -85,7 +85,7 @@
         @apply m-0;
         top: 131px;
         left: 0px;
-        width: 300px;
+        width: 400px;
         &.is-open {
           @apply pt-0;
         }
