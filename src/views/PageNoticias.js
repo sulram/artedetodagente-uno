@@ -44,7 +44,7 @@ function PageNoticias() {
                 noticias.map((noticia, i)=>{
                   const image = noticia.image
                   return(
-                    <article className="noticias-feed-item" key={i}>
+                    <article className="noticias-feed-item," key={i}>
                       <Link to={`/noticias/${noticia.id}`} className="box">
                         <img src={`https://admin.umnovoolhar.art.br${image.url}`} alt={noticia.title} />
                         <p><strong>{noticia.title}</strong></p>
