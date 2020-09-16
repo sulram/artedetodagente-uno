@@ -1,24 +1,29 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {useParams} from "react-router-dom"
-import parse from 'html-react-parser'
-
-import store from '../store'
+import {compiler} from 'markdown-to-jsx'
 
 import Header from './Header'
 import Footer from './Footer'
+import api from '../services/api'
 
 function Page() {
 
   const {id} = useParams()
-  const {pages} = store
+  const [page, setPage] = useState({page_title: `...`, page_text: `...`})
 
-  const content = pages[id] || pages[404]
+  useEffect(()=>{
+    async function fetchData(){
+      const response = await api.get(`/page-builders?page_id=${id}`)
+      setPage(response.data[0])
+    }
+    fetchData()
+  },[id])
 
   return (
     <>
-      <Header title={content.title} url={`/${id}`} />
+      <Header title={page.page_title} url={`/${id}`} />
       <main className="main-content page-content">
-        {parse(content.fulltext)}
+        {compiler(page.page_text)}
       </main>
       <Footer />
     </>
