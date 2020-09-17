@@ -126,12 +126,12 @@
   .eventos-feed-item {
 
     .box {
-      @apply m-2 p-4 bg-white block no-underline;
+      @apply m-2 p-4 bg-black text-white block no-underline;
       img {
         @apply w-full mb-4 h-64;
       }
       &:hover, &:focus {
-        @apply bg-black text-white;
+        @apply bg-white text-black;
       }
       p {
         @apply m-0 leading-tight;
@@ -160,6 +160,86 @@
 
   }
 
+}
+
+.galeria-feed{
+
+  @apply -m-2;
+  @screen md {
+    @apply flex flex-wrap;
+  }
+  .galeria-feed-item {
+
+    .box {
+      @apply m-2 p-1 bg-white block no-underline;
+      img {
+        @apply w-full mb-4 h-64;
+      }
+      p {
+        @apply flex justify-center m-0 leading-tight;
+      }
+    }
+
+    @media (min-width: 300px) {
+      .box img{
+        @apply h-32;
+      }
+    }
+
+    @screen md {
+      @apply w-1/2;
+      .box img{
+        @apply h-48;
+      }
+    }
+
+    @screen lg {
+      @apply w-1/3;
+      .box img{
+        @apply h-64;
+      }
+    }
+
+  }
+
+}
+
+.evento-page{
+
+  .videos-feed{
+
+    .videos-feed-v{
+      
+      .box{
+        @apply m-4 p-1 pb-6;
+        p{
+          @apply text-center;
+        }
+      }   
+    }
+  }
+
+  .link-box{
+    @apply flex justify-center w-40 m-auto mt-2 w-1/3;
+  }
+
+  .button-container{
+    @apply flex justify-center;
+    
+    .link-box{
+      @apply w-1/2 mx-12;
+    }
+  }
+}
+
+.evento-documentos{
+  .documentos-feed{
+    @apply flex flex-col;
+
+    .link-box{
+      @apply m-1;
+    }
+  }
 }
 
 .videos-feed {

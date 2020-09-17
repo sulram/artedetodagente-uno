@@ -9,6 +9,7 @@ import HomeCursos from './HomeCursos'
 import HomeVideos from './HomeVideos'
 import HomeProjetos from './HomeProjetos'
 import HomeNews from './HomeNews'
+import PageEventos from './PageEventos';
 
 import api from '../services/api'
 
