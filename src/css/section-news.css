@@ -1,13 +1,15 @@
 @import "_variables";
 
 section.slider-noticias {
-  background: var(--yellow);
-  min-height: 100vh;
-  .noticia {
+  background: #000;
+  .loading {
+    background: var(--yellow);
+    @apply p-10 pb-64;
+  }
+  .swiper-slide {
     background-size: cover !important;
   }
   .wrapper {
-    @apply p-4;
     @screen md {
       @apply p-10 pt-64 max-w-4xl mx-auto;
     }
