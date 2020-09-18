@@ -117,49 +117,62 @@
   }
 }
 
-.eventos-feed{
+.eventos{ 
   
-  @apply -m-2;
-  @screen md {
-    @apply flex flex-wrap;
+  background: var(--yellow);
+  @apply pb-32;
+  .text-box{
+    @apply -mt-5 block text-2xl mb-10 p-5 leading-none normal-case text-white;
   }
-  .eventos-feed-item {
-
-    .box {
-      @apply m-2 p-4 bg-black text-white block no-underline;
-      img {
-        @apply w-full mb-4 h-64;
-      }
-      &:hover, &:focus {
-        @apply bg-white text-black;
-      }
-      p {
-        @apply m-0 leading-tight;
-      }
+  @screen md{
+    .text-box{
+      @apply text-4xl;
     }
-
-    @media (min-width: 300px) {
-      .box img{
-        @apply h-32;
-      }
-    }
-
+  }
+  .eventos-feed{
+    
+    @apply -m-2 px-16;
     @screen md {
-      @apply w-1/2;
-      .box img{
-        @apply h-48;
-      }
+      @apply flex flex-wrap;
     }
+    .eventos-feed-item {
 
-    @screen lg {
-      @apply w-1/3;
-      .box img{
-        @apply h-64;
+      .box {
+        @apply m-2 p-4 bg-black text-white block no-underline;
+        img {
+          @apply w-full mb-4 h-64;
+        }
+        &:hover, &:focus {
+          @apply bg-white text-black;
+        }
+        p {
+          @apply m-0 leading-tight;
+        }
       }
+
+      @media (min-width: 300px) {
+        .box img{
+          @apply h-32;
+        }
+      }
+
+      @screen md {
+        @apply w-1/2;
+        .box img{
+          @apply h-48;
+        }
+      }
+
+      @screen lg {
+        @apply w-1/3;
+        .box img{
+          @apply h-64;
+        }
+      }
+
     }
 
   }
-
 }
 
 .galeria-feed{
@@ -205,6 +218,35 @@
 }
 
 .evento-page{
+
+  .banner-text-container{
+
+    @apply justify-center;
+
+    .banner-text{
+      height: 14rem;
+      @apply w-full flex flex-row p-1 bg-black pb-0 overflow-hidden;
+      img{
+        @apply w-1/3 h-auto;
+      }
+      p{
+        @apply w-2/3 h-full p-2 text-justify flex-wrap pl-4 mb-0 bg-white break-words;
+      }
+      @screen md{
+        @apply flex-wrap h-56;
+      }
+    }
+    .text-button{
+      @apply justify-center w-full m-0 py-2 bg-black text-white no-underline uppercase leading-tight block ;
+      &:hover {
+        @apply bg-white text-black;
+      }
+      @screen md {
+        @apply inline-block leading-none;
+      }
+      
+    }
+  }
 
   .videos-feed{
 

@@ -37,6 +37,7 @@ function Home() {
           <HomeProjetos key={i} title={projeto.name} id={projeto.id} label={projeto.button_label} obras={projeto.obras}/>
         )}
         {/*<HomeProjetos id="repertorio-coral" label="Acessar todo repertório coral" />*/}
+        <PageEventos/>
       </main>
       <Footer />
     </>

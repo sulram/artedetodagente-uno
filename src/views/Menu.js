@@ -25,7 +25,6 @@ function Menu(props) {
       {/* <li><Link to="/galeria">Galeria</Link></li> */}
       <li><Link onBlur={props.onblur} onFocus={props.onfocus} to="/parceiros">Parceiros</Link></li>
       <li><Link onBlur={props.onblur} onFocus={props.onfocus} to="/imprensa">Imprensa</Link></li>
-      <li><Link onBlur={props.onblur} onFocus={props.onfocus} to="/eventos">Eventos</Link></li>
     </>
   );
 }

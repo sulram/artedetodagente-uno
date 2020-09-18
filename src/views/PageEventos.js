@@ -5,6 +5,9 @@ import YouThumb from './YouThumb';
 import YouEmbed from './YouEmbed';
 import api from '../services/api';
 import {Route, Switch, useParams, useRouteMatch, Link} from 'react-router-dom';
+import Button from 'react-bootstrap/Button'
+import { none } from 'ramda';
+
 
 function PageEventos() {
 
@@ -21,11 +24,10 @@ function PageEventos() {
     const {path} = useRouteMatch();
     
     return( 
-        <>
-            <Header title="Eventos" url={"/eventos"} />
-            <main className="main-content page-content">
-                <Switch>
-                    <Route exact path={path}>
+        <>          
+            <Switch>
+                <Route exact path={path}>
+                    <section className="eventos">
                         <h3 className="text-box">Eventos</h3>
                         <p>&nbsp;</p>
                         <section className="eventos-feed">
@@ -39,14 +41,12 @@ function PageEventos() {
                                 )
                             })}
                         </section>
-
-                    </Route>
-                    <Route path={`${path}/:id`}>
-                        <Evento/>
-                    </Route>
-                </Switch>
-            </main>
-            <Footer />
+                    </section>
+                </Route>
+                <Route path={`${path}/:id`}>
+                    <Evento/>
+                </Route>
+            </Switch>           
         </>
     );
 }
@@ -55,58 +55,87 @@ function Evento() {
     const {id} = useParams();
     const [evento, setEvento] = useState([]);
     const [videos, setVideos] = useState([]);
+    const [banner, setBanner] = useState([]);
+    const [isToggleOn, setIsToggleOn] = useState(false);
 
     useEffect(() => {
         async function fetchData(){
             const response = await api.get(`/eventos/${id}`);
             setEvento(response.data);
-            setVideos(response.data.video_url.slice(0, 6));
+            setVideos(response.data.videos.slice(0, 6));
+            setBanner(response.data.banner);
         }
         fetchData();
     }, [id]);
+
+    function hideSection(){
+        setIsToggleOn(!isToggleOn);
+        const section = document.getElementsByClassName('banner-text');
+        const button = document.getElementsByClassName('text-button');
+
+
+        if(isToggleOn){
+            section[0].style.height = 'auto';
+            button[0].innerHTML = 'LEIA MENOS';
+        }else{
+            section[0].style.height = '14rem';
+            button[0].innerHTML = 'LEIA MAIS';
+        }
+    }
 
     const {path} = useRouteMatch();
 
     return (
         <>
-            <Switch>
-                <Route exact path={path}>
-                    <main className="evento-page">
-                        <h3 className="title-2 mobile-hidden">{`${evento.title}`.toUpperCase()}</h3>
-                        <h3 className="text-box divider">TITULO DA AREA DE VIDEOS</h3>
-                        <section className="videos-feed">
-                            {videos.map( (video, key) => {
-                                return(
-                                    <article className="videos-feed-v" key={key}>
-                                        <Link to={`/eventos/${evento.id}/${video.id}`} className="box" >
-                                            <YouThumb url={video.video_url}/>
-                                            <p>{video.video_title}</p>
-                                        </Link>
-                                    </article>
-                                )
-                            })}
-                        </section>
-                        <Link to={`/eventos/${evento.id}/videos`} className="link-box">CARREGAR MAIS</Link>
-                        <h3 className="text-box divider">FOTOS E DOCUMENTOS</h3>
-                        <section className="button-container">
-                            <Link to={`/eventos/${evento.id}/galeria`} className="link-box">ACESSAR A GALERIA DE FOTOS DO EVENTO</Link>
-                            <Link to={`/eventos/${evento.id}/documentos`} className="link-box">ACESSA OS ARQUIVOS E DOCUMENTOS DO EVENTO</Link>
-                        </section>
-                    </main>
-                </Route>
-                <Route path={`${path}/galeria`}>
-                    <GaleriaEvento evento={evento}/>
-                </Route>
-                <Route path={`${path}/documentos`}>
-                    <DocumentosEvento/>
-                </Route>
-                <Route path={`${path}/videos`}>
-                    <Videos/>
-                </Route>
-                <Route path={`${path}/:id`}>
-                    <Video parent={id}/>
-                </Route>
-            </Switch>
+            <Header title={evento.title} url={`/eventos/${evento.id}`} />
+            <main className="main-content page-content">
+                <Switch>
+                    <Route exact path={path}>
+                        <main className="evento-page">
+                            <h3 className="title-2 mobile-hidden">{`${evento.title}`.toUpperCase()}</h3>
+                            <div className="banner-text-container">
+                                <section className="banner-text">
+                                    <img className="banner" src={`https://admin.umnovoolhar.art.br${banner.url}`}/>
+                                    <p>{evento.description}</p>
+                                </section>
+                                <Button onClick={hideSection} className="text-button" style={{border:none}}>LEIA MAIS</Button>
+                            </div>
+                            <h3 className="text-box divider">{evento.titulo_area_videos}</h3>
+                            <section className="videos-feed">
+                                {videos.map( (video, key) => {
+                                    return(
+                                        <article className="videos-feed-v" key={key}>
+                                            <Link to={`/eventos/${evento.id}/${key}`} className="box" >
+                                                <YouThumb url={video.video_url}/>
+                                                <p>{video.video_title}</p>
+                                            </Link>
+                                        </article>
+                                    )
+                                })}
+                            </section>
+                            <Link to={`/eventos/${evento.id}/videos`} className="link-box">CARREGAR MAIS</Link>
+                            <h3 className="text-box divider">FOTOS E DOCUMENTOS</h3>
+                            <section className="button-container">
+                                <Link to={`/eventos/${evento.id}/galeria`} className="link-box">ACESSAR A GALERIA DE FOTOS DO EVENTO</Link>
+                                <Link to={`/eventos/${evento.id}/documentos`} className="link-box">ACESSA OS ARQUIVOS E DOCUMENTOS DO EVENTO</Link>
+                            </section>
+                        </main>
+                    </Route>
+                    <Route path={`${path}/galeria`}>
+                        <GaleriaEvento evento={evento}/>
+                    </Route>
+                    <Route path={`${path}/documentos`}>
+                        <DocumentosEvento/>
+                    </Route>
+                    <Route path={`${path}/videos`}>
+                        <Videos/>
+                    </Route>
+                    <Route path={`${path}/:id`}>
+                        <Video parent={id}/>
+                    </Route>
+                </Switch>
+            </main>
+            <Footer />
         </>
     );
 }
@@ -122,7 +151,7 @@ function Videos(){
         async function fetchData() {
             const response = await api.get(`/eventos/${id}`);
             setEvento(response.data);
-            setVideos(response.data.video_url);
+            setVideos(response.data.videos);
         }
         fetchData();
     }, [id]);
@@ -140,7 +169,7 @@ function Videos(){
                     {videos.map( (video, key) => {
                         return(
                             <article className="videos-feed-v" key={key}>
-                                <Link to={`/eventos/${evento.id}/${video.id}`} className="box" >
+                                <Link to={`/eventos/${evento.id}/${key}`} className="box" >
                                     <YouThumb url={video.video_url}/>
                                     <p>{video.video_title}</p>
                                 </Link>
@@ -161,15 +190,15 @@ function Video(props) {
     const [evento, setEvento] = useState([]);
 
     useEffect(() => {
-        async function fetchData(){
+        async function fetchDataEvento(){
             const response = await api.get(`/eventos/${parent}`);
             setEvento(response.data);
-            setVideo(response.data.video_url[id-1]);
+            setVideo(response.data.videos[id]);
         }
-        fetchData();
+        fetchDataEvento();
     }, [id]);
 
-    console.log(props);
+    console.log(evento);
 
     return(
         <>
@@ -213,11 +242,10 @@ function GaleriaEvento(props){
                 </h3>
                 <section className="galeria-feed">
                     {photos.map( photo => {
-                        console.log(photo)
                         return(
                             <article className="galeria-feed-item">
                                 <div className="box">
-                                    <img src={`http://localhost:1339${photo.url}`}></img>
+                                    <img src={`https://admin.umnovoolhar.art.br${photo.url}`}></img>
                                     <p>{photo.name}</p>
                                 </div>
                             </article>
@@ -244,8 +272,6 @@ function DocumentosEvento(props){
         }
         fetchData();
     }, [id]);
-
-    console.log(documentos);
 
     return(
         <>
