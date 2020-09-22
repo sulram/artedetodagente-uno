@@ -46,13 +46,13 @@ function HomeNews() {
         >
           {latestPosts.map((noticia,i)=>{
             const date = fdate(noticia.date)
-            const image = noticia.image?.formats.medium ?? {static: `/img/static/BG-Noticias-Padrao.png`}
+            const image = noticia.image?.formats.medium ?? {default: `/img/static/BG-Noticias-Padrao.png`}
             return(
-              <SwiperSlide key={`${noticia.id}-slide-${i}`} style={{background: bgcover(image.url ? `https://admin.umnovoolhar.art.br${image.url}` : image.static) }}>
+              <SwiperSlide key={`${noticia.id}-slide-${i}`} style={{background: bgcover(image.url ? `https://admin.umnovoolhar.art.br${image.url}` : image.default) }}>
                 <article className="noticia">
                   <div className="wrapper">
                     {size.width <= 768 && (
-                      <img src={image.url ? `https://admin.umnovoolhar.art.br${image.url}` : image.static} alt={noticia.title} />
+                      <img src={image.url ? `https://admin.umnovoolhar.art.br${image.url}` : image.default} alt={noticia.title} />
                     )}
                     <Link className="content" to={`/noticias/${noticia.id}`}>
                       <h3>{noticia.title}</h3>

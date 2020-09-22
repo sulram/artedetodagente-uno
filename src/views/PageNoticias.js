@@ -42,11 +42,11 @@ function PageNoticias() {
             <section className="noticias-feed">
               {
                 noticias.map((noticia, i)=>{
-                  const image = noticia.image
+                  const image = noticia.image || {default: `/img/static/BG-Noticias-Padrao.png`}
                   return(
                     <article className="noticias-feed-item" key={i}>
                       <Link to={`/noticias/${noticia.id}`} className="box">
-                        <img src={`https://admin.umnovoolhar.art.br${image.url}`} alt={noticia.title} />
+                        <img src={image.url ? `https://admin.umnovoolhar.art.br${image.url}` : image.default} alt={noticia.title} />
                         <p><strong>{noticia.title}</strong></p>
                         <p>{noticia.call}</p>
                       </Link>
@@ -92,7 +92,7 @@ function Single(props) {
         <Link to={`/noticias/${id}`} className="link-box">{noticia.title}</Link>
       </h3>
       <p>&nbsp;</p>
-      {`https://admin.umnovoolhar.art.br${image.url}` &&
+      {image &&
         <img
           alt={noticia.title}
           src={`https://admin.umnovoolhar.art.br${image.url}`}
