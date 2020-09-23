@@ -68,13 +68,13 @@ function Evento() {
         fetchData();
     }, [id]);
 
-    function hideSection(){
+    const hideSection = () => {
         setIsToggleOn(!isToggleOn);
         const section = document.getElementsByClassName('banner-text');
         const button = document.getElementsByClassName('text-button');
 
 
-        if(isToggleOn){
+        if(!isToggleOn){
             section[0].style.height = 'auto';
             button[0].innerHTML = 'LEIA MENOS';
         }else{

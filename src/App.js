@@ -29,6 +29,9 @@ function App() {
           <Route path="/noticias">
             <PageNoticias />
           </Route>
+          <Route path="/eventos">
+            <PageEventos />
+          </Route>
           <Route path="/imprensa">
             <PageImprensa />
           </Route>
