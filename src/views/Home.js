@@ -11,8 +11,10 @@ import HomeVideos from './HomeVideos'
 import HomeProjetos from './HomeProjetos'
 import HomeNews from './HomeNews'
 import HomeVideoEspecial from './HomeVideoEspecial'
+import PageEventos from './PageEventos'
 
 import api from '../services/api'
+
 
 function Home() {
   const [projetos, setProj] = useState([])
@@ -40,6 +42,7 @@ function Home() {
           <HomeProjetos key={i} title={projeto.name} id={projeto.id} label={projeto.button_label} obras={projeto.obras}/>
         )}
         {/*<HomeProjetos id="repertorio-coral" label="Acessar todo repertório coral" />*/}
+        <PageEventos />
       </main>
       <Footer />
     </>
