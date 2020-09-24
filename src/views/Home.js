@@ -10,6 +10,7 @@ import HomeCursos from './HomeCursos'
 import HomeVideos from './HomeVideos'
 import HomeProjetos from './HomeProjetos'
 import HomeNews from './HomeNews'
+import HomeVideoEspecial from './HomeVideoEspecial'
 
 import api from '../services/api'
 
@@ -31,6 +32,7 @@ function Home() {
         {/* <HomeLanding /> */}
         <HomeNews />
         <HomeCongresso />
+        <HomeVideoEspecial />
         <HomeCursos />
         <HomeVideos id="apresentacoes" label="Acessar todas as apresentações" />
         <HomeVideos id="palestras" label="Acessar todas as palestras" />
