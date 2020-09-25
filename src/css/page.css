@@ -238,19 +238,19 @@
 
     @apply justify-center;
 
-    .banner-text{
-      height: 14rem;
-      @apply w-full flex flex-row p-1 bg-black pb-0 overflow-hidden;
-      img{
-        @apply w-1/3 h-auto;
+    .banner-content {
+      @apply flex flex-col overflow-hidden;
+      @screen md {
+        @apply flex-row;
       }
-      p{
-        @apply w-2/3 h-full p-2 text-justify flex-wrap pl-4 mb-0 bg-white break-words;
+      .banner-img{
+        @apply p-2 bg-black;
       }
-      @screen md{
-        @apply flex-wrap h-56;
+      .banner-text{
+        @apply p-6 bg-white;
       }
     }
+    
     .text-button{
       @apply justify-center w-full m-0 py-2 bg-black text-white no-underline uppercase leading-tight block ;
       &:hover {

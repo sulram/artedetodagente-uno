@@ -68,18 +68,7 @@ function Evento() {
     }, [id]);
 
     const hideSection = () => {
-        setIsToggleOn(!isToggleOn);
-        const section = document.getElementsByClassName('banner-text');
-        const button = document.getElementsByClassName('text-button');
-
-
-        if(!isToggleOn){
-            section[0].style.height = 'auto';
-            button[0].innerHTML = 'LEIA MENOS';
-        }else{
-            section[0].style.height = '14rem';
-            button[0].innerHTML = 'LEIA MAIS';
-        }
+        setIsToggleOn(!isToggleOn)
     }
 
     const {path} = useRouteMatch();
@@ -93,13 +82,19 @@ function Evento() {
                         <main className="evento-page">
                             <h3 className="title-2 mobile-hidden">{`${evento.title}`.toUpperCase()}</h3>
                             <div className="banner-text-container">
-                                <section className="banner-text">
-                                    <img className="banner" src={`https://admin.umnovoolhar.art.br${banner.url}`}/>
+                                <section className="banner-content">
+                                  <div className="banner-img">
+                                    <img alt={evento.title} className="banner" src={`https://admin.umnovoolhar.art.br${banner.url}`}/>
+                                  </div>
+                                  <div className="banner-text" style={{height: isToggleOn ? `auto` : `14rem`}}>
                                     <p>{evento.description}</p>
+                                  </div>
                                 </section>
-                                <button onClick={hideSection} className="text-button" style={{border:none}}>LEIA MAIS</button>
+                                <button onClick={hideSection} className="text-button" style={{border:none}}>
+                                  {isToggleOn ? `Leia menos` : `Leia mais`}
+                                </button>
                             </div>
-                            <h3 className="text-box divider">{evento.titulo_area_videos}</h3>
+                            <h3 className="text-box divider">Vídeos</h3>
                             <section className="videos-feed">
                                 {videos.map( (video, key) => {
                                     return(
