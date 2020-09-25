@@ -5,7 +5,6 @@ import YouThumb from './YouThumb';
 import YouEmbed from './YouEmbed';
 import api from '../services/api';
 import {Route, Switch, useParams, useRouteMatch, Link} from 'react-router-dom';
-import Button from 'react-bootstrap/Button'
 import { none } from 'ramda';
 
 
@@ -98,7 +97,7 @@ function Evento() {
                                     <img className="banner" src={`https://admin.umnovoolhar.art.br${banner.url}`}/>
                                     <p>{evento.description}</p>
                                 </section>
-                                <Button onClick={hideSection} className="text-button" style={{border:none}}>LEIA MAIS</Button>
+                                <button onClick={hideSection} className="text-button" style={{border:none}}>LEIA MAIS</button>
                             </div>
                             <h3 className="text-box divider">{evento.titulo_area_videos}</h3>
                             <section className="videos-feed">
