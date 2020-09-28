@@ -11,7 +11,7 @@ import HomeVideos from './HomeVideos'
 import HomeProjetos from './HomeProjetos'
 import HomeNews from './HomeNews'
 import HomeVideoEspecial from './HomeVideoEspecial'
-import PageEventos from './PageEventos'
+import HomeEventos from './HomeEventos'
 
 import api from '../services/api'
 
@@ -42,7 +42,7 @@ function Home() {
           <HomeProjetos key={i} title={projeto.name} id={projeto.id} label={projeto.button_label} obras={projeto.obras}/>
         )}
         {/*<HomeProjetos id="repertorio-coral" label="Acessar todo repertório coral" />*/}
-        <PageEventos />
+        <HomeEventos />
       </main>
       <Footer />
     </>
