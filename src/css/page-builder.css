@@ -1,0 +1,20 @@
+.dynamic-block {
+  @apply my-8;
+}
+
+.dynamic-block-slider {
+  @apply bg-white p-4 flex flex-wrap justify-center;
+
+  .dynamic-block-slider-item {
+    @apply m-4;
+    a {
+      @apply block;
+      img {
+        max-height: 128px;
+        max-width: 256px;
+        width: auto;
+      }
+    }
+  }
+
+}

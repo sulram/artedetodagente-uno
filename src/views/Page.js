@@ -4,17 +4,19 @@ import {compiler} from 'markdown-to-jsx'
 
 import Header from './Header'
 import Footer from './Footer'
+import DynamicPage from './DynamicPage'
 import api from '../services/api'
 
 function Page() {
 
   const {id} = useParams()
-  const [page, setPage] = useState({page_title: `...`, page_text: `...`})
+  const [page, setPage] = useState({page_title: `...`, page_text: `...`, Content: []})
 
   useEffect(()=>{
     async function fetchData(){
       const response = await api.get(`/page-builders?page_id=${id}`)
       setPage(response.data[0])
+      console.log(response.data[0])
     }
     fetchData()
   },[id])
@@ -24,6 +26,9 @@ function Page() {
       <Header title={page.page_title} url={`/${id}`} />
       <main className="main-content page-content">
         {compiler(page.page_text)}
+        <div className="page-zones">
+        {page.Content.map( component => <DynamicPage data={component}/>)}
+        </div>
       </main>
       <Footer />
     </>
