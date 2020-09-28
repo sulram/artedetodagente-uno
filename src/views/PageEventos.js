@@ -59,69 +59,68 @@ function Evento() {
     const [videos, setVideos] = useState([]);
     const [banner, setBanner] = useState([]);
     const [textIsToggleOn, setTextIsToggleOn] = useState(false);
-    const [videoIsToggleOn, setVideoIsToggleOn] = useState(false);
+    // const [videoIsToggleOn, setVideoIsToggleOn] = useState(false);
 
     useEffect(() => {
         async function fetchData(){
             const response = await api.get(`/eventos/${id}`);
             setEvento(response.data);
-            videoIsToggleOn ? setVideos(response.data.videos) : setVideos(response.data.videos.slice(0, 6));
+            setVideos(response.data.videos)
+            // videoIsToggleOn ? setVideos(response.data.videos) : setVideos(response.data.videos.slice(0, 6));
             setBanner(response.data.banner);
         }
         fetchData();
-    }, [id, videoIsToggleOn]);
+    }, [id]);
 
 
     const hideTextSection = () => {
         setTextIsToggleOn(!textIsToggleOn)
     }
-    const hideVideoSection = () => {
-        setVideoIsToggleOn(!videoIsToggleOn)
-    }
+    // const hideVideoSection = () => {
+    //     setVideoIsToggleOn(!videoIsToggleOn)
+    // }
 
     const {path} = useRouteMatch();
 
     return (
         <>
-            <main className="main-content page-content">
-                <Switch>
-                    <Route exact path={path}>
-                        <main className="evento-page">
-                            <h3 className="title-2 mobile-hidden">{`${evento.title}`.toUpperCase()}</h3>
-                            <div className="banner-text-container">
-                                <section className="banner-content">
-                                  <div className="banner-img">
-                                    <img alt={evento.title} className="banner" src={`https://admin.umnovoolhar.art.br${banner.url}`}/>
-                                  </div>
-                                  <div className="banner-text" style={{height: textIsToggleOn ? `auto` : `14rem`}}>
-                                    <p>{evento.description}</p>
-                                  </div>
-                                </section>
-                                <button onClick={hideTextSection} className="text-button" style={{border:'none'}}>
-                                  {textIsToggleOn ? `Leia menos` : `Leia mais`}
-                                </button>
-                            </div>
-                            <h3 className="text-box divider">Vídeos</h3>
-                            <section className="videos-feed">
-                                {videos.map( (video, key) => {
-                                    return(
-                                        <article className="videos-feed-v" key={key}>
-                                            <Link to={`/eventos/${evento.id}/${key}`} className="box" >
-                                                <YouThumb url={video.video_url}/>
-                                                <p>{video.video_title}</p>
-                                            </Link>
-                                        </article>
-                                    )
-                                })}
+            <Switch>
+                <Route exact path={path}>
+                    <main className="evento-page">
+                        <h3 className="title-2 mobile-hidden">{`${evento.title}`.toUpperCase()}</h3>
+                        <div className="banner-text-container">
+                            <section className="banner-content">
+                                <div className="banner-img">
+                                <img alt={evento.title} className="banner" src={`https://admin.umnovoolhar.art.br${banner.url}`}/>
+                                </div>
+                                <div className="banner-text" style={{height: textIsToggleOn ? `auto` : `14rem`}}>
+                                <p>{evento.description}</p>
+                                </div>
                             </section>
-                            <button onClick={hideVideoSection} className="link-box">{videoIsToggleOn ? 'CARREGAR MENOS' : 'CARREGAR MAIS'}</button>
-                        </main>
-                    </Route>
-                    <Route path={`${path}/:id`}>
-                        <Video parent={id}/>
-                    </Route>
-                </Switch>
-            </main>
+                            <button onClick={hideTextSection} className="text-button" style={{border:'none'}}>
+                                {textIsToggleOn ? `Leia menos` : `Leia mais`}
+                            </button>
+                        </div>
+                        <h3 className="text-box divider">Vídeos</h3>
+                        <section className="videos-feed">
+                            {videos.map( (video, key) => {
+                                return(
+                                    <article className="videos-feed-v" key={key}>
+                                        <Link to={`/eventos/${evento.id}/${key}`} className="box" >
+                                            <YouThumb url={video.video_url}/>
+                                            <p>{video.video_title}</p>
+                                        </Link>
+                                    </article>
+                                )
+                            })}
+                        </section>
+                        {/* <button onClick={hideVideoSection} className="link-box">{videoIsToggleOn ? 'CARREGAR MENOS' : 'CARREGAR MAIS'}</button> */}
+                    </main>
+                </Route>
+                <Route path={`${path}/:id`}>
+                    <Video parent={id}/>
+                </Route>
+            </Switch>
         </>
     );
 }
@@ -146,16 +145,14 @@ function Video(props) {
 
     return(
         <>
-            <main className="evento-documentos">
-                <h3 className="title-2 mobile-hidden">
-                     <Link to={`/eventos/${evento.id}`} className="title-box" style={{ textDecoration: 'none' }}> {`${evento.title}`.toUpperCase()} </Link>
-                     >>
-                     <Link to={`/eventos/${evento.id}/videos`} className="title-box" style={{ textDecoration: 'none' }}> VIDEOS </Link>
-                     >> {`${video.video_title}`.toUpperCase()}
-                </h3>
-                <YouEmbed url={video.video_url} />
-                <h3>{video.video_title}</h3>
-            </main>
+            <h3 className="title-2 mobile-hidden">
+                    <Link to={`/eventos/${evento.id}`} className="title-box" style={{ textDecoration: 'none' }}> {`${evento.title}`.toUpperCase()} </Link>
+                    >>
+                    <Link to={`/eventos/${evento.id}/videos`} className="title-box" style={{ textDecoration: 'none' }}> VIDEOS </Link>
+                    >> {`${video.video_title}`.toUpperCase()}
+            </h3>
+            <YouEmbed url={video.video_url} />
+            <h3>{video.video_title}</h3>
         </>
     )
 

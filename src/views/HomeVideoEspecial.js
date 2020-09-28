@@ -1,5 +1,4 @@
 import React from 'react'
-import YouEmbed from './YouEmbed'
 
 function HomeVideoEspecial(){
 
