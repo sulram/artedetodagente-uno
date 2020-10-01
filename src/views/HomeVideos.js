@@ -11,14 +11,15 @@ import api from '../services/api'
 
 function HomeVideos(props) {
 
-  const [lessons, setVideos] = useState([])
+  const [videos, setVideos] = useState([])
 
   const {id} = props
 
 
   useEffect(()=>{
     async function fetchData(){
-      const response = await api.get(`/${id}`)
+      const today = new Date().toISOString()
+      const response = await api.get(`/${id}?_sort=date:DESC&_limit=3&_where[date_lte]=${today}`)
       setVideos(response.data.reverse())
     }
     fetchData()
@@ -29,7 +30,7 @@ function HomeVideos(props) {
 
   const size = useWindowSize()
 
-  const videos = R.slice(0, (size.width > 1024 ? 6 : 2), lessons)
+  const filteredVideos = R.slice(0, (size.width > 1024 ? 6 : 2), videos)
 
   return (
     <section id={id} className="base cursos" style={{backgroundColor: props.color || `#fdf204`}}>
@@ -39,7 +40,7 @@ function HomeVideos(props) {
         </div>
         <section className="videos-feed">
           {
-            videos.map((video)=>{
+            filteredVideos.map((video)=>{
               return(
                 <article className="videos-feed-v" key={video.id}>
                   <Link to={`/videos/${id}/${video.id}`} className="box">

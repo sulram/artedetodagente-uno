@@ -26,7 +26,8 @@ function PageVideos() {
 
   useEffect(()=>{
     async function fetchData(){
-      const response = await api.get(`/${id}`)
+      const today = new Date().toISOString()
+      const response = await api.get(`/${id}?_sort=date:DESC&_where[date_lte]=${today}`)
       setVideo(response.data)
     }
     fetchData()
