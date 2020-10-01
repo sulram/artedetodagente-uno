@@ -99,9 +99,11 @@ function PageVideos(props) {
 
   useEffect(()=>{
     async function fetchData(){
+      const today = new Date().toISOString()
       const response = await api.get(`/obras/${catid}`)
+      const responseAulas = await api.get(`/aulas?obra=${catid}&_sort=date:ASC&_where[date_lte]=${today}`)
       setObra(response.data)
-      setAulas(response.data.aulas)
+      setAulas(responseAulas.data)
       setProfessor(response.data.professor)
     }
     fetchData()
