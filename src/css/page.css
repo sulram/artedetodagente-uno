@@ -258,6 +258,133 @@
   }
 }
 
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+   
+/* Style your items */
+@media (max-width: 800px) {
+  .my-masonry-grid {
+    margin-left: -15px; /* gutter size offset */
+  }
+  .my-masonry-grid_column {
+    padding-left: 15px; /* gutter size offset */
+  }
+}
+
+.card-photo {
+  @apply flex flex-col;
+  background-color: #ddd;
+  margin-top: 30px;
+
+  .body{
+    @apply flex;
+    flex: 1;
+
+    .figure {
+      @apply flex flex-col m-0;
+      flex: 1;
+
+      img {
+        @apply w-full;
+        background-color: #555;
+        flex: 1;
+      }
+      .fig-container {
+        @apply flex items-center justify-between;
+        height: 30px;
+        padding-left: 10px;
+      
+        .figcaption {
+          text-align: left;
+          font-size: .8em;
+        }
+        
+        button {
+          @apply flex flex-col outline-none items-center justify-end; 
+          height: 30px;
+          width: 30px;
+          background-color: #bbb;
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+.card-video {
+  @apply flex flex-col;
+  background-color: #ddd;
+  margin-top: 30px;
+
+  .body{
+    @apply flex flex-col;
+    flex: 1;
+
+    div:last-of-type {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    p {
+      text-align: left;
+      font-size: .8em;
+      margin: 0;
+      padding-left: 10px;
+    }
+  }
+}
+
+.card-testimony {
+  @apply flex flex-col;
+  padding: 15px;
+  background-color: #ebebeb;
+  margin-top: 30px;
+
+  .header {
+    @apply flex items-center;
+    height: 50px;
+
+    .figure {
+      @apply m-0;
+
+      img { 
+        @apply rounded-full;
+        height: 43px;
+        width: 43px;
+        background-color: #555;
+      }
+    }
+    h1 {
+      @apply m-0 text-left overflow-hidden;
+      flex: 1;
+      margin-left: 10px;
+      font-size: 1em;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .body {
+    margin-top: 15px;
+    p{
+      @apply text-left;
+      font-size: 1.2em;
+      line-height: normal;
+    }
+  }
+}
+
 .videos-feed {
   @apply -m-2;
   @screen md {

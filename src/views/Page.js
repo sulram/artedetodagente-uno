@@ -16,7 +16,6 @@ function Page() {
     async function fetchData(){
       const response = await api.get(`/page-builders?page_id=${id}`)
       setPage(response.data[0])
-      console.log(response.data[0])
     }
     fetchData()
   },[id])
