@@ -47,7 +47,7 @@ function PageNoticias() {
                   return(
                     <article className="noticias-feed-item" key={i}>
                       <Link to={`/noticias/${noticia.slug}`} className="box">
-                        <img src={image.url ? `http://localhost:1339${image.url}` : image.default} alt={noticia.title} />
+                        <img src={image.url ? `https://admin.umnovoolhar.art.br${image.url}` : image.default} alt={noticia.title} />
                         <p><strong>{noticia.title}</strong></p>
                         <p>{noticia.call}</p>
                       </Link>
@@ -96,7 +96,7 @@ function Single(props) {
       {image &&
         <img
           alt={noticia.title}
-          src={`http://localhost:1339${image.url}`}
+          src={`https://admin.umnovoolhar.art.br${image.url}`}
           width="40%" style={{float:'right', margin: '40px 0 40px 40px'}}
         /> 
       }

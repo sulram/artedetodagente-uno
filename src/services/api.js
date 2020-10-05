@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'http://localhost:1339'
+    baseURL: 'https://admin.umnovoolhar.art.br'
 })
 
 export default api

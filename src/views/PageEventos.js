@@ -91,7 +91,7 @@ function Evento() {
                         <div className="banner-text-container">
                             <section className="banner-content">
                                 <div className="banner-img">
-                                <img alt={evento.title} className="banner" src={`http://localhost:1339${banner.url}`}/>
+                                <img alt={evento.title} className="banner" src={`https://admin.umnovoolhar.art.br${banner.url}`}/>
                                 </div>
                                 <div className="banner-text" style={{height: textIsToggleOn ? `auto` : `14rem`}}>
                                 <p>{evento.description}</p>

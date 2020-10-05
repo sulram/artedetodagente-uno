@@ -16,7 +16,7 @@ export default function Block({data}){
                   target="_blank"
                   >
                     <img
-                      src={`http://localhost:1339${slide.Image.url}`}
+                      src={`https://admin.umnovoolhar.art.br${slide.Image.url}`}
                       alt={slide.Caption ? slide.Caption : null}/>
                 </a>
               </div>
