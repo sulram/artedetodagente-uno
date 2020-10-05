@@ -18,38 +18,38 @@ import api from '../services/api'
 
 function PageProjetos() {
 
-  const {id} = useParams()
+  const {projeto_slug} = useParams()
 
   const [projeto, setProjeto] = useState([])
   const [obras, setObras] = useState([])
   
   useEffect(()=>{
     async function fetchData(){
-      const response = await api.get(`/projetos/${id}`)
+      const response = await api.get(`/projetos/${projeto_slug}`)
       setProjeto(response.data)
       setObras(response.data.obras)
     }
     fetchData()
-  },[id])
+  },[projeto_slug])
 
   const {path} = useRouteMatch()
 
   return (
     <>
-      <Header title={projeto.name} url={`/projetos/${id}`} />
+      <Header title={projeto.title} url={`/projetos/${projeto_slug}`} />
       <main className="main-content page-content">
         <Switch>
           <Route exact path={path}>
-            <h3 className='title-1'><Link to={`/projetos/${id}`} className="link-box">{projeto.name}</Link></h3>
+            <h3 className='title-1'><Link to={`/projetos/${projeto_slug}`} className="link-box">{projeto.title}</Link></h3>
             <h3 className="title-2">Selecione uma categoria</h3>
             <section className="cat-feed">
               {
                 obras.map((obra,i)=>{
-                  const professor = obra.professor     
+                  const professor = obra.professor
 
                   return(
                     <article className="cat-feed-item" key={`${i}-${obra.id}`}>
-                      <Link to={`/projetos/${id}/${obra.id}`} className="link-box">
+                      <Link to={`/projetos/${projeto_slug}/${obra.slug}`} className="link-box">
                         {professor.name}: {obra.title}
                       </Link>
                     </article>
@@ -67,7 +67,7 @@ function PageProjetos() {
                   const professor = obra.professor
                   return(
                     <article className="videos-feed-v" key={`${i}-${obra.id}`}>
-                      <Link to={`/projetos/${id}/${obra.id}`} className="box">
+                      <Link to={`/projetos/${projeto_slug}/${obra.slug}`} className="box">
                         <YouThumb url={video.video_url} />
                         <p>{professor.name}: {obra.title}</p>
                       </Link>
@@ -77,8 +77,8 @@ function PageProjetos() {
               }
             </section>
           </Route>
-          <Route path={`${path}/:catid`}>
-            <PageVideos id={id} content={projeto} />
+          <Route path={`${path}/:obra_slug`}>
+            <PageVideos projeto_slug={projeto_slug} content={projeto} />
           </Route>
         </Switch>
       </main>
@@ -89,8 +89,8 @@ function PageProjetos() {
 
 function PageVideos(props) {
 
-  const {id, content} = props
-  const {catid} = useParams()
+  const {projeto_slug, content} = props
+  const {obra_slug} = useParams()
   const {path} = useRouteMatch()
 
   const [obra, setObra] = useState([])
@@ -100,29 +100,28 @@ function PageVideos(props) {
   useEffect(()=>{
     async function fetchData(){
       const today = new Date().toISOString()
-      const response = await api.get(`/obras/${catid}`)
-      const responseAulas = await api.get(`/aulas?obra=${catid}&_sort=date:ASC&_where[date_lte]=${today}`)
+      const response = await api.get(`/obras/${obra_slug}`)
+      const responseAulas = await api.get(`/aulas?obra=${response.data.id}&_sort=date:ASC&_where[date_lte]=${today}`)
       setObra(response.data)
       setAulas(responseAulas.data)
       setProfessor(response.data.professor)
     }
     fetchData()
-  },[catid])
-  
+  },[obra_slug])
 
   return (
     <>
       <h3 className="title-2 mobile-hidden">
-        <Link to={`/projetos/${id}`} className="link-box">{content.name}</Link>
+        <Link to={`/projetos/${projeto_slug}`} className="link-box">{content.title}</Link>
         &nbsp;
-        <Link to={`/projetos/${id}/${obra.id}`} className="link-box">{professor.name}: {content.name}</Link>
+        <Link to={`/projetos/${projeto_slug}/${obra.slug}`} className="link-box">{professor.name}: {content.title}</Link>
       </h3>
       <Switch>
         <Route exact path={path}>
           {professor.id && <InfoBox content={obra} id={professor.id} />}
         </Route>
         <Route path={`${path}/:id`}>
-          <Video parent={id} content={content} obra={obra} professor={professor.id} />
+          <Video parent={projeto_slug} content={content} obra={obra} professor={professor.id} />
       </Route>
       </Switch>
       <p>&nbsp;</p>
@@ -132,7 +131,7 @@ function PageVideos(props) {
           aulas.map((aula)=>{
             return(
               <article className="videos-feed-v" key={aula.id}>
-                <Link to={`/projetos/${id}/${obra.id}/${aula.id}`} className="box">
+                <Link to={`/projetos/${projeto_slug}/${obra.slug}/${aula.id}`} className="box">
                   <YouThumb url={aula.video_url} />
                   <p>{aula.title}</p>
                 </Link>
@@ -150,7 +149,6 @@ function InfoBox(props) {
   const [professor, setProf] = useState([])
   const [image, setImage] = useState([])
 
-
   useEffect(()=>{
       async function fetchData(){
         const response = await api.get(`/professors/${id}`)
@@ -165,7 +163,7 @@ function InfoBox(props) {
       <div
         className="figure"
         style={image.url && {
-          background: `url(https://admin.umnovoolhar.art.br${image.formats.small.url}) center top / cover no-repeat`
+          background: `url(http://localhost:1339${image.formats.small.url}) center top / cover no-repeat`
         }}
       ></div>
       <div className="box">

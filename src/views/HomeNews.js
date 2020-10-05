@@ -49,19 +49,19 @@ function HomeNews() {
             const date = fdate(noticia.date)
             const image = noticia.image?.formats.medium ?? {default: `/img/static/BG-Noticias-Padrao.png`}
             return(
-              <SwiperSlide key={`${noticia.id}-slide-${i}`} style={{background: bgcover(image.url ? `https://admin.umnovoolhar.art.br${image.url}` : image.default) }}>
+              <SwiperSlide key={`${noticia.id}-slide-${i}`} style={{background: bgcover(image.url ? `http://localhost:1339${image.url}` : image.default) }}>
                 <article className="noticia">
                   <div className="wrapper">
                     {size.width <= 768 && (
-                      <img src={image.url ? `https://admin.umnovoolhar.art.br${image.url}` : image.default} alt={noticia.title} />
+                      <img src={image.url ? `http://localhost:1339${image.url}` : image.default} alt={noticia.title} />
                     )}
-                    <Link className="content" to={`/noticias/${noticia.id}`}>
+                    <Link className="content" to={`/noticias/${noticia.slug}`}>
                       <h3>{noticia.title}</h3>
                       <p>{noticia.call}</p>
                       <p className="post-date">Publicado em {date.day} de {date.month} de {date.year}</p>
                     </Link>
                     <div className="bt-group">
-                      <Link className="bt" to={`/noticias/${noticia.id}`}>Leia mais</Link>
+                      <Link className="bt" to={`/noticias/${noticia.slug}`}>Leia mais</Link>
                       &nbsp;
                       <button className="bt" onClick={()=>slideNext()}>Próxima notícia</button>
                     </div>

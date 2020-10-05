@@ -29,7 +29,7 @@ function HomeEventos() {
                             {eventos.map((evento,key) => {
                                 return(
                                     <article className="eventos-feed-item" key={key}>
-                                        <Link to={`/eventos/${evento.id}`} className="box">
+                                        <Link to={`/eventos/${evento.slug}`} className="box">
                                             <p><strong>{evento.title}</strong></p>
                                         </Link>
                                     </article>

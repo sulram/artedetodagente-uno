@@ -37,8 +37,6 @@ function PageVideos() {
 
   const content = videos[id] || videos[404]
 
-  
-
   const { path } = useRouteMatch()
 
   return (
@@ -55,7 +53,7 @@ function PageVideos() {
                 video.map((video)=>{
                   return(
                     <article className="videos-feed-v" key={video.id}>
-                      <Link to={`/videos/${id}/${video.id}`} className="box">
+                      <Link to={`/videos/${id}/${video.slug}`} className="box">
                         <YouThumb url={video.video_url} />
                         <p>{video.title}</p>
                       </Link>

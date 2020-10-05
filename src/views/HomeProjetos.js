@@ -7,7 +7,7 @@ import YouThumb from './YouThumb'
 
 function HomeProjetos(props) {
 
-  const {id, obras, title} = props
+  const {id, obras, title, projeto_slug} = props
 
   const size = useWindowSize()
 
@@ -27,7 +27,7 @@ function HomeProjetos(props) {
               const professor = obra.professor
               return(
                 <article className="videos-feed-v" key={obra.id}>
-                  <Link to={`/projetos/${id}/${obra.id}`} className="box">
+                  <Link to={`/projetos/${projeto_slug}/${obra.slug}`} className="box">
                     <YouThumb url={video.video_url} />
                   <p>{professor.name}: {obra.title}</p>
                   </Link>
@@ -38,7 +38,7 @@ function HomeProjetos(props) {
         </section>
         <p>&nbsp;</p>
         <p>
-          <Link to={`/projetos/${id}`} className="link-box">
+          <Link to={`/projetos/${projeto_slug}`} className="link-box">
             { props.label || `Acessar todos os vídeos de ${title}`}
           </Link>
         </p>

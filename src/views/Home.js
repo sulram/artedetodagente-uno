@@ -38,8 +38,8 @@ function Home() {
         <HomeCursos />
         <HomeVideos id="apresentacoes" label="Acessar todas as apresentações" />
         <HomeVideos id="palestras" label="Acessar todas as palestras" />
-        {projetos.map((projeto,i) => 
-          <HomeProjetos key={i} title={projeto.name} id={projeto.id} label={projeto.button_label} obras={projeto.obras}/>
+        {projetos.map((projeto,i) =>
+          <HomeProjetos key={i} title={projeto.title} id={projeto.id} label={projeto.button_label} obras={projeto.obras} projeto_slug={projeto.slug}/>
         )}
         {/*<HomeProjetos id="repertorio-coral" label="Acessar todo repertório coral" />*/}
         <HomeEventos />

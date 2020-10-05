@@ -24,7 +24,7 @@ function App() {
           <Route path="/videos/:id">
             <PageVideos />
           </Route>
-          <Route path="/projetos/:id">
+          <Route path="/projetos/:projeto_slug">
             <PageProjetos />
           </Route>
           <Route path="/noticias">

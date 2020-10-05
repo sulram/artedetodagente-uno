@@ -5,7 +5,7 @@ export default function Cover({data}){
     return(
       <div className="block-cover">
         <img
-          src={`https://admin.sinos.art.br${data.cover.url}`}
+          src={`http://localhost:1339${data.cover.url}`}
           style={{width: '100%', height: 'auto'}}
           alt={``}
         />

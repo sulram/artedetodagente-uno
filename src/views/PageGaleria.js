@@ -48,7 +48,7 @@ export default PageGaleria;
 
 function CardPhoto({ data }) {
 
-    const image = `https://admin.umnovoolhar.art.br${data.image.formats.medium.url}`;
+    const image = `http://localhost:1339${data.image.formats.medium.url}`;
   
     async function download() {
       const res = await Axios.get(image, { responseType: 'blob' });
@@ -116,7 +116,7 @@ function CardPhoto({ data }) {
       <div className="card-testimony">
         <div className="header">
           <div className="figure">
-            <img src={`https://admin.umnovoolhar.art.br${data.image.url}`} alt=""/>
+            <img src={`http://localhost:1339${data.image.url}`} alt=""/>
           </div>
           <h1>{data.autor.nome}</h1>
         </div>
