@@ -14,10 +14,9 @@ function Palestrantes(){
 
     return(
         <>
-            <h1 style={{
-                display:"felx",
-                marginTop: "30px",
-                textAlign: "center"
+            <h1 className="text-box" style={{
+                marginTop: "4em",
+                marginBottom: "4em"
             }}>Palestrantes</h1>
             
             <div className="palestrantes-container">
