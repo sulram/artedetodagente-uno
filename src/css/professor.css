@@ -1,0 +1,13 @@
+.professor-container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    padding: 1em;
+    display: flex;
+}
+
+.professor-pic{
+    width: 200%;
+    height: 30%;
+    margin-right: 3vh;
+}

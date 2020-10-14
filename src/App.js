@@ -14,6 +14,7 @@ import PageImprensa from './views/PageImprensa'
 import PageEventos from './views/PageEventos'
 import PageGaleria from './views/PageGaleria'
 import ScrollToTop from './util/ScrollToTop'
+import PageProfessor from './views/PageProfessor'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
       <ScrollToTop />
       <Analytics id="UA-177269578-1" debug>
         <Switch>
+          <Route path="/professor/:id">
+            <PageProfessor />
+          </Route>
           <Route path="/videos/:id">
             <PageVideos />
           </Route>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-
+import { Worker } from '@phuocng/react-pdf-viewer';
+import Viewer from '@phuocng/react-pdf-viewer';
+import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
 import {
   Switch,
   Route,
@@ -15,6 +17,16 @@ import YouEmbed from './YouEmbed'
 
 import api from '../services/api'
 
+import '../css/repertorio.css'
+
+import ReactPlayer from 'react-player'
+
+const buttonStyle={
+  fontSize: '0.8em',
+  textDecoration: 'none',
+  marginLeft: '1vh',
+  color: 'red'
+}
 
 function PageProjetos() {
 
@@ -22,12 +34,12 @@ function PageProjetos() {
 
   const [projeto, setProjeto] = useState([])
   const [obras, setObras] = useState([])
-  
+
   useEffect(()=>{
     async function fetchData(){
-      const response = await api.get(`/projetos/${projeto_slug}`)
-      setProjeto(response.data)
-      setObras(response.data.obras)
+      const response = await api.get(`/${projeto_slug.toLowerCase()}`)
+      setProjeto(response.data[0])
+      setObras(response.data[0].obras)
     }
     fetchData()
   },[projeto_slug])
@@ -96,6 +108,7 @@ function PageVideos(props) {
   const [obra, setObra] = useState([])
   const [aulas, setAulas] = useState([])
   const [professor, setProfessor] = useState([])
+  const [professorObras, setProfObras] = useState([])
 
   useEffect(()=>{
     async function fetchData(){
@@ -105,6 +118,7 @@ function PageVideos(props) {
       setObra(response.data)
       setAulas(responseAulas.data)
       setProfessor(response.data.professor)
+      setProfObras(response.data.professor.obras)
     }
     fetchData()
   },[obra_slug])
@@ -121,7 +135,14 @@ function PageVideos(props) {
           {professor.id && <InfoBox content={obra} id={professor.id} />}
         </Route>
         <Route path={`${path}/:id`}>
-          <Video parent={projeto_slug} content={content} obra={obra} professor={professor.id} />
+          <Video 
+            parent={projeto_slug} 
+            content={content} 
+            obra={obra} 
+            professor={professor.id}
+            professor_obras={professorObras}
+            prof={professor}
+          />
       </Route>
       </Switch>
       <p>&nbsp;</p>
@@ -170,30 +191,131 @@ function InfoBox(props) {
         <p className="text-box">{content.title}</p>
         <p>{content.description}</p>
         <p className="text-box">{professor.name}</p>
-        <p>{professor.bio}</p>
+        <p>{professor.mini_bio}</p>
+        <Link style={buttonStyle} to={`/professor/${professor.id}`}> Saiba mais </Link>
       </div>
     </div>
   )
 }
 
-function Video(props) {
+function Video({prof, professor_obras}) {
 
   const [aula, setAula] = useState([])
-  const {id} = useParams()
+  const [audios, setAudios] = useState([])
+  const [partituras, setPartituras] = useState([])
+  const {id, projeto_slug} = useParams()
 
   useEffect(()=>{
     async function fetchData(){
       const response = await api.get(`/aulas/${id}`)
       setAula(response.data)
+      setAudios(response.data.audios)
+      setPartituras(response.data.partituras)
     }
     fetchData()
   },[id])
 
   return (
     <>
+    { projeto_slug === "Repertorio-Coral" ? 
+      <RepertorioVideo 
+        aula={aula} 
+        professor={prof}
+        professorObras={professor_obras}
+        audios={audios}
+        partituras={partituras}
+        /> :
+      <>
       <YouEmbed url={aula.video_url} />
       <h3>{aula.title}</h3>
       <p>{aula.text}</p>
+      </>
+    }
+    </>
+  )
+};
+
+function RepertorioVideo({aula, professor, professorObras, audios, partituras}){
+
+  const styles = {
+    fontSize: '1em'
+  }
+
+  
+
+  return (
+    <>
+      <div className="repertorio-container">
+        <div className="left-container">
+          <div className="repertorio-video-container">
+            <p className="acompanhe">
+              Acompanhe a partitura:
+            </p>
+            <ReactPlayer 
+              className="player"
+              url={aula.video_url} 
+              light={true} 
+              controls={true} 
+              loop={true} 
+            />
+            <div>
+              <p className="repertorio-title">
+                {professor.name}
+              </p>
+              <p className="repertorio-inner">
+                {professor.mini_bio}
+              </p>
+              <a rel="noopener noreferrer" style={buttonStyle} href={`/professor/${professor.id}`} target="_blank">Saiba mais</a>
+            </div>
+            <div>
+              <p className="repertorio-title">
+                Download de arquivos
+              </p>
+              <p className="repertorio-inner">
+                {
+                  audios.map((audio,i)=>{
+                    return <> <a key={i} rel="noopener noreferrer" href={`https://admin.umnovoolhar.art.br${audio.audio_file.url}`} download target="_blank">{audio.title}</a><br/></>
+                  })
+                }
+              </p>
+            </div>
+              
+            <div>
+              <p className="repertorio-title" style={{backgroundColor: 'lightgreen'}}>
+                Mais obras deste autor
+              </p>
+              <p className="repertorio-inner">
+              {
+                professorObras.map((obra, i)=>{
+                  return <Link key={i} to={`/projetos/Repertorio-Coral/${obra.slug}`} style={styles}>{obra.title}</Link>
+                })
+              }
+              </p>
+            </div>
+  
+          </div>
+        </div>
+        <div className="partituras-container">
+            <p className="partitura-title">Partituras</p>
+            <div className="partituras">
+              {
+                partituras.map((partitura,i)=>{
+                  console.log(partitura.partitura.url)
+                  return (
+                    <div className="partitura">
+                      <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js">
+                        <Viewer 
+                        fileUrl={`https://admin.umnovoolhar.art.br${partitura.partitura.url}`} 
+                        defaultScale={0.7}
+                        />
+                      </Worker>
+                    </div>
+                  )
+                })
+              }
+            </div>
+        </div>
+      </div>
     </>
   )
 }
