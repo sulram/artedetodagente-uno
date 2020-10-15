@@ -6,6 +6,7 @@ import Header from './Header'
 import Footer from './Footer'
 import DynamicPage from './DynamicPage'
 import api from '../services/api'
+import Palestrantes from './palestrantes'
 
 function Page() {
 
@@ -20,6 +21,7 @@ function Page() {
     fetchData()
   },[id])
 
+
   return (
     <>
       <Header title={page.page_title} url={`/${id}`} />
@@ -28,6 +30,7 @@ function Page() {
         <div className="page-zones">
         {page.Content.map( component => <DynamicPage data={component}/>)}
         </div>
+        {id === 'congresso-internacional' ? <Palestrantes /> : {}}
       </main>
       <Footer />
     </>
@@ -35,3 +38,4 @@ function Page() {
 }
 
 export default Page;
+
