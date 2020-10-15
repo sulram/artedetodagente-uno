@@ -49,7 +49,7 @@ function PageProjetos() {
   return (
     <>
       <Header title={projeto.title} url={`/projetos/${projeto_slug}`} />
-      <main className="main-content page-content">
+      <main className="main-content page-content" style={{padding: '1rem'}}>
         <Switch>
           <Route exact path={path}>
             <h3 className='title-1'><Link to={`/projetos/${projeto_slug}`} className="link-box">{projeto.title}</Link></h3>
@@ -241,8 +241,6 @@ function RepertorioVideo({aula, professor, professorObras, audios, partituras}){
     fontSize: '1em'
   }
 
-  
-
   return (
     <>
       <div className="repertorio-container">
@@ -301,11 +299,9 @@ function RepertorioVideo({aula, professor, professorObras, audios, partituras}){
                 partituras.map((partitura,i)=>{
                   return (
                     <div className="partitura">
-                      <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js">
                         <Viewer 
-                        fileUrl={`https://admin.umnovoolhar.art.br${partitura.partitura.url}`} 
+                        fileUrl={`https://admin.umnovoolhar.art.br${partitura.partitura.url}`}
                         />
-                      </Worker>
                     </div>
                   )
                 })
