@@ -305,7 +305,7 @@ function RepertorioVideo({aula, professor, professorObras, audios, partituras}){
                       <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js">
                         <Viewer 
                         fileUrl={`https://admin.umnovoolhar.art.br${partitura.partitura.url}`} 
-                        defaultScale={0.7}
+                        defaultScale={0.5}
                         />
                       </Worker>
                     </div>
