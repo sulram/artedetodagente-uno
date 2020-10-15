@@ -60,3 +60,23 @@
     margin-top: 3vh;
 }
 
+@media(max-width: 768px){
+    .repertorio-container {
+        flex-direction: column;
+    }
+    .repertorio-video-container {
+        height: 100vh;
+    }
+    .left-container {
+        width: 100%;
+    }
+    .partituras-container {
+        margin-top: 5vh;
+        width: 100%;
+        margin-left: 0;
+    }
+    .partitura {
+        width: 100%;
+        height: 100%;
+    }
+}

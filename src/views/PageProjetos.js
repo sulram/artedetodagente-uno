@@ -300,7 +300,6 @@ function RepertorioVideo({aula, professor, professorObras, audios, partituras}){
             <div className="partituras">
               {
                 partituras.map((partitura,i)=>{
-                  console.log(partitura.partitura.url)
                   return (
                     <div className="partitura">
                       <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js">
