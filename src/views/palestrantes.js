@@ -578,6 +578,9 @@ function Palestrantes(){
                     </div>
                 </div>
             </div>
+            <img src="./img/uno-congresso-marcas.png" alt="congresso marcas" style={{
+                margin: "3em auto"
+            }}></img>
         </>
     )
 }
