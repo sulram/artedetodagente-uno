@@ -6,9 +6,9 @@ export default function Block({data}){
       <div className="dynamic-block">
         <h2 className="text-box">{data.title}</h2>
         <div className="dynamic-block-slider">
-          {data.Slider && data.Slider.map(slide=>{
+          {data.Slider && data.Slider.map((slide,i)=>{
             return (
-              <div className="dynamic-block-slider-item">
+              <div key={i} className="dynamic-block-slider-item">
                 <a
                   href={slide.Link}
                   title={slide.Caption}

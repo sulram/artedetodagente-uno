@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Worker } from '@phuocng/react-pdf-viewer';
 import Viewer from '@phuocng/react-pdf-viewer';
 import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
 import {

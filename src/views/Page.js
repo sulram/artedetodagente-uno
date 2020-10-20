@@ -28,9 +28,9 @@ function Page() {
       <main className="main-content page-content">
         {compiler(page.page_text)}
         <div className="page-zones">
-        {page.Content.map( component => <DynamicPage data={component}/>)}
+        {page.Content.map( (component,i) => <DynamicPage key={i} data={component}/>)}
         </div>
-        {id === 'congresso-internacional' ? <Palestrantes /> : {}}
+        {id === 'congresso-internacional' ? <Palestrantes /> : null}
       </main>
       <Footer />
     </>
