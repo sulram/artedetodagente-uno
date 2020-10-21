@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Worker } from '@phuocng/react-pdf-viewer';
-import Viewer from '@phuocng/react-pdf-viewer';
 import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
 import {
   Switch,
@@ -20,6 +18,10 @@ import api from '../services/api'
 import '../css/repertorio.css'
 
 import ReactPlayer from 'react-player'
+
+import { Document, Page as Pager} from 'react-pdf/dist/umd/entry.webpack';
+
+import { BiArrowFromRight, BiArrowFromLeft } from 'react-icons/bi'
 
 const buttonStyle={
   fontSize: '0.8em',
@@ -205,6 +207,7 @@ function Video({prof, professor_obras}) {
   const [partituras, setPartituras] = useState([])
   const {id, projeto_slug} = useParams()
 
+
   useEffect(()=>{
     async function fetchData(){
       const response = await api.get(`/aulas/${id}`)
@@ -239,6 +242,23 @@ function RepertorioVideo({aula, professor, professorObras, audios, partituras}){
 
   const styles = {
     fontSize: '1em'
+  }
+
+  const [pageNumber, setPageNumber] = useState(1);
+  const [numPages, setNumPages] = useState(null);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
+  
+  function nextPage(){
+    if(pageNumber === numPages) return;
+    setPageNumber(pageNumber + 1)
+  }
+
+  function previousPage(){
+    if(pageNumber <= 1) return;
+    setPageNumber(pageNumber - 1)
   }
 
   return (
@@ -278,11 +298,11 @@ function RepertorioVideo({aula, professor, professorObras, audios, partituras}){
               </p>
             </div>
               
-            <div>
+            <div style={{marginBottom: '1rem'}}>
               <p className="repertorio-title" style={{backgroundColor: 'lightgreen'}}>
                 Mais obras deste autor
               </p>
-              <p className="repertorio-inner">
+              <p className="repertorio-inner"  style={{backgroundColor: 'white'}}>
               {
                 professorObras.map((obra, i)=>{
                   return <Link key={i} to={`/projetos/Repertorio-Coral/${obra.slug}`} style={styles}>{obra.title}</Link>
@@ -298,11 +318,20 @@ function RepertorioVideo({aula, professor, professorObras, audios, partituras}){
               {
                 partituras.map((partitura,i)=>{
                   return (
-                    <div className="partitura">
-                        <Viewer 
-                        fileUrl={`https://admin.umnovoolhar.art.br${partitura.partitura.url}`}
-                        />
-                    </div>
+                    <Document
+                className="pdf"
+                error="Aguarde um momento, carregando PDF..."
+                loading="Carregando PDF..."
+                file={`https://admin.umnovoolhar.art.br${partitura.partitura.url}`}
+                onLoadSuccess={onDocumentLoadSuccess}
+              >
+              <Pager pageNumber={pageNumber} />
+              <div className="obra-buttons">
+                <button onClick={()=>previousPage()}><BiArrowFromRight/></button>
+                  <p>Página {pageNumber} de {numPages}</p>
+                <button onClick={()=>nextPage()}><BiArrowFromLeft/></button>            
+              </div>
+              </Document>
                   )
                 })
               }
