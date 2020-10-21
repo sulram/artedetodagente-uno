@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
+
 import {
   Switch,
   Route,
@@ -319,19 +319,19 @@ function RepertorioVideo({aula, professor, professorObras, audios, partituras}){
                 partituras.map((partitura,i)=>{
                   return (
                     <Document
-                className="pdf"
-                error="Aguarde um momento, carregando PDF..."
-                loading="Carregando PDF..."
-                file={`https://admin.umnovoolhar.art.br${partitura.partitura.url}`}
-                onLoadSuccess={onDocumentLoadSuccess}
-              >
-              <Pager pageNumber={pageNumber} />
-              <div className="obra-buttons">
-                <button onClick={()=>previousPage()}><BiArrowFromRight/></button>
-                  <p>Página {pageNumber} de {numPages}</p>
-                <button onClick={()=>nextPage()}><BiArrowFromLeft/></button>            
-              </div>
-              </Document>
+                      className="pdf"
+                      error="Aguarde um momento, carregando PDF..."
+                      loading="Carregando PDF..."
+                      file={`https://admin.umnovoolhar.art.br${partitura.partitura.url}`}
+                      onLoadSuccess={onDocumentLoadSuccess}
+                    >
+                    <Pager pageNumber={pageNumber} />
+                    <div className="obra-buttons">
+                      <button onClick={()=>previousPage()}><BiArrowFromRight/></button>
+                        <p>Página {pageNumber} de {numPages}</p>
+                      <button onClick={()=>nextPage()}><BiArrowFromLeft/></button>            
+                    </div>
+                    </Document>
                   )
                 })
               }

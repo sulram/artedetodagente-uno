@@ -139,7 +139,7 @@ function Video(props) {
             setVideo(response.data.videos[id]);
         }
         fetchDataEvento();
-    }, [id]);
+    }, [id,parent]);
 
     return(
         <>
