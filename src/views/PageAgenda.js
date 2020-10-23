@@ -18,8 +18,8 @@ function PageAgenda(){
   
     useEffect(()=>{
       async function fetchData(){
-        // const response = await api.get('/schedules?_sort=date:ASC')
-        const response = await api.get('/schedules')
+         const response = await api.get('/calendarios?_sort=date:ASC')
+        //const response = await api.get('/calendarios')
         let schedules = response.data.map(item => new Date(item.date).getMonth())
         setSchedules(schedules)
         const todayMonth = new Date().getMonth()
@@ -28,12 +28,13 @@ function PageAgenda(){
       fetchData()
     },[])
 
-    console.log(schedules)
+    //console.log(schedules)
   
     useEffect(()=>{
       async function fetchData(){
-        const response = await api.get(`/schedules?month=${months[current_month]}`)
-        setEvents(response.data[0]?.events ?? [])
+        const response = await api.get(`/calendarios?month=${months[current_month]}`)
+        setEvents(response.data[0]?.schedule_events ?? [])
+        console.log(response)
       }
       fetchData()
     },[current_month])
@@ -53,7 +54,7 @@ function PageAgenda(){
     return(
         <>
             <Header title="Programação" url={'/agenda'}/>
-            <section className="main-content page-content">
+            <section className="page-view agenda-view page-content">
                 <Switch>
                     <Route exact path={path}>
                     <nav className="agenda-nav">
@@ -78,9 +79,9 @@ function PageAgenda(){
                                 <h3>{date.day}</h3>
                                 <p>{date.month}</p>
                                 </div>
-                                <div className="agenda-content">
+                                <div className="agenda-content" >
                                 <h3>{evento.time} | {evento.title}</h3>
-                                <p>{evento.text}</p>
+                                <p>{evento.description}</p>
                                 </div>
                             </div>
                             </article>
