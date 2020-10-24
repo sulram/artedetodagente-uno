@@ -521,6 +521,7 @@
 }
 
 .agenda-feed {
+  @apply grid grid-cols-1;
   .agenda-item{
     @apply flex flex-row p-4;
     .agenda-date{
@@ -540,6 +541,9 @@
   }
   @screen lg {
     column-count: 2;
+  }
+  @screen md {
+    @apply grid-cols-2;
   }
   article {
     break-inside: avoid;

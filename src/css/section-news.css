@@ -35,3 +35,124 @@ section.slider-noticias {
     }
   }
 }
+
+.full-section {
+  @apply flex flex-col overflow-hidden relative h-auto;
+  min-height: 80vh;
+
+  @screen md {
+    /* height: 1px; */
+    @apply h-auto w-full flex-row min-w-0 min-h-0;
+  }
+
+  @screen sm {
+    @apply h-auto w-full flex-row min-w-0 min-h-0;
+  }
+  .col {
+    @apply h-full relative;
+    
+    .section-header {
+      @apply -mt-8;
+      z-index: 10;
+      .title {
+        @apply mb-0;
+      }
+      .projetos-box {
+        @apply flex;
+        .projetos-box-title {
+          @apply py-1 px-2 uppercase text-xs;
+        }
+      }
+    }
+    &.agenda {
+      @apply bg-white py-32;
+      
+      @screen md {
+        @apply w-1/2;
+      }
+
+      @screen lg {
+        @apply w-5/12 py-0;
+        .center-in {
+          @apply w-8/12;
+        }
+      }
+      
+      .btn-container {
+        @apply text-center mt-8;
+      }
+    }
+    &.center-out {
+      @apply flex justify-center items-center pb-0;
+      min-height: 80vh;
+      min-width: 40%;
+      flex-wrap: wrap;
+      padding-top: 3em;
+      background-color: var(--yellow);
+      @screen md {
+        @apply  h-full;
+      }
+      @screen sm {
+        @apply  h-auto flex-wrap w-full;
+      }
+      .text-box{
+        @apply mb-8;
+      }
+      .center-in {
+        @apply flex flex-col justify-center items-center mb-4;
+        padding: "8em 4em";
+        width: 100%;
+        .agenda-item-home{
+          @apply flex flex-row justify-center items-center mb-12;
+          .agenda-date-home{
+            @apply flex flex-col justify-center items-center h-16 pr-4;
+            border: solid;
+            border-style: none solid none none;
+            h3{
+              @apply m-0;
+            }
+          }
+          .agenda-content-home{
+            @apply ml-4 h-16 flex flex-col items-center justify-center;
+            h3{
+              @apply m-0;
+            }
+          }
+        }
+        @screen md {
+          @apply mb-2;
+        }
+        @screen sm {
+          @apply mb-2;
+        }
+      }
+    } 
+  }
+}
+
+/* .agenda-item {
+  @apply flex mb-4;
+  .agenda-date {
+    @apply px-3 w-3/12 text-center border-r border-gray-400;
+    h3 {
+      @apply text-5xl leading-none mb-1;
+    }
+    p {
+      @apply text-base mb-0;
+      color: var(--red);
+    }
+  }
+  .agenda-content {
+    @apply px-3 w-9/12;
+    h3 {
+      @apply text-sm mb-1;
+      color: #666;
+    }
+    p {
+      @apply text-base leading-none;
+    }
+  }
+} */
+
+
+

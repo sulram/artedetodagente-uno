@@ -10,7 +10,10 @@ const ytImage = (url) => {
   return `https://img.youtube.com/vi/${vid}/hqdefault.jpg`
 }
 
+const tweet = (text, max) => text.length > max ? text.slice(0,max) + `...` : text
+
 export {
   fdate,
-  ytImage
+  ytImage,
+  tweet
 }
