@@ -13,6 +13,7 @@ import PageNoticias from './views/PageNoticias'
 import PageImprensa from './views/PageImprensa'
 import PageEventos from './views/PageEventos'
 import PageGaleria from './views/PageGaleria'
+import PageAgenda from './views/PageAgenda'
 import ScrollToTop from './util/ScrollToTop'
 import PageProfessor from './views/PageProfessor'
 
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/galeria">
             <PageGaleria />
+          </Route>
+          <Route path="/agenda">
+            <PageAgenda />
           </Route>
           <Route path="/imprensa">
             <PageImprensa />

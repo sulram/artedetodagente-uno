@@ -600,3 +600,70 @@
   }
 
 }
+.page-view {
+  .title-1, h3 {
+    @apply text-2xl mb-4;
+    span {
+      @apply block;
+      @screen md {
+        @apply inline-block;
+      }
+    }
+  }
+  p {
+    @apply mb-2;
+    a {
+      color: var(--red);
+      &:hover {
+        color: black;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+}
+
+.agenda-view{
+  .agenda-nav{
+    span, button {
+      @apply px-3 py-1 text-white text-xl inline-block uppercase;
+      background: black;
+      margin-left: 2px;
+    }
+    span {
+      min-width: 120px;
+      text-align: center;
+    }
+  }
+}
+
+.agenda-feed {
+  @apply grid grid-cols-1;
+  .agenda-item{
+    @apply flex flex-row p-4;
+    .agenda-date{
+      @apply flex flex-col justify-center items-center h-16 pr-4;
+      border: solid;
+      border-style: none solid none none;
+      h3{
+        @apply m-0;
+      }
+    }
+    .agenda-content{
+      @apply ml-4 h-16 flex flex-col items-center justify-center;
+      h3{
+        @apply m-0;
+      }
+    }
+  }
+  @screen lg {
+    column-count: 2;
+  }
+  @screen md {
+    @apply grid-cols-2;
+  }
+  article {
+    break-inside: avoid;
+  }
+
+}
