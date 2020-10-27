@@ -1,7 +1,7 @@
 import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 
-function HomeLanding() {
+function HomeLandingEncontro() {
   return (
     <section id="landing" className="base landing">
 
@@ -88,4 +88,4 @@ function HomeLanding() {
   );
 }
 
-export default HomeLanding;
+export default HomeLandingEncontro;
