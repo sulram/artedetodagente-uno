@@ -18,8 +18,7 @@ function PageAgenda(){
   
     useEffect(()=>{
       async function fetchData(){
-         const response = await api.get('/calendarios?_sort=date:ASC')
-        //const response = await api.get('/calendarios')
+         const response = await api.get('/schedules?_sort=date:ASC')
         let schedules = response.data.map(item => new Date(item.date).getMonth())
         setSchedules(schedules)
         const todayMonth = new Date().getMonth()
@@ -27,12 +26,10 @@ function PageAgenda(){
       }
       fetchData()
     },[])
-
-    //console.log(schedules)
   
     useEffect(()=>{
       async function fetchData(){
-        const response = await api.get(`/calendarios?month=${months[current_month]}`)
+        const response = await api.get(`/schedules?month=${months[current_month]}`)
         setEvents(response.data[0]?.schedule_events ?? [])
         console.log(response)
       }

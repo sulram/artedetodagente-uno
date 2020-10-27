@@ -85,7 +85,7 @@ function HomeNews() {
                           )}
                           <Link className="content" to={`/noticias/${noticia.id}`}>
                             <h3>{noticia.title}</h3>
-                            <p>{noticia.call}</p>
+                            <p className="call">{noticia.call}</p>
                             <p className="post-date">Publicado em {date.day} de {date.month} de {date.year}</p>
                           </Link>
                           <div className="bt-group">

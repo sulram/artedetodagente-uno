@@ -1,53 +1,56 @@
 @import "_variables";
 
-section.slider-noticias {
-  background: #000;
-  .loading {
-    background: var(--yellow);
-    @apply p-10 pb-64;
-  }
-  .swiper-slide {
-    background-size: cover !important;
-  }
-  .wrapper {
-    @screen md {
-      @apply p-10 pt-64 max-w-4xl mx-auto;
-    }
-    .content {
-      background: var(--yellow);
-      @apply p-4 border-black border-4 block mb-2;
-      h3 {
-        @apply font-medium text-xl;
-      }
-      .post-date {
-        @apply text-sm;
-      }
-    }
-    .bt-group {
-      @apply text-right;
-    }
-    .bt {
-      background: var(--yellow);
-      @apply px-4 py-2 border-black border-4 mb-2 inline-block uppercase font-medium;
-      &:hover,&:focus {
-        @apply bg-black text-white;
-      }
-    }
-  }
-}
-
 .full-section {
-  @apply flex flex-col overflow-hidden relative h-auto;
+  @apply flex flex-col overflow-hidden relative h-full w-full;
   min-height: 80vh;
 
-  @screen md {
-    /* height: 1px; */
+  @media(min-width: 1300px){
     @apply h-auto w-full flex-row min-w-0 min-h-0;
   }
 
-  @screen sm {
-    @apply h-auto w-full flex-row min-w-0 min-h-0;
+  section.slider-noticias {
+    @apply relative items-center;
+    background: #000;
+    .loading {
+      background: var(--yellow);
+      @apply p-10 pb-64;
+    }
+    .swiper-slide {
+      background-size: cover !important;
+      min-height: 70vh;
+    }
+    .wrapper {
+      @screen md {
+        @apply flex flex-wrap p-10 pt-64 max-w-4xl mx-auto;
+      }
+      .content {
+        background: var(--yellow);
+        @apply p-4 border-black border-4 block mb-2;
+        h3 {
+          @apply font-medium text-xl;
+        }
+        .post-date {
+          @apply text-sm;
+        }
+        .call{
+          @media(max-width: 1900px){
+            display: none;
+          } 
+        }
+      }
+      .bt-group {
+        @apply text-right;
+      }
+      .bt {
+        background: var(--yellow);
+        @apply px-4 py-2 border-black border-4 mb-2 inline-block uppercase font-medium;
+        &:hover,&:focus {
+          @apply bg-black text-white;
+        }
+      }
+    }
   }
+
   .col {
     @apply h-full relative;
     
@@ -85,7 +88,7 @@ section.slider-noticias {
     &.center-out {
       @apply flex justify-center items-center pb-0;
       min-height: 80vh;
-      min-width: 40%;
+      min-width: 30%;
       flex-wrap: wrap;
       padding-top: 3em;
       background-color: var(--yellow);
