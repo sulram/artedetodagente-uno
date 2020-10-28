@@ -39,12 +39,12 @@ function HomeNews() {
 
   const latestPosts = R.slice(0, 3, noticias)
   const bindSwiper = (swiper) => setSlideNext(() => () => swiper.slideNext())
-  const bgcover = (url) => size.width > 768 ? `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${url}) no-repeat 50% 50%` : `black`
+  const bgcover = (url) => `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${url}) no-repeat 50% 50%`
 
   return (
     <>
       <div className="full-section">
-          <div className="col agenda center-out">
+          {/* <div className="col agenda center-out">
                 <div className="text-box">Nossa Programação</div>
                 <div className="center-in">
                   {schedules.map((evento,i) => {
@@ -64,7 +64,7 @@ function HomeNews() {
                   })}
                   <Link className="link-box" to="/agenda">Ver programação completa</Link>
               </div>
-          </div>
+          </div> */}
           <section id="home-noticias" className="slider-noticias">
             {!isLoaded && <div className="loading">Carregando últimas notícias...</div>}
             {isLoaded &&

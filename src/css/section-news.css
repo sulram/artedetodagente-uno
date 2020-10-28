@@ -1,15 +1,19 @@
 @import "_variables";
 
 .full-section {
+  /* @apply flex flex-col overflow-hidden relative h-full w-full; */
   @apply flex flex-col overflow-hidden relative h-full w-full;
   min-height: 80vh;
 
-  @media(min-width: 1300px){
+  /* @media(min-width: 1300px){
+    @apply h-auto w-full flex-row min-w-0 min-h-0;
+  } */
+  @screen sm {
     @apply h-auto w-full flex-row min-w-0 min-h-0;
   }
 
   section.slider-noticias {
-    @apply relative items-center;
+    @apply flex flex-wrap items-center;
     background: #000;
     .loading {
       background: var(--yellow);
@@ -18,10 +22,11 @@
     .swiper-slide {
       background-size: cover !important;
       min-height: 70vh;
+      max-width: 100%;
     }
     .wrapper {
       @screen md {
-        @apply flex flex-wrap p-10 pt-64 max-w-4xl mx-auto;
+        @apply flex flex-wrap flex-col p-10 pt-64 max-w-4xl mx-auto;
       }
       .content {
         background: var(--yellow);
@@ -39,7 +44,7 @@
         }
       }
       .bt-group {
-        @apply text-right;
+        @apply text-left;
       }
       .bt {
         background: var(--yellow);
@@ -86,14 +91,14 @@
       }
     }
     &.center-out {
-      @apply flex justify-center items-center pb-0;
+      @apply flex justify-center items-center pb-0 w-7/12;
       min-height: 80vh;
       min-width: 30%;
       flex-wrap: wrap;
       padding-top: 3em;
       background-color: var(--yellow);
       @screen md {
-        @apply  h-full;
+        @apply  h-full w-1/2;
       }
       @screen sm {
         @apply  h-auto flex-wrap w-full;
