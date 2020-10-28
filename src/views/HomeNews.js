@@ -39,7 +39,7 @@ function HomeNews() {
 
   const latestPosts = R.slice(0, 3, noticias)
   const bindSwiper = (swiper) => setSlideNext(() => () => swiper.slideNext())
-  const bgcover = (url) => size.width > 768 ? `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${url}) no-repeat 50% 50%` : `black`
+  const bgcover = (url) => `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${url}) no-repeat 50% 50%`
 
   return (
     <>

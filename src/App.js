@@ -15,6 +15,7 @@ import PageEventos from './views/PageEventos'
 import PageGaleria from './views/PageGaleria'
 import PageAgenda from './views/PageAgenda'
 import ScrollToTop from './util/ScrollToTop'
+import PageProfessor from './views/PageProfessor'
 
 function App() {
   return (
@@ -22,10 +23,13 @@ function App() {
       <ScrollToTop />
       <Analytics id="UA-177269578-1" debug>
         <Switch>
+          <Route path="/professor/:id">
+            <PageProfessor />
+          </Route>
           <Route path="/videos/:id">
             <PageVideos />
           </Route>
-          <Route path="/projetos/:id">
+          <Route path="/projetos/:projeto_slug">
             <PageProjetos />
           </Route>
           <Route path="/noticias">

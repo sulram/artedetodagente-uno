@@ -34,7 +34,7 @@ function PageEventos() {
                             {eventos.map((evento,key) => {
                                 return(
                                     <article className="eventos-feed-item" key={key}>
-                                        <Link to={`/eventos/${evento.id}`} className="box">
+                                        <Link to={`/eventos/${evento.slug}`} className="box">
                                             <p><strong>{evento.title}</strong></p>
                                         </Link>
                                     </article>
@@ -106,7 +106,7 @@ function Evento() {
                             {videos.map( (video, key) => {
                                 return(
                                     <article className="videos-feed-v" key={key}>
-                                        <Link to={`/eventos/${evento.id}/${key}`} className="box" >
+                                        <Link to={`/eventos/${evento.slug}/${key}`} className="box" >
                                             <YouThumb url={video.video_url}/>
                                             <p>{video.video_title}</p>
                                         </Link>
@@ -139,16 +139,14 @@ function Video(props) {
             setVideo(response.data.videos[id]);
         }
         fetchDataEvento();
-    }, [id]);
-
-    console.log(evento);
+    }, [id,parent]);
 
     return(
         <>
             <h3 className="title-2 mobile-hidden">
-                    <Link to={`/eventos/${evento.id}`} className="title-box" style={{ textDecoration: 'none' }}> {`${evento.title}`.toUpperCase()} </Link>
+                    <Link to={`/eventos/${evento.slug}`} className="title-box" style={{ textDecoration: 'none' }}> {`${evento.title}`.toUpperCase()} </Link>
                     >>
-                    <Link to={`/eventos/${evento.id}/videos`} className="title-box" style={{ textDecoration: 'none' }}> VIDEOS </Link>
+                    <Link to={`/eventos/${evento.slug}/videos`} className="title-box" style={{ textDecoration: 'none' }}> VIDEOS </Link>
                     >> {`${video.video_title}`.toUpperCase()}
             </h3>
             <YouEmbed url={video.video_url} />

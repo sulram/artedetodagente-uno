@@ -46,7 +46,7 @@ function PageNoticias() {
                   const image = noticia.image || {default: `/img/static/BG-Noticias-Padrao.png`}
                   return(
                     <article className="noticias-feed-item" key={i}>
-                      <Link to={`/noticias/${noticia.id}`} className="box">
+                      <Link to={`/noticias/${noticia.slug}`} className="box">
                         <img src={image.url ? `https://admin.umnovoolhar.art.br${image.url}` : image.default} alt={noticia.title} />
                         <p><strong>{noticia.title}</strong></p>
                         <p>{noticia.call}</p>
@@ -58,7 +58,7 @@ function PageNoticias() {
             </section>
           </Route>
 
-          <Route path={`${path}/:id`}>
+          <Route path={`${path}/:noticia_slug`}>
             <Single noticias={noticias} />
           </Route>
 
@@ -71,26 +71,26 @@ function PageNoticias() {
 
 function Single(props) {
 
-  const {id} = useParams()
+  const {noticia_slug} = useParams()
   
   const [noticia, setNoticia] = useState([])
   const [image, setImage] = useState([])
 
   useEffect(()=>{
     async function fetchData(){
-      const response = await api.get(`/noticias/${id}`)
+      const response = await api.get(`/noticias/${noticia_slug}`)
       setNoticia(response.data)
       setImage(response.data.image)
     }
     fetchData()
-  },[id])
+  },[noticia_slug])
   
   return (
     <>
       <h3 className="title-2 mobile-hidden">
         <Link to={`/noticias`} className="link-box">Notícias</Link>
         &nbsp;
-        <Link to={`/noticias/${id}`} className="link-box">{noticia.title}</Link>
+        <Link to={`/noticias/${noticia_slug}`} className="link-box">{noticia.title}</Link>
       </h3>
       <p>&nbsp;</p>
       {image &&

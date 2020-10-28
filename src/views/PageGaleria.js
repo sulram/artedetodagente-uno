@@ -21,7 +21,7 @@ function PageGaleria(){
 
     return(
         <>
-            <Header title="Galeria" url={`/galeira`} />
+            <Header title="Galeria" url={`/galeria`} />
             <main className="main-content page-content"> 
                 <Masonry
                     breakpointCols={{ default: 3, 700: 2, 500: 1 }}

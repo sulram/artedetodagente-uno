@@ -1,7 +1,7 @@
 import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 
-function HomeCongresso() {
+function HomeLandingCongresso() {
   return (
     <section id="congresso" className="base congresso">
 
@@ -40,4 +40,4 @@ function HomeCongresso() {
   );
 }
 
-export default HomeCongresso;
+export default HomeLandingCongresso;
