@@ -22,9 +22,9 @@ function HomeNews() {
       const response = await api.get(`/noticias?_sort=date:DESC&_limit=3&_where[date_lte]=${today}`)
       setNoticias(response.data)
       setIsLoaded(true)
-      //const schedules = await api.get(`/schedule-events?_sort=date:ASC&_limit=4&_where[date_lte]=${today}`)
-      const schedules = await api.get(`/schedule-events?_sort=date:DESC&_limit=4`)
-      setSchedules(schedules.data)
+      const schedules = await api.get(`/schedule-events?_sort=date:ASC&_limit=4&_where[date_lte]=${today}`)
+      const schedulesLastest = await api.get(`/schedule-events?_sort=date:DESC&_limit=4`)
+      setSchedules(schedules.data.length < schedulesLastest.data.length ? schedulesLastest.data.reverse() : schedules.data)
       console.log(schedules)
     }
     fetchData()
@@ -43,29 +43,32 @@ function HomeNews() {
 
   return (
     <>
-      <div className="full-section">
+      <section className="home-news full-section">
+        <div className="cols">
           <div className="col agenda center-out">
                 <div className="text-box">Nossa Programação</div>
                 <div className="center-in">
                   {schedules.map((evento,i) => {
                     const date = fdate(evento.date)
                     return (
-                      <div className="agenda-item-home" key={`agenda-${i}`}>
-                        <div className="agenda-date-home">
+                      <div className="agenda-item" key={`agenda-${i}`}>
+                        <div className="agenda-date">
                           <h3>{date.day}</h3>
                           <p>{date.month}</p>
                         </div>
-                        <div className="agenda-content-home">
+                        <div className="agenda-content">
                           <h3>{evento.time} | {evento.title}</h3>
                           <p>{evento.text && tweet(evento.text, 140)}</p>
                         </div>
                       </div>
                     )
                   })}
-                  <Link className="link-box" to="/agenda">Ver programação completa</Link>
+                  <div className="btn-container">
+                    <Link className="link-box" to="/agenda">Ver programação completa</Link>
+                  </div>
               </div>
           </div>
-          <section id="home-noticias" className="slider-noticias">
+          <div id="home-noticias" className="col slider-noticias center-out-off">
             {!isLoaded && <div className="loading">Carregando últimas notícias...</div>}
             {isLoaded &&
               <Swiper
@@ -85,7 +88,7 @@ function HomeNews() {
                           )}
                           <Link className="content" to={`/noticias/${noticia.id}`}>
                             <h3>{noticia.title}</h3>
-                            <p className="call">{noticia.call}</p>
+                            <p className="post-call">{noticia.call}</p>
                             <p className="post-date">Publicado em {date.day} de {date.month} de {date.year}</p>
                           </Link>
                           <div className="bt-group">
@@ -100,8 +103,9 @@ function HomeNews() {
                 })}
               </Swiper>
             }
-          </section>
+          </div>
         </div>
+      </section>
     </>
   );
 }

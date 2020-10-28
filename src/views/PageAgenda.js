@@ -51,42 +51,44 @@ function PageAgenda(){
     return(
         <>
             <Header title="Programação" url={'/agenda'}/>
-            <section className="page-view agenda-view page-content">
-                <Switch>
-                    <Route exact path={path}>
-                    <nav className="agenda-nav">
-                        <button
-                            onClick={()=>prevMonth()}
-                            style={{opacity: prevEnabled ? 1 : 0.5}}
-                        >◀</button>
-                        <span>{months[current_month] || `...`}</span>
-                        <button
-                            onClick={()=>nextMonth()}
-                            style={{opacity: nextEnabled ? 1 : 0.5}}
-                        >▶</button>
-                    </nav>
-                    <p>&nbsp;</p>
-                    <div className="agenda-feed">
-                        {events.map((evento,i) => {
-                        const date = fdate(evento.date)
-                        return (
-                            <article key={`agenda-${current_month}-${i}`}>
-                            <div className="agenda-item">
-                                <div className="agenda-date">
-                                <h3>{date.day}</h3>
-                                <p>{date.month}</p>
-                                </div>
-                                <div className="agenda-content" >
-                                <h3>{evento.time} | {evento.title}</h3>
-                                <p>{evento.description}</p>
-                                </div>
-                            </div>
-                            </article>
-                        )
-                        })}
-                    </div>
-                    </Route>
-                </Switch>
+            <section className="page-content">
+              <div className="page-view agenda-view">
+                  <Switch>
+                      <Route exact path={path}>
+                      <nav className="agenda-nav">
+                          <button
+                              onClick={()=>prevMonth()}
+                              style={{opacity: prevEnabled ? 1 : 0.5}}
+                          >◀</button>
+                          <span>{months[current_month] || `...`}</span>
+                          <button
+                              onClick={()=>nextMonth()}
+                              style={{opacity: nextEnabled ? 1 : 0.5}}
+                          >▶</button>
+                      </nav>
+                      <p>&nbsp;</p>
+                      <div className="agenda-feed">
+                          {events.map((evento,i) => {
+                          const date = fdate(evento.date)
+                          return (
+                              <article key={`agenda-${current_month}-${i}`}>
+                              <div className="agenda-item">
+                                  <div className="agenda-date">
+                                  <h3>{date.day}</h3>
+                                  <p>{date.month}</p>
+                                  </div>
+                                  <div className="agenda-content" >
+                                  <h3>{evento.time} | {evento.title}</h3>
+                                  <p>{evento.description}</p>
+                                  </div>
+                              </div>
+                              </article>
+                          )
+                          })}
+                      </div>
+                      </Route>
+                  </Switch>
+                </div>
             </section>
             <Footer/>
         </>

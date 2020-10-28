@@ -507,6 +507,7 @@
 }
 
 .agenda-view{
+  @apply bg-white p-5;
   .agenda-nav{
     span, button {
       @apply px-3 py-1 text-white text-xl inline-block uppercase;

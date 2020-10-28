@@ -66,6 +66,7 @@ strong {
   min-height: 80vh;
   overflow: hidden;
   height: auto;
+  background-color: var(--yellow);
 
   @screen md {
     height: 1px;
