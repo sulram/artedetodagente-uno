@@ -144,9 +144,11 @@
       @apply text-4xl;
     }
   }
+  .eventos-feed-wrapper {
+    @apply p-8;
+  }
   .eventos-feed{
     
-    @apply -m-2 px-16;
     @screen md {
       @apply flex flex-wrap;
     }

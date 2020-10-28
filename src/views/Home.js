@@ -4,8 +4,7 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 
-// import HomeLanding from './HomeLanding'
-import HomeCongresso from './HomeCongresso'
+import HomeLandingENAC from './HomeLandingENAC'
 import HomeCursos from './HomeCursos'
 import HomeVideos from './HomeVideos'
 import HomeProjetos from './HomeProjetos'
@@ -19,9 +18,8 @@ function Home() {
     <>
       <Header />
       <main className="main-content home-content">
-        {/* <HomeLanding /> */}
         <HomeNews />
-        <HomeCongresso />
+        <HomeLandingENAC />
         <HomeVideoEspecial />
         <HomeCursos />
         <HomeVideos id="apresentacoes" label="Acessar todas as apresentações" />
