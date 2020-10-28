@@ -29,8 +29,8 @@ function PageAgenda(){
   
     useEffect(()=>{
       async function fetchData(){
-        const response = await api.get(`/schedules?month=${months[current_month]}`)
-        setEvents(response.data[0]?.schedule_events ?? [])
+        const response = await api.get(`/schedule-events?_sort=date:ASC&schedule.month=${months[current_month]}`)
+        setEvents(response.data ?? [])
         console.log(response)
       }
       fetchData()
@@ -79,6 +79,7 @@ function PageAgenda(){
                                   </div>
                                   <div className="agenda-content" >
                                   <h3>{evento.time} | {evento.title}</h3>
+                                  &nbsp;
                                   <p>{evento.description}</p>
                                   </div>
                               </div>

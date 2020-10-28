@@ -11,6 +11,7 @@
 
       .text-box{
         @apply mb-8;
+        width: 95%;
       }
       &.agenda {
         @apply flex flex-col h-auto p-8 bg-white py-32;
@@ -22,9 +23,6 @@
 
         @screen lg {
           @apply w-5/12 py-0;
-          .center-in {
-            @apply w-8/12;
-          }
         }
         
         .btn-container {
@@ -96,6 +94,7 @@
   @apply flex mb-4;
   .agenda-date {
     @apply px-3 w-3/12 text-center border-r border-black;
+    min-width: 90px;
     h3 {
       @apply text-5xl leading-none mb-1;
     }
