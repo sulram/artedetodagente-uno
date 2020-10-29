@@ -14,7 +14,7 @@
         width: 95%;
       }
       &.agenda {
-        @apply flex flex-col h-auto p-8 bg-white py-32;
+        @apply flex flex-col h-auto p-8 bg-white;
         background-color: var(--yellow);
         
         @screen md {
@@ -48,7 +48,7 @@
         }
 
         .noticia {
-          @apply p-10 h-full;
+          @apply p-10 h-full px-0;
           background-size: cover;
           color: white;
           min-height: 70vh;
@@ -57,9 +57,8 @@
             min-height: 70vh;
           }
           .content {
-            @apply p-4 absolute border-black border-4 border-b-0;
-            bottom: 0;
-            left: 0;
+            @apply p-4 relative border-black border-4;
+            bottom: -2.5rem;
             background-color: var(--yellow);
             h3 {
               @apply text-xl text-black mb-1 uppercase;
@@ -78,7 +77,8 @@
             }
           }
           .bt-group {
-            @apply text-left;
+            @apply relative text-left;
+            bottom: -2.5rem;
           }
           .bt {
             background: var(--yellow);
