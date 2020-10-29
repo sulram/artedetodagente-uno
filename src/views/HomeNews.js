@@ -85,16 +85,16 @@ function HomeNews() {
                           {size.width <= 768 && (
                             <img src={image.url ? `https://admin.umnovoolhar.art.br${image.url}` : image.default} alt={noticia.title} />
                           )}
-                          <Link className="content" to={`/noticias/${noticia.id}`}>
-                            <h3>{noticia.title}</h3>
-                            <p className="post-call">{noticia.call}</p>
-                            <p className="post-date">Publicado em {date.day} de {date.month} de {date.year}</p>
-                          </Link>
                           <div className="bt-group">
                             <Link className="bt" to={`/noticias/${noticia.id}`}>Leia mais</Link>
                             &nbsp;
                             <button className="bt" onClick={()=>slideNext()}>Próxima notícia</button>
                           </div>
+                          <Link className="content" to={`/noticias/${noticia.id}`}>
+                            <h3>{noticia.title}</h3>
+                            <p className="post-call">{noticia.call}</p>
+                            <p className="post-date">Publicado em {date.day} de {date.month} de {date.year}</p>
+                          </Link>
                         </div>
                       </article>
                     </SwiperSlide>
