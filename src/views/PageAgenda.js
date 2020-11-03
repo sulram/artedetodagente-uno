@@ -26,7 +26,6 @@ function PageAgenda(){
       }
       fetchData()
     },[])
-  
     useEffect(()=>{
       async function fetchData(){
         const response = await api.get(`/schedule-events?_sort=date:ASC&schedule.month=${months[current_month]}`)
@@ -67,7 +66,7 @@ function PageAgenda(){
                           >▶</button>
                       </nav>
                       <p>&nbsp;</p>
-                      <div className="agenda-feed">
+                      <div className="agenda-feed" style={{columnCount: events.length > 1 ? 2 : 1}}>
                           {events.map((evento,i) => {
                           const date = fdate(evento.date)
                           return (
