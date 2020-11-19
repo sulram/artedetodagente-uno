@@ -11,6 +11,7 @@ import HomeProjetos from './HomeProjetos'
 import HomeNews from './HomeNews'
 import HomeVideoEspecial from './HomeVideoEspecial'
 import HomeEventos from './HomeEventos'
+import HomeBanner from './HomeBanner'
 
 function Home() {
   
@@ -27,6 +28,7 @@ function Home() {
         <HomeProjetos id="oficinas-de-regencia" />
         <HomeProjetos id="repertorio-coral" />
         <HomeEventos />
+        <HomeBanner url={`http://www.ifcplp.org`} img={`/img/banners/banner-curso-fotografia.jpg`} />
       </main>
       <Footer />
     </>
