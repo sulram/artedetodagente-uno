@@ -1,5 +1,4 @@
 import React from 'react'
-import parse from 'html-react-parser'
 import { HashLink as Link } from 'react-router-hash-link'
 
 function HomeCursos(props) {
