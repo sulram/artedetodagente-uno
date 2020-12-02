@@ -28,7 +28,7 @@ function Home() {
         <HomeProjetos id="oficinas-de-regencia" />
         <HomeProjetos id="repertorio-coral" />
         <HomeEventos />
-        <HomeBanner url={`http://www.ifcplp.org`} img={`/img/banners/banner-curso-fotografia.jpg`} />
+        {/* <HomeBanner url={`http://www.ifcplp.org`} img={`/img/banners/banner-curso-fotografia.jpg`} /> */}
       </main>
       <Footer />
     </>
