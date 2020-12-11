@@ -20,7 +20,7 @@ function Home() {
       <Header />
       <main className="main-content home-content">
         <HomeNews />
-        <HomeLandingENAC />
+        {/* <HomeLandingENAC /> */}
         <HomeVideoEspecial />
         <HomeCursos />
         <HomeVideos id="apresentacoes" label="Acessar todas as apresentações" />
