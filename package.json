@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "html-react-parser": "^0.13.0",
     "markdown-to-jsx": "^7.0.0",
     "pdfjs-dist": "2.4.456",
