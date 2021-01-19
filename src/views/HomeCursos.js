@@ -29,7 +29,7 @@ function HomeCursos(props) {
           >
             Faça sua inscrição
           </a>
-          &nbsp;<Link className="link-box" to="/noticias/PANORAMA-DA-ARTE-EDUCACAO-INCLUSIVA">Saiba mais</Link>
+          &nbsp;<Link className="link-box" to="/noticias/Inscricoes-para-nosso-segundo-curso!">Saiba mais</Link>
         </div>
       </div>
     </section>
