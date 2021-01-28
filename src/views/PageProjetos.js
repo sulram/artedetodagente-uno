@@ -181,12 +181,16 @@ function InfoBox(props) {
       fetchData()
   },[id])
 
+
+
+  console.log(image);
+
   return (
     <div className="info-box">
       <div
         className="figure"
         style={image.url && {
-          background: `url(https://admin.umnovoolhar.art.br${image.formats.small.url}) center top / cover no-repeat`
+          background: `url(https://admin.umnovoolhar.art.br${image.formats.thumbnail.url||image.formats.small.url}) center top / cover no-repeat`
         }}
       ></div>
       <div className="box">
