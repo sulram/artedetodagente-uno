@@ -70,7 +70,6 @@ function PageProjetos() {
                   )
                 })
               }
-            
             </section>
             <p>&nbsp;</p>
             <h3 className="title-2">Últimas publicações</h3>
