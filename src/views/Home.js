@@ -26,7 +26,7 @@ function Home() {
         <HomeVideos id="apresentacoes" label="Acessar todas as apresentações" />
         <HomeVideos id="palestras" label="Acessar todas as palestras" />
         <HomeProjetos id="oficinas-de-regencia" />
-        {/* <HomeProjetos id="acessibilifolia" /> */}
+        <HomeProjetos id="acessibilifolia" />
         <HomeProjetos id="repertorio-coral" />
         <HomeEventos />
         {/* <HomeBanner url={`http://www.ifcplp.org`} img={`/img/banners/banner-curso-fotografia.jpg`} /> */}
