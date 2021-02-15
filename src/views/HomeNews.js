@@ -132,7 +132,7 @@ function HomeNews() {
                           </div>
                           <Link
                             className="content"
-                            to={`/noticias/${noticia.id}`}
+                            to={`/noticias/${noticia.slug}`}
                           >
                             <h3>{noticia.title}</h3>
                             <p className="post-call">{noticia.call}</p>
