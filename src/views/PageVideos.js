@@ -65,6 +65,7 @@ function PageVideos() {
           </Route>
 
           <Route path={`${path}/:id`}>
+            teste
             <Video parent={id} content={content} />
           </Route>
 

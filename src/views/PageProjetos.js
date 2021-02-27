@@ -189,7 +189,7 @@ function InfoBox(props) {
       <div
         className="figure"
         style={image.url && {
-          background: `url(https://admin.umnovoolhar.art.br${image.formats.thumbnail.url||image.formats.small.url}) center top / cover no-repeat`
+          background: `url(https://admin.umnovoolhar.art.br${image.url||image.formats.small.url}) center top / cover no-repeat`
         }}
       ></div>
       <div className="box">
