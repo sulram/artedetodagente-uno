@@ -7,7 +7,7 @@ function HomeCursos(props) {
   return (
     <section id="cursos" className="base cursos">
       <div className="title-box divider">
-        <h2><Link to="/#cursos">Curso Artes Integradas + Educação + Decolonialismo</Link></h2>
+        <h2><Link to="/#cursos">Artes Visuais + Educação + Acessibilidade + Decolonialismo</Link></h2>
       </div>
       <div className="inside-content">
         <div>
