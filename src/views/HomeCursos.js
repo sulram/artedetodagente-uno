@@ -12,7 +12,7 @@ function HomeCursos(props) {
       <div className="inside-content">
         <div>
           <p>
-            Estão abertas as inscrições para o curso Artes Integradas + Educação + Decolonialismo, destinado à capacitação de educadores. A atividade é oferecida pelo projeto Um Novo Olhar e faz parte da série de cursos Arte/Educação + Acessibilidade + Inclusão.
+            Estão abertas as inscrições para o curso Artes Visuais + Educação + Acessibilidade + Decolonialismo, destinado à capacitação de educadores. A atividade é oferecida pelo projeto Um Novo Olhar e faz parte da série de cursos Arte/Educação + Acessibilidade + Inclusão.
           </p>
           <p>
             Em seus seis módulos, o curso trata das relações entre a Acessibilidade Cultural e o Ensino das Artes Visuais no Brasil a partir de uma perspectiva não linear e não hegemônica. O conteúdo inclui questões como formação de públicos, acesso aos bens culturais, espaços de criação e protagonismo. O objetivo é tornar possível uma abordagem acessível e abrangente das concepções de educação formal, não formal e suas implicações no ensino das artes visuais na perspectiva decolonial. O foco estará nas implicações políticas da luta para a consolidação do ensino da arte na educação básica, valorização da arte como área de conhecimento e ampliação da acessibilidade cultural no Brasil.
